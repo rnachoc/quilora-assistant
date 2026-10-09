@@ -11,6 +11,8 @@ Flow for every tool call the model proposes:
 
 The model only ever sees JSON payloads. Errors follow one shape so the system prompt can
 teach a single recovery strategy: {"error": {"code", "message", "hint", "retryable"}}.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -50,6 +52,7 @@ class ToolError(Exception):
         self.details = details or {}
 
     def payload(self) -> dict[str, Any]:
+        """The JSON error object sent back to the model."""
         error: dict[str, Any] = {"code": self.code, "message": self.message,
                                  "retryable": self.retryable}
         if self.hint:
@@ -73,6 +76,7 @@ class SessionState:
     handoff_ticket_id: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
+        """Serialise for storage in chat_sessions.state."""
         return {
             "verified_orders": self.verified_orders,
             "failed_verifications": self.failed_verifications,
@@ -82,6 +86,7 @@ class SessionState:
 
     @classmethod
     def from_dict(cls, data: dict[str, Any] | None) -> SessionState:
+        """Rebuild the state from stored JSON."""
         data = data or {}
         return cls(
             verified_orders=dict(data.get("verified_orders", {})),
@@ -93,6 +98,7 @@ class SessionState:
 
 @dataclass
 class ToolContext:
+    """Everything a tool handler may use: database, settings, session state and turn index."""
     db: Database
     settings: Settings
     state: SessionState
@@ -106,23 +112,35 @@ Handler = Callable[[ToolContext, Any], dict[str, Any]]
 
 @dataclass(frozen=True)
 class ToolSpec:
+    """A tool's contract: name, description for the model, input model, handler, side effects."""
     name: str
     description: str
     input_model: type[BaseModel]
     handler: Handler
     mutates: bool = False  # True only for tools that change business data
 
+    def input_schema(self) -> dict[str, Any]:
+        """JSON Schema of the input, flat and without titles.
+
+        The model's class docstring is a developer comment, not model-facing text: it is
+        removed so only the tool `description` explains the tool to the model.
+        """
+        schema = clean_schema(inline_refs(self.input_model.model_json_schema()))
+        schema.pop("description", None)
+        return schema
+
     def definition(self) -> dict[str, Any]:
         """Tool definition in the Messages API format."""
         return {
             "name": self.name,
             "description": self.description,
-            "input_schema": clean_schema(inline_refs(self.input_model.model_json_schema())),
+            "input_schema": self.input_schema(),
         }
 
 
 @dataclass
 class ToolOutcome:
+    """Result of executing one tool call, success or error, with its duration."""
     name: str
     input: dict[str, Any]
     payload: dict[str, Any]
@@ -131,9 +149,11 @@ class ToolOutcome:
 
     @property
     def error_code(self) -> str | None:
+        """The error code, or None if the call succeeded."""
         return self.payload["error"]["code"] if self.is_error else None
 
     def content(self) -> str:
+        """The payload serialised as the tool_result content."""
         return to_json(self.payload)
 
 
@@ -186,10 +206,13 @@ def _json_default(value: Any) -> Any:
 
 
 def to_json(payload: dict[str, Any]) -> str:
+    """Serialise tool payloads, converting Decimal and dates."""
     return json.dumps(payload, default=_json_default, ensure_ascii=False)
 
 
 class ToolRegistry:
+    """The single entry point for executing tools, shared by the agent loop and MCP."""
+
     def __init__(self, specs: list[ToolSpec]) -> None:
         names = [s.name for s in specs]
         if len(names) != len(set(names)):
@@ -198,15 +221,19 @@ class ToolRegistry:
 
     @property
     def specs(self) -> list[ToolSpec]:
+        """All registered tool specs."""
         return list(self._specs.values())
 
     def get(self, name: str) -> ToolSpec | None:
+        """Look up a tool spec by name."""
         return self._specs.get(name)
 
     def definitions(self) -> list[dict[str, Any]]:
+        """Tool definitions to send to the model with every request."""
         return [s.definition() for s in self._specs.values()]
 
     def execute(self, name: str, raw_input: dict[str, Any], ctx: ToolContext) -> ToolOutcome:
+        """Validate and run one tool call, always returning a ToolOutcome (never raising)."""
         started = time.perf_counter()
 
         def done(payload: dict[str, Any], is_error: bool) -> ToolOutcome:

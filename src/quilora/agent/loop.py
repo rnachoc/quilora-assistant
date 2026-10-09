@@ -10,6 +10,8 @@ Everything that can go wrong has an explicit, non-model fallback: the model API 
 the iteration budget running out, or the output being truncated. The conversation history
 is always left valid (every tool_use has its tool_result, roles alternate), so the next
 turn can continue normally.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -71,6 +73,7 @@ def guess_language(text: str) -> str:
 
 @dataclass
 class ToolCallRecord:
+    """What happened in one tool call during a turn (for the API, traces and evals)."""
     name: str
     input: dict[str, Any]
     is_error: bool
@@ -81,6 +84,9 @@ class ToolCallRecord:
 
 @dataclass
 class TurnResult:
+    """Everything a caller needs about one turn: reply, why it stopped, tools, tokens, cost, flags,
+    handoff.
+    """
     reply: str
     stop_reason: str  # end_turn | max_iterations | model_error | max_tokens | rejected_input
     iterations: int = 0
@@ -95,6 +101,8 @@ class TurnResult:
 
 
 class Agent:
+    """The customer-support agent: system prompt + tools + model, run one customer turn at a time.
+    """
     def __init__(
         self,
         model: ModelClient,
@@ -116,9 +124,11 @@ class Agent:
         self.tracer = tracer or trace.get_tracer("quilora.agent")
 
     def system_prompt(self) -> str:
+        """Render the system prompt with the store's current date."""
         return render(self.prompt_name, today=self.settings.today())
 
     def run_turn(self, conv: Conversation, user_text: str) -> TurnResult:
+        """Process one customer message and return the reply; wraps the turn in a trace span."""
         with self.tracer.start_as_current_span("chat.turn") as span:
             result = self._run_turn(conv, user_text)
             span.set_attributes({
@@ -142,6 +152,7 @@ class Agent:
             return result
 
     def _call_model(self, system: str, conv: Conversation):
+        """Call the model once, recording a GenAI span with tokens and finish reason."""
         name = f"chat {self.model.model}"
         with self.tracer.start_as_current_span(name, kind=trace.SpanKind.CLIENT) as span:
             span.set_attributes({
@@ -168,6 +179,7 @@ class Agent:
             return response
 
     def _execute_tool(self, call: dict, ctx: ToolContext):
+        """Execute one tool call through the registry, recording a span with redacted arguments."""
         with self.tracer.start_as_current_span(f"execute_tool {call['name']}") as span:
             span.set_attributes({
                 "gen_ai.operation.name": "execute_tool",
@@ -183,6 +195,7 @@ class Agent:
             return outcome
 
     def _run_turn(self, conv: Conversation, user_text: str) -> TurnResult:
+        """The loop itself: model -> tools -> model ... until a final answer or a limit is hit."""
         started = time.perf_counter()
         user_text = (user_text or "").strip()
         lang = guess_language(user_text)
@@ -275,6 +288,9 @@ class Agent:
                                  "content": [{"type": "text", "text": guarded.text}]}
 
     def _check_input(self, conv: Conversation, text: str, lang: str) -> TurnResult | None:
+        """Reject empty or oversized messages and over-long conversations without calling the
+        model.
+        """
         if not text:
             return TurnResult(reply="", stop_reason="rejected_input", flags=["empty_input"])
         if len(text) > MAX_USER_MESSAGE_CHARS:

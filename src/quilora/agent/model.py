@@ -2,6 +2,8 @@
 
 The rest of the code depends on the small `ModelClient` protocol, so tests can drive the
 agent loop with a scripted fake and we could swap providers without touching the loop.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -15,6 +17,7 @@ import anthropic
 
 @dataclass
 class TokenUsage:
+    """Token counts of one or more model calls, including prompt-cache reads and writes."""
     input_tokens: int = 0
     output_tokens: int = 0
     cache_creation_input_tokens: int = 0
@@ -29,6 +32,7 @@ class TokenUsage:
         )
 
     def as_dict(self) -> dict[str, int]:
+        """Plain dict for JSON responses and reports."""
         return {
             "input_tokens": self.input_tokens,
             "output_tokens": self.output_tokens,
@@ -53,10 +57,12 @@ class ModelResponse:
 
     @property
     def text(self) -> str:
+        """All text blocks joined: the reply shown to the customer."""
         return "\n".join(b["text"] for b in self.content if b["type"] == "text").strip()
 
     @property
     def tool_uses(self) -> list[dict[str, Any]]:
+        """The tool calls the model is asking us to run."""
         return [b for b in self.content if b["type"] == "tool_use"]
 
 
@@ -69,6 +75,7 @@ class ModelError(Exception):
 
 
 class ModelClient(Protocol):
+    """The minimal interface the agent loop needs from a model provider."""
     model: str
 
     def create(
@@ -105,6 +112,7 @@ class AnthropicModelClient:
         self.model = model
 
     def create(self, *, system, messages, tools, max_tokens) -> ModelResponse:
+        """Send one Messages API request and return a provider-neutral ModelResponse."""
         kwargs: dict[str, Any] = {
             "model": self.model,
             "max_tokens": max_tokens,

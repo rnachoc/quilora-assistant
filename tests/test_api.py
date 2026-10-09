@@ -1,4 +1,7 @@
-"""Phase 9: HTTP API and durable sessions."""
+"""Phase 9: HTTP API and durable sessions.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

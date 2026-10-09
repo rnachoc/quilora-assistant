@@ -14,6 +14,8 @@ Defence in depth, from strongest to weakest:
 Heuristics in layers 2-3 have false positives and negatives. That is why injection
 detection only *flags* (for monitoring and evals) instead of blocking, and only
 high-precision checks block.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -63,12 +65,15 @@ NO_DISCOUNT_REPLY = {
 
 @dataclass
 class GuardResult:
+    """Outcome of a guard: the (possibly replaced) text, flags raised, and whether it was blocked.
+    """
     text: str
     flags: list[str] = field(default_factory=list)
     blocked: bool = False
 
 
 def _luhn_ok(digits: str) -> bool:
+    """Luhn checksum, so only digit runs that are plausible card numbers get redacted."""
     total, parity = 0, len(digits) % 2
     for i, ch in enumerate(digits):
         d = int(ch)
@@ -79,6 +84,9 @@ def _luhn_ok(digits: str) -> bool:
 
 
 def check_input(text: str) -> GuardResult:
+    """Redact payment-card, IBAN and ID numbers and flag likely injection attempts in a customer
+    message.
+    """
     flags: list[str] = []
 
     def redact_card(match: re.Match) -> str:
@@ -101,11 +109,13 @@ def check_input(text: str) -> GuardResult:
 
 
 def normalise_amount(raw: str) -> str:
+    """Normalise '49,95' / '49.95' to '49.95' so amounts can be compared as strings."""
     value = raw.replace(",", ".")
     return f"{float(value):.2f}"
 
 
 def amounts_in(text: str) -> set[str]:
+    """Extract the euro amounts mentioned in a reply."""
     found = set()
     for match in _AMOUNT.finditer(text):
         raw = match.group(1) or match.group(2)

@@ -1,4 +1,7 @@
-"""Phase 8: the MCP server exposes the same tools, schemas and rules, in-process."""
+"""Phase 8: the MCP server exposes the same tools, schemas and rules, in-process.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

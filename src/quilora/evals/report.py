@@ -1,9 +1,13 @@
-"""Markdown report and baseline comparison for evaluation runs."""
+"""Markdown report and baseline comparison for evaluation runs.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
 
 def compare(current: dict, baseline: dict) -> dict:
+    """Diff a run against the baseline: regressions, fixes, new cases and changed settings."""
     before = {c["id"]: c["passed"] for c in baseline["cases"]}
     now = {c["id"]: c["passed"] for c in current["cases"]}
     common = before.keys() & now.keys()
@@ -23,6 +27,7 @@ def _pct(x: float) -> str:
 
 
 def render_report(results: dict, baseline: dict | None) -> str:
+    """Markdown report: pass rate per category, cost, latency, baseline diff and failures."""
     meta, summary = results["meta"], results["summary"]
     base_cats = baseline["summary"]["by_category"] if baseline else {}
     lines = [

@@ -1,4 +1,7 @@
-"""Phase 3: the agent loop, driven by a scripted model (no network)."""
+"""Phase 3: the agent loop, driven by a scripted model (no network).
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

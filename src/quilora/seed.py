@@ -3,6 +3,8 @@
 Usage:
     python -m quilora.seed            # migrate + (re)load all data
     python -m quilora.seed --reset-writes   # only clear returns/tickets/sessions (eval runs)
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -31,10 +33,12 @@ WRITE_TABLES = ["return_requests", "support_tickets", "audit_log", "chat_session
 
 
 def _ts(value: str | None) -> datetime | None:
+    """Parse a generated timestamp as store-local time."""
     return datetime.fromisoformat(value).replace(tzinfo=STORE_TZ) if value else None
 
 
 def _existing(conn: psycopg.Connection, tables: list[str]) -> list[str]:
+    """Return which of the given tables exist (later migrations add more)."""
     with conn.cursor(row_factory=tuple_row) as cur:
         rows = cur.execute(
             "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
@@ -44,12 +48,14 @@ def _existing(conn: psycopg.Connection, tables: list[str]) -> list[str]:
 
 
 def reset_writes(conn: psycopg.Connection) -> None:
+    """Clear the tables the assistant writes to, so tests and evals start clean."""
     tables = _existing(conn, WRITE_TABLES)
     if tables:
         conn.execute(f"TRUNCATE {', '.join(tables)} RESTART IDENTITY CASCADE")
 
 
 def load_all(conn: psycopg.Connection) -> dict[str, int]:
+    """Replace all store data with the synthetic dataset and the chunked policies."""
     gen = DATA_DIR / "generated"
     charts = json.loads((gen / "size_charts.json").read_text())
     products = json.loads((gen / "products.json").read_text())
@@ -122,6 +128,7 @@ def load_all(conn: psycopg.Connection) -> dict[str, int]:
 
 
 def main() -> None:
+    """Command-line entry point: migrate, then load data (or only reset runtime tables)."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reset-writes", action="store_true",
                         help="only clear tables written by the assistant")

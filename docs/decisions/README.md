@@ -1,5 +1,7 @@
 # Architecture Decision Records
 
+_Author: Ignacio Rodríguez Caro_
+
 Each significant decision is recorded as a short ADR: **context, options, decision, consequences**.
 
 Status values:

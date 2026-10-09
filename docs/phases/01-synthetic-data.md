@@ -1,5 +1,7 @@
 # Phase 1: Synthetic data
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 An agent is only as good as the data its tools return. Before touching the model we need a

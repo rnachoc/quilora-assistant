@@ -2,6 +2,7 @@
 
 - **Status:** Proposed
 - **Date:** 2026-10-09
+- **Author:** Ignacio Rodríguez Caro
 
 ## Context
 

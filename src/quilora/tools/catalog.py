@@ -1,4 +1,7 @@
-"""Catalog tools: search_products, get_product, check_stock, get_size_recommendation."""
+"""Catalog tools: search_products, get_product, check_stock, get_size_recommendation.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -28,6 +31,7 @@ def availability(stock: int) -> str:
 
 
 def _variant_view(v: dict) -> dict:
+    """Customer-facing view of a variant: availability level, units only when low."""
     view = {"color": v["color"], "size": v["size"], "availability": availability(v["stock"])}
     if view["availability"] == "low_stock":
         view["units_left"] = v["stock"]  # "only 2 left" is useful and common in shops
@@ -35,15 +39,18 @@ def _variant_view(v: dict) -> dict:
 
 
 class _Input(BaseModel):
+    """Base for tool inputs: unknown fields are rejected and strings are trimmed."""
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
 
 class ProductRef(_Input):
+    """Input that identifies one product by its Quilora ID."""
     product_id: str = Field(description="Quilora product ID, e.g. 'QL-TRS-001'.")
 
     @field_validator("product_id")
     @classmethod
     def _normalise_id(cls, value: str) -> str:
+        """Upper-case the ID and reject anything that is not QL-ABC-123."""
         value = value.upper()
         if not PRODUCT_ID_PATTERN.match(value):
             raise ValueError("must look like 'QL-ABC-123'; use search_products to find IDs")
@@ -51,6 +58,7 @@ class ProductRef(_Input):
 
 
 def _load_product(ctx: ToolContext, product_id: str) -> dict:
+    """Load a product with its size chart and variants, or raise PRODUCT_NOT_FOUND."""
     with ctx.db.connection() as conn:
         product = conn.execute(
             "SELECT p.*, sc.garment_type, sc.gender AS chart_gender, sc.size_order, sc.sizes"
@@ -71,6 +79,7 @@ def _load_product(ctx: ToolContext, product_id: str) -> dict:
 # --------------------------------------------------------------------------- search_products
 
 class SearchProductsInput(_Input):
+    """Input of search_products: keywords and/or filters."""
     query: str | None = Field(
         default=None, max_length=100,
         description="Search keywords IN ENGLISH (translate the customer's words), e.g. "
@@ -89,17 +98,20 @@ class SearchProductsInput(_Input):
 
     @model_validator(mode="after")
     def _needs_query_or_category(self):
+        """Refuse searches with neither keywords nor a category."""
         if not self.query and not self.category:
             raise ValueError("give a query, a category, or both")
         return self
 
 
 def _or_query(text: str) -> str:
+    """Build an OR tsquery from the words of a query (fallback pass)."""
     words = re.findall(r"[a-zA-Z]+", text.lower())
     return " | ".join(words)
 
 
 def search_products(ctx: ToolContext, args: SearchProductsInput) -> dict:
+    """Handler: search the catalog with filters, falling back to a partial match."""
     variant_filter = ["v.product_id = p.id"]
     params: dict = {"category": args.category, "gender": args.gender,
                     "max_price": args.max_price_eur, "limit": args.limit}
@@ -173,6 +185,7 @@ def search_products(ctx: ToolContext, args: SearchProductsInput) -> dict:
 # --------------------------------------------------------------------------- get_product
 
 def get_product(ctx: ToolContext, args: ProductRef) -> dict:
+    """Handler: full product details with an availability matrix."""
     p = _load_product(ctx, args.product_id)
     by_colour: dict[str, dict[str, str]] = {}
     for v in p["variants"]:
@@ -196,6 +209,7 @@ def get_product(ctx: ToolContext, args: ProductRef) -> dict:
 # --------------------------------------------------------------------------- check_stock
 
 class CheckStockInput(ProductRef):
+    """Input of check_stock: product plus optional colour and size."""
     color: str | None = Field(default=None, max_length=30,
                               description="Colour IN ENGLISH, e.g. 'black'. Omit for all colours.")
     size: str | None = Field(default=None, max_length=10,
@@ -203,6 +217,7 @@ class CheckStockInput(ProductRef):
 
 
 def check_stock(ctx: ToolContext, args: CheckStockInput) -> dict:
+    """Handler: availability for a colour/size, with alternatives when sold out."""
     p = _load_product(ctx, args.product_id)
     variants = p["variants"]
     colours = sorted({v["color"] for v in variants})
@@ -253,6 +268,7 @@ def check_stock(ctx: ToolContext, args: CheckStockInput) -> dict:
 # --------------------------------------------------------------------------- size recommendation
 
 class SizeRecommendationInput(ProductRef):
+    """Input of get_size_recommendation: product plus body data."""
     height_cm: float | None = Field(default=None, ge=120, le=230,
                                     description="Height in cm (1,68 m -> 168).")
     weight_kg: float | None = Field(default=None, ge=30, le=250, description="Weight in kg.")
@@ -265,6 +281,7 @@ class SizeRecommendationInput(ProductRef):
 
 
 def get_size_recommendation(ctx: ToolContext, args: SizeRecommendationInput) -> dict:
+    """Handler: run the sizing algorithm and add in-stock colours for the size."""
     p = _load_product(ctx, args.product_id)
     try:
         rec = recommend(

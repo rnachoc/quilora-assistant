@@ -1,1 +1,4 @@
-"""Pure business rules (no I/O): sizing and return eligibility."""
+"""Pure business rules (no I/O): sizing and return eligibility.
+
+Author: Ignacio Rodríguez Caro
+"""

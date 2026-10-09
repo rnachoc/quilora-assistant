@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # Labelled queries for policy retrieval. `relevant` lists the chunk IDs that answer the
 # query (any of them counts as a hit). Groups:
 #   en_keyword    - English, uses the same words as the policy text

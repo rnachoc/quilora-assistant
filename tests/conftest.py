@@ -3,6 +3,8 @@
 Tests marked `db` run against a real PostgreSQL (with pgvector) pointed to by
 TEST_DATABASE_URL or DATABASE_URL. They are skipped when no database is reachable, so
 `pytest` always works on a laptop; CI provides a Postgres service container.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations

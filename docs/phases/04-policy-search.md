@@ -1,5 +1,7 @@
 # Phase 4: Policy search (FTS vs pgvector)
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 **RAG** (retrieval-augmented generation) means: find the passages that answer the

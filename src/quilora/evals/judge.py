@@ -5,6 +5,8 @@ transcript, the tool results and a narrow yes/no rubric, and answers in JSON. Na
 rubrics are far more reliable than "rate this from 1 to 10". The judge is a different,
 cheaper model than the agent (JUDGE_MODEL) to limit cost and self-preference bias.
 Judge verdicts should be spot-checked by a human; see docs/evaluation.md.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -33,6 +35,7 @@ SCHEMA = {
 
 
 def render_transcript(messages: list[dict]) -> str:
+    """Turn the stored messages into a readable transcript for the judge."""
     lines = []
     for m in messages:
         if isinstance(m["content"], str):
@@ -49,11 +52,14 @@ def render_transcript(messages: list[dict]) -> str:
 
 
 class Judge:
+    """LLM-as-judge client that grades a final reply against a narrow yes/no rubric."""
+
     def __init__(self, api_key: str | None, model: str) -> None:
         self.client = anthropic.Anthropic(api_key=api_key, max_retries=2, timeout=60)
         self.model = model
 
     def evaluate(self, rubric: str, messages: list[dict]) -> Check:
+        """Ask the judge model for a verdict and return it as a Check."""
         prompt = f"RUBRIC:\n{rubric}\n\nTRANSCRIPT:\n{render_transcript(messages)}"
         kwargs = {"model": self.model, "max_tokens": 300, "system": SYSTEM,
                   "messages": [{"role": "user", "content": prompt}]}

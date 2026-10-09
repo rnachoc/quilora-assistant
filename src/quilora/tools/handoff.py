@@ -2,6 +2,8 @@
 
 It only creates a ticket; it changes no order, payment or return. One open ticket per
 conversation: calling it again updates the same ticket, so it is idempotent.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ ALWAYS_HIGH = {"refund_or_payment_dispute", "complaint"}
 
 
 class HandoffInput(BaseModel):
+    """Input of handoff_to_human: reason, summary for the agent and optional contact data."""
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
     reason: Reason
@@ -41,12 +44,14 @@ class HandoffInput(BaseModel):
     @field_validator("customer_email")
     @classmethod
     def _valid_email(cls, value: str | None) -> str | None:
+        """Validate and lower-case the email if one was given."""
         if value is not None and not EMAIL_PATTERN.match(value):
             raise ValueError("not a valid email address")
         return value.lower() if value else value
 
 
 def handoff_to_human(ctx: ToolContext, args: HandoffInput) -> dict:
+    """Handler: open or update this conversation's ticket and audit it."""
     priority = "high" if args.reason in ALWAYS_HIGH else args.priority
     verified = args.order_id is not None and str(args.order_id) in ctx.state.verified_orders
     order_id = args.order_id

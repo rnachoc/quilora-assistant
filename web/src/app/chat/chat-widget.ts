@@ -1,3 +1,4 @@
+// Author: Ignacio Rodríguez Caro
 import { DecimalPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
@@ -5,6 +6,7 @@ import { Component, ElementRef, inject, signal, viewChild } from '@angular/core'
 import { ChatMessage } from './chat.models';
 import { ChatService } from './chat.service';
 
+/** Example questions shown in an empty conversation; they mirror the project brief. */
 const SUGGESTIONS = [
   '¿Tenéis vestidos de lino por menos de 60 €?',
   'Mido 1,68 y peso 60 kg, ¿qué talla me pido en el Iris Linen Trousers?',
@@ -12,6 +14,10 @@ const SUGGESTIONS = [
   'Where is my order 1052? liam.blanco@example.com',
 ];
 
+/**
+ * Floating chat widget: launcher button, message list, input box, handoff banner and a
+ * 'Details' toggle that shows tools, latency and cost per turn (useful for demos).
+ */
 @Component({
   selector: 'app-chat-widget',
   template: `
@@ -100,6 +106,7 @@ export class ChatWidget {
   protected readonly messages = signal<ChatMessage[]>([]);
   protected readonly ticketId = signal<string | null>(null);
 
+  /** Send a customer message to the API and append the reply (or a friendly error). */
   send(text: string): void {
     const message = text.trim();
     if (!message || this.loading()) return;
@@ -125,12 +132,14 @@ export class ChatWidget {
     });
   }
 
+  /** Forget the current session and clear the screen to start a new conversation. */
   restart(): void {
     this.chat.reset();
     this.messages.set([]);
     this.ticketId.set(null);
   }
 
+  /** Append a message and keep the list scrolled to the newest one. */
   private push(message: ChatMessage): void {
     this.messages.update((list) => [...list, message]);
     queueMicrotask(() => {

@@ -1,5 +1,7 @@
+// Author: Ignacio Rodríguez Caro
 /** Mirrors the API contract in src/quilora/api/app.py. */
 
+/** A tool the agent used during a turn, without its arguments. */
 export interface ToolCallView {
   name: string;
   ok: boolean;
@@ -7,6 +9,7 @@ export interface ToolCallView {
   duration_ms: number;
 }
 
+/** Diagnostics for one turn: stop reason, model calls, latency, tokens, cost, flags. */
 export interface TurnMeta {
   stop_reason: string;
   iterations: number;
@@ -18,6 +21,7 @@ export interface TurnMeta {
   model: string;
 }
 
+/** Response of POST /api/chat. */
 export interface ChatResponse {
   session_id: string;
   reply: string;
@@ -26,6 +30,7 @@ export interface ChatResponse {
   meta: TurnMeta;
 }
 
+/** A message as rendered in the widget ('error' is a local connection problem). */
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'error';
   text: string;

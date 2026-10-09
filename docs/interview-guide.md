@@ -1,5 +1,7 @@
 # How I would explain this in 10 minutes
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Structure
 
 | Minute | Topic | Key sentence |

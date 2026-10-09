@@ -1,6 +1,8 @@
 """Compute and store embeddings for all policy chunks.
 
     python -m quilora.search.embed
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -13,6 +15,7 @@ from quilora.search.embeddings import Embedder, FastEmbedEmbedder, to_pgvector
 
 
 def embed_policies(conn: psycopg.Connection, embedder: Embedder) -> int:
+    """Compute and store an embedding for every policy chunk."""
     rows = conn.execute(
         "SELECT id, doc_title, section_title, content FROM policy_chunks ORDER BY id"
     ).fetchall()
@@ -29,6 +32,7 @@ def embed_policies(conn: psycopg.Connection, embedder: Embedder) -> int:
 
 
 def main() -> None:
+    """Command-line entry point: embed all policies with the configured model."""
     settings = load_settings()
     embedder = FastEmbedEmbedder(settings.embedding_model)
     with psycopg.connect(settings.database_url) as conn:

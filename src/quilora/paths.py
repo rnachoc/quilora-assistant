@@ -3,6 +3,8 @@
 From a source checkout they are found relative to this file. In a container, where the
 package is installed into site-packages, set QUILORA_HOME to the directory holding
 `data/`, `db/` and `evals/` (the Dockerfile sets it to /app).
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations

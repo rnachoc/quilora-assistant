@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # Runs on every push and pull request. No API key needed: the agent loop is tested with a
 # scripted fake model, tools are tested against a real Postgres with pgvector.
 name: CI

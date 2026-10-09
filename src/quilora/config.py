@@ -2,6 +2,8 @@
 
 A frozen dataclass keeps configuration explicit and immutable; see `.env.example` for
 documentation of every variable.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -23,6 +25,7 @@ def _float(name: str, default: float) -> float:
 
 @dataclass(frozen=True)
 class Settings:
+    """All runtime configuration in one immutable object (see .env.example)."""
     database_url: str = "postgresql://quilora:quilora_dev@localhost:5432/quilora"
     anthropic_api_key: str | None = None
     agent_model: str = "claude-sonnet-5-5"
@@ -45,6 +48,7 @@ class Settings:
 
 
 def load_settings(dotenv_path: str = ".env") -> Settings:
+    """Read settings from the environment (and .env), validating the few that have fixed values."""
     load_dotenv(dotenv_path)
     today = os.environ.get("STORE_TODAY") or None
     backend = (os.environ.get("POLICY_SEARCH_BACKEND") or "fts").lower()

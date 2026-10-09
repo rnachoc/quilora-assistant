@@ -1,5 +1,7 @@
 # Phase 6: Guardrails
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 A **guardrail** is any check that constrains what goes into or comes out of the model.

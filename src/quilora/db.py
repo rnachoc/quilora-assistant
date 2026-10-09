@@ -1,4 +1,7 @@
-"""Database access: a connection pool and a tiny forward-only migration runner."""
+"""Database access: a connection pool and a tiny forward-only migration runner.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -35,14 +38,17 @@ class Database:
     @contextmanager
     def connection(self) -> Iterator[psycopg.Connection]:
         # The pool commits on clean exit and rolls back on exceptions.
+        """Borrow a pooled connection; commits on success, rolls back on error."""
         with self._pool.connection() as conn:
             yield conn
 
     def ping(self) -> bool:
+        """Cheap query used by the readiness probe."""
         with self.connection() as conn:
             return conn.execute("SELECT 1 AS ok").fetchone()["ok"] == 1
 
     def close(self) -> None:
+        """Close all pooled connections."""
         self._pool.close()
 
 

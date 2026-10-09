@@ -18,6 +18,8 @@ It works in two phases, and every guarantee is enforced by code:
 Idempotency has two layers: a confirmed token remembers its return ID (a replayed call
 returns the same ID), and a unique idempotency key in the database stops two concurrent
 confirmations from creating two returns.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -38,12 +40,14 @@ HANDOFF_REASONS = {"defective_or_damaged", "wrong_item"}
 
 
 class ReturnItem(BaseModel):
+    """One order line to return and how many units."""
     model_config = ConfigDict(extra="forbid")
     line_no: int = Field(ge=1, description="line_no of the item, from get_order_status.")
     quantity: int = Field(default=1, ge=1, le=20)
 
 
 class CreateReturnInput(BaseModel):
+    """Input of create_return_request, including the optional confirmation token."""
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
     order_id: int = Field(ge=1, description="Order number already verified in this conversation.")
@@ -60,6 +64,7 @@ class CreateReturnInput(BaseModel):
     @field_validator("items")
     @classmethod
     def _unique_lines(cls, items: list[ReturnItem]) -> list[ReturnItem]:
+        """Each order line may appear only once in a request."""
         lines = [i.line_no for i in items]
         if len(lines) != len(set(lines)):
             raise ValueError("each line_no may appear only once")
@@ -67,10 +72,12 @@ class CreateReturnInput(BaseModel):
 
 
 def _now() -> datetime:
+    """Current UTC time (isolated for clarity and testing)."""
     return datetime.now(UTC)
 
 
 def _idempotency_key(order_id: int, items: list[ReturnItem], already_returned: dict) -> str:
+    """Deterministic key for 'this order, these items, this prior-return state'."""
     material = {
         "order_id": order_id,
         "items": sorted((i.line_no, i.quantity) for i in items),
@@ -80,6 +87,7 @@ def _idempotency_key(order_id: int, items: list[ReturnItem], already_returned: d
 
 
 def _validated_items(ctx: ToolContext, args: CreateReturnInput) -> tuple[dict, list[dict]]:
+    """Check verification, ownership, eligibility and quantities for the requested items."""
     email = ctx.state.verified_orders.get(str(args.order_id))
     if email is None:
         raise ToolError(
@@ -119,6 +127,7 @@ def _validated_items(ctx: ToolContext, args: CreateReturnInput) -> tuple[dict, l
 
 
 def _summary(order_id: int, selected: list[dict], args: CreateReturnInput) -> dict:
+    """The summary the customer must see and confirm."""
     return {
         "order_id": order_id,
         "items": [
@@ -138,6 +147,7 @@ def _summary(order_id: int, selected: list[dict], args: CreateReturnInput) -> di
 def create_return_request(ctx: ToolContext, args: CreateReturnInput) -> dict:
     # Replay of an already confirmed token (e.g. the model repeats the call): same answer,
     # no new side effect. Checked first, because the item is no longer returnable now.
+    """Handler: propose (no token) or confirm (token) a return, enforcing every rule."""
     replay = ctx.state.pending_returns.get(args.confirmation_token or "")
     if replay and replay.get("return_id"):
         return {"status": "already_requested", "return_id": replay["return_id"],

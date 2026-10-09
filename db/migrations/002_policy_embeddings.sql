@@ -1,3 +1,4 @@
+-- Author: Ignacio Rodríguez Caro
 -- 002: semantic search over policy chunks with pgvector.
 -- Requires the pgvector extension (bundled in the pgvector/pgvector Docker image).
 

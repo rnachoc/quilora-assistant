@@ -1,4 +1,7 @@
-"""Deterministic graders: each expectation becomes a named pass/fail check."""
+"""Deterministic graders: each expectation becomes a named pass/fail check.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -13,6 +16,7 @@ from quilora.evals.cases import Expect
 
 @dataclass
 class Check:
+    """Result of one named check, with a detail string for the report."""
     name: str
     passed: bool
     detail: str = ""
@@ -31,15 +35,19 @@ class CaseRun:
 
 
 def strip_accents(text: str) -> str:
+    """Remove diacritics so 'agotada' matches 'agotáda' style variations."""
     decomposed = unicodedata.normalize("NFKD", text)
     return "".join(c for c in decomposed if not unicodedata.combining(c))
 
 
 def norm(text: str) -> str:
+    """Accent- and case-insensitive form used for text matching."""
     return strip_accents(text).lower()
 
 
 def _match_value(actual: Any, matcher: Any) -> bool:
+    """Compare a tool argument with an expectation (literal or {lte, gte, contains, in, present}).
+    """
     if isinstance(matcher, dict):
         ok = True
         if "lte" in matcher:

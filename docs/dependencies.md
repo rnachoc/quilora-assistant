@@ -1,5 +1,7 @@
 # Dependencies
 
+_Author: Ignacio Rodríguez Caro_
+
 Every dependency must earn its place. Versions are pinned in `pyproject.toml` and were checked
 against PyPI on 2026-10-09.
 

@@ -1,5 +1,5 @@
 # Size Guide
-<!-- doc_id: SIZE | updated: 2026-09-01 -->
+<!-- doc_id: SIZE | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. How to measure yourself
 Use a soft tape measure over light clothing. Chest: around the fullest part. Waist: around the narrowest part, usually just above the belly button. Hip: around the fullest part of the hips. Foot length: from heel to longest toe while standing.

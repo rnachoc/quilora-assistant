@@ -1,5 +1,5 @@
 # Exchanges Policy
-<!-- doc_id: EXC | updated: 2026-09-01 -->
+<!-- doc_id: EXC | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Size and colour exchanges
 You can exchange an item for a different size or colour of the same product within 30 days of delivery, subject to stock availability. Each item can be exchanged once, and exchange shipping is free within mainland Spain.

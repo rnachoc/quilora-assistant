@@ -1,3 +1,4 @@
+-- Author: Ignacio Rodríguez Caro
 -- 003: the only data the assistant writes: return requests, support tickets, audit log.
 
 CREATE TABLE return_requests (

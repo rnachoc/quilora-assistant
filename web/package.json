@@ -1,6 +1,7 @@
 {
   "name": "web",
   "version": "0.0.0",
+  "author": "Ignacio Rodríguez Caro",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

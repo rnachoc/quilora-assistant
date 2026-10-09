@@ -1,1 +1,4 @@
-"""HTTP API (FastAPI)."""
+"""HTTP API (FastAPI).
+
+Author: Ignacio Rodríguez Caro
+"""

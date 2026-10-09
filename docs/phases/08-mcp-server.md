@@ -1,5 +1,7 @@
 # Phase 8: MCP server
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept: agent vs MCP
 
 - **The agent** is a *program that decides*: it holds the conversation, calls the model,

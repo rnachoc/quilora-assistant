@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # API, seed job and MCP server share this image.
 FROM python:3.13-slim
 

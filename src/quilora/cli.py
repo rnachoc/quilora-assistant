@@ -3,6 +3,8 @@
     python -m quilora.cli            # full agent with tools
     python -m quilora.cli --raw      # model only, no tools (phase 2 experiment)
     python -m quilora.cli --verbose  # also print tool inputs
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -20,6 +22,7 @@ from quilora.observability import setup_tracing
 
 
 def _read() -> str | None:
+    """Read one line from the terminal; None on Ctrl-D."""
     try:
         return input("you> ").strip()
     except EOFError:
@@ -50,6 +53,7 @@ def raw_chat(prompt_name: str) -> None:
 
 
 def agent_chat(verbose: bool) -> None:
+    """Interactive terminal chat with the full agent, printing tools, latency and cost per turn."""
     settings = load_settings()
     setup_tracing(settings)
     agent = build_agent(settings)
@@ -74,6 +78,7 @@ def agent_chat(verbose: bool) -> None:
 
 
 def main() -> None:
+    """Command-line entry point."""
     parser = argparse.ArgumentParser(description="Quilora assistant in the terminal")
     parser.add_argument("--raw", action="store_true", help="model only, no tools (phase 2)")
     parser.add_argument("--prompt", default="minimal", help="prompt template for --raw")

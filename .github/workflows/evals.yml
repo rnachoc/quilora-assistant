@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # Agent evaluation against the real model. Costs money, so it runs only when something that
 # changes behaviour changes (prompt, tools, agent, cases), or on demand.
 # Requires the repository secret ANTHROPIC_API_KEY; without it the job is skipped.

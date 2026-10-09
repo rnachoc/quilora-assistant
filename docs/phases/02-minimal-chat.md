@@ -1,5 +1,7 @@
 # Phase 2: Minimal chat (no tools)
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 The Messages API is **stateless**: every request carries the whole conversation

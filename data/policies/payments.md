@@ -1,5 +1,5 @@
 # Payments Policy
-<!-- doc_id: PAY | updated: 2026-09-01 -->
+<!-- doc_id: PAY | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Accepted payment methods
 We accept Visa, Mastercard and American Express cards, PayPal, Bizum, Apple Pay and Google Pay. All prices are in euros and include VAT for deliveries within the European Union.

@@ -1,5 +1,7 @@
 # Phase 7: Evaluation and CI
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 A unit test asks "does this function return X?". An **evaluation** asks "given this

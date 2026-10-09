@@ -10,6 +10,8 @@ Security rules enforced here, in code (the prompt cannot be trusted to enforce t
   create_return_request only accept verified orders.
 * Output is minimised: masked email, city only (no street address), and customer free text
   is wrapped and labelled as untrusted.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -38,11 +40,13 @@ STATUS_DESCRIPTIONS = {
 
 
 def mask_email(email: str) -> str:
+    """Hide most of an email address (l***@example.com)."""
     local, _, domain = email.partition("@")
     return f"{local[0]}***@{domain}" if local else "***"
 
 
 class OrderLookupInput(BaseModel):
+    """Input of get_order_status: order number and purchase email."""
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
     order_id: int = Field(ge=1, le=99_999_999, description="Order number, e.g. 1043.")
@@ -51,6 +55,7 @@ class OrderLookupInput(BaseModel):
     @field_validator("order_id", mode="before")
     @classmethod
     def _strip_hash(cls, value):
+        """Accept '#1043' as well as 1043."""
         if isinstance(value, str):
             value = value.strip().lstrip("#").strip()
         return value
@@ -58,6 +63,7 @@ class OrderLookupInput(BaseModel):
     @field_validator("email")
     @classmethod
     def _valid_email(cls, value: str) -> str:
+        """Validate and lower-case the email."""
         if not EMAIL_PATTERN.match(value):
             raise ValueError("not a valid email address")
         return value.lower()
@@ -113,10 +119,12 @@ def load_verified_order(ctx: ToolContext, order_id: int, email: str) -> dict:
 
 
 def _local_date(ts) -> date | None:
+    """Convert a timestamp to a store-local calendar date."""
     return ts.astimezone(STORE_TZ).date() if ts else None
 
 
 def order_view(order: dict, today: date) -> dict:
+    """Customer-facing order view with per-item return eligibility and labelled notes."""
     delivered_on = _local_date(order["delivered_at"])
     items = []
     for item in order["items"]:
@@ -167,6 +175,7 @@ def order_view(order: dict, today: date) -> dict:
 
 
 def get_order_status(ctx: ToolContext, args: OrderLookupInput) -> dict:
+    """Handler: verify order + email, then return the order view."""
     order = load_verified_order(ctx, args.order_id, args.email)
     return order_view(order, ctx.settings.today())
 

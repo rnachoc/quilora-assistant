@@ -1,5 +1,5 @@
 # Customer Support
-<!-- doc_id: SUP | updated: 2026-09-01 -->
+<!-- doc_id: SUP | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Opening hours and response times
 Our support team works Monday to Friday from 9:00 to 18:00 (Spanish peninsula time). We answer requests within 24 business hours.

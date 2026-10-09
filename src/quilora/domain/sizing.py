@@ -7,6 +7,8 @@ When the customer gives only height and weight, body measurements are *estimated
 a deliberately simple linear heuristic around an average body for each chart's gender.
 It is a rough guide: confidence is reported as "low" and the customer is invited to
 measure. Replacing it with a model trained on real return data is a listed next step.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -27,6 +29,7 @@ RELEVANT_DIMENSIONS = {
 
 @dataclass(frozen=True)
 class Measurements:
+    """What the customer told us about their body; any field may be missing."""
     height_cm: float | None = None
     weight_kg: float | None = None
     chest_cm: float | None = None
@@ -35,11 +38,13 @@ class Measurements:
     foot_length_cm: float | None = None
 
     def get(self, dim: str) -> float | None:
+        """Return a measurement by dimension name ('chest', 'waist', ...)."""
         return getattr(self, f"{dim}_cm")
 
 
 @dataclass
 class SizeRecommendation:
+    """Recommended size with alternative, confidence, basis and notes for the customer."""
     recommended_size: str
     alternative_size: str | None
     confidence: Literal["high", "medium", "low"]
@@ -88,6 +93,8 @@ def recommend(
     measurements: Measurements,
     preference: Preference = "regular",
 ) -> SizeRecommendation:
+    """Pick a size from the product's size chart, adjusting for fit and the customer's preference.
+    """
     if garment_type == "one_size":
         return SizeRecommendation(size_order[0], None, "high", "one_size",
                                   notes=["This item is one size."])

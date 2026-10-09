@@ -1,4 +1,7 @@
-"""Phase 3: read-only tools against the seeded database."""
+"""Phase 3: read-only tools against the seeded database.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -205,3 +208,4 @@ def test_tool_definitions_are_compact_and_valid():
         assert "title" not in schema
         assert schema.get("additionalProperties") is False
         assert "$ref" not in json.dumps(schema) and "$defs" not in schema
+        assert "description" not in schema  # developer docstrings never reach the model

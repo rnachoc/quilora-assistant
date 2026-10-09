@@ -6,6 +6,8 @@ POST /api/chat          one customer message in, one reply out (session kept ser
 GET  /api/sessions/{id} the customer-visible transcript (no tool internals)
 GET  /healthz           liveness: the process is up
 GET  /readyz            readiness: the database answers
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -29,11 +31,13 @@ log = logging.getLogger("quilora.api")
 
 
 class ChatRequest(BaseModel):
+    """Body of POST /api/chat: optional session ID plus the customer's message."""
     session_id: str | None = Field(default=None, description="Omit to start a conversation.")
     message: str = Field(min_length=1, max_length=4000)
 
 
 class ToolCallView(BaseModel):
+    """A tool call as shown to the widget (no arguments, to avoid exposing personal data)."""
     name: str
     ok: bool
     error_code: str | None
@@ -41,6 +45,7 @@ class ToolCallView(BaseModel):
 
 
 class TurnMeta(BaseModel):
+    """Diagnostics for one turn: tools, iterations, latency, tokens, cost and guardrail flags."""
     stop_reason: str
     iterations: int
     latency_ms: float
@@ -52,6 +57,7 @@ class TurnMeta(BaseModel):
 
 
 class ChatResponse(BaseModel):
+    """Reply returned to the widget, with handoff status and turn diagnostics."""
     session_id: str
     reply: str
     handed_off: bool
@@ -60,6 +66,7 @@ class ChatResponse(BaseModel):
 
 
 class TranscriptMessage(BaseModel):
+    """One customer-visible message of a conversation."""
     role: str
     text: str
 
@@ -79,12 +86,14 @@ def visible_transcript(conv: Conversation) -> list[TranscriptMessage]:
 
 def create_app(settings: Settings | None = None, agent: Agent | None = None,
                store: Any = None) -> FastAPI:
+    """Build the FastAPI application; agent and store can be injected for tests."""
     settings = settings or load_settings()
     setup_tracing(settings)
     state: dict[str, Any] = {}
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
+        """Create the database pool, agent and session store at startup; close them at shutdown."""
         from quilora.bootstrap import build_agent
 
         db = agent.db if agent else Database(settings.database_url)
@@ -101,10 +110,12 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
 
     @app.get("/healthz")
     def healthz() -> dict[str, str]:
+        """Liveness probe: the process is running."""
         return {"status": "ok"}
 
     @app.get("/readyz")
     def readyz() -> dict[str, str]:
+        """Readiness probe: the database answers, so the API can serve traffic."""
         try:
             state["db"].ping()
         except Exception as exc:
@@ -115,6 +126,9 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
     # client and the DB pool are all synchronous. See docs/phases/09-api-widget-docker.md.
     @app.post("/api/chat", response_model=ChatResponse)
     def chat(request: ChatRequest) -> ChatResponse:
+        """Run one customer turn: load or create the session, call the agent, save with optimistic
+        locking.
+        """
         sessions = state["store"]
         if request.session_id:
             conv = sessions.load(request.session_id)
@@ -150,6 +164,7 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
 
     @app.get("/api/sessions/{session_id}", response_model=list[TranscriptMessage])
     def transcript(session_id: str) -> list[TranscriptMessage]:
+        """Return what the customer saw in a conversation, without tool internals."""
         conv = state["store"].load(session_id)
         if conv is None:
             raise HTTPException(404, "Unknown session.")

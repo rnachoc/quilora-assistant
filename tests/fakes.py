@@ -1,4 +1,7 @@
-"""Test doubles: a scripted model that replays prepared responses."""
+"""Test doubles: a scripted model that replays prepared responses.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

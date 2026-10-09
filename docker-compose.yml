@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # One command for the whole stack:  docker compose up --build
 #   http://localhost:4200   storefront + chat widget
 #   http://localhost:8000/docs   API (OpenAPI)

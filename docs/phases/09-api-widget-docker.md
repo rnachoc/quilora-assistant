@@ -1,5 +1,7 @@
 # Phase 9: API, chat widget and Docker Compose
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 Until now the agent lived in a terminal. To be a product it needs:

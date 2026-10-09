@@ -1,3 +1,4 @@
+-- Author: Ignacio Rodríguez Caro
 -- 001: catalog, stock, customers, orders and policy text.
 -- Applied by `python -m quilora.seed` (see src/quilora/db.py for the migration runner).
 

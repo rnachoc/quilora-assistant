@@ -1,4 +1,7 @@
-"""Phase 10: traces for each turn, model call and tool call, without personal data."""
+"""Phase 10: traces for each turn, model call and tool call, without personal data.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

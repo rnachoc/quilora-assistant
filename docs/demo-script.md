@@ -1,5 +1,7 @@
 # Five-minute demo script
 
+_Author: Ignacio Rodríguez Caro_
+
 Setup before the call: `docker compose up --build` already running, browser tabs open on the
 storefront (`:4200`) with **Details** enabled in the widget, Jaeger (`:16686`), the
 repository, and the latest evaluation report. Rehearse once: model answers vary.

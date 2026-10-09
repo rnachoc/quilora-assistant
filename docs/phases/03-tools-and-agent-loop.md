@@ -1,5 +1,7 @@
 # Phase 3: Read-only tools and the agent loop
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 **Tool use** works like this: with each request we send the model a list of tools (name,

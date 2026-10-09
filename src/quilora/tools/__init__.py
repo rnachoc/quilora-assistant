@@ -1,4 +1,7 @@
-"""The store's tools. One registry is shared by the agent loop and the MCP server."""
+"""The store's tools. One registry is shared by the agent loop and the MCP server.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -22,5 +25,6 @@ ALL_TOOLS: list[ToolSpec] = [
 
 
 def build_registry(read_only: bool = False) -> ToolRegistry:
+    """Create the registry with all tools, or only those that do not change data."""
     specs = [s for s in ALL_TOOLS if not (read_only and s.mutates)]
     return ToolRegistry(specs)

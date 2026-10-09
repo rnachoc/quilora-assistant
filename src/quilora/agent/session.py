@@ -1,4 +1,7 @@
-"""Conversations and where they are stored."""
+"""Conversations and where they are stored.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -12,6 +15,7 @@ from quilora.tools.base import SessionState
 
 @dataclass
 class Conversation:
+    """A customer conversation: message history, code-owned session state and lock version."""
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     messages: list[dict[str, Any]] = field(default_factory=list)
     state: SessionState = field(default_factory=SessionState)
@@ -24,6 +28,8 @@ class ConcurrentUpdateError(Exception):
 
 
 class SessionStore(Protocol):
+    """Where conversations are loaded from and saved to."""
+
     def load(self, session_id: str) -> Conversation | None: ...
     def save(self, conv: Conversation) -> None: ...
 
@@ -35,10 +41,12 @@ class InMemorySessionStore:
         self._data: dict[str, Conversation] = {}
 
     def load(self, session_id: str) -> Conversation | None:
+        """Return a copy of the conversation, or None if it does not exist."""
         conv = self._data.get(session_id)
         return copy.deepcopy(conv) if conv else None
 
     def save(self, conv: Conversation) -> None:
+        """Store the conversation, failing if someone saved a newer version."""
         current = self._data.get(conv.id)
         if current and current.version != conv.version:
             raise ConcurrentUpdateError(conv.id)
@@ -58,6 +66,7 @@ class PostgresSessionStore:
         self.db = db
 
     def load(self, session_id: str) -> Conversation | None:
+        """Load a conversation and its lock version from Postgres."""
         with self.db.connection() as conn:
             row = conn.execute(
                 "SELECT id, messages, state, turn_count, version FROM chat_sessions"
@@ -69,6 +78,7 @@ class PostgresSessionStore:
                             turn_count=row["turn_count"], version=row["version"])
 
     def save(self, conv: Conversation) -> None:
+        """Insert or update the conversation; raise ConcurrentUpdateError on a version clash."""
         from psycopg.errors import UniqueViolation
         from psycopg.types.json import Jsonb
 

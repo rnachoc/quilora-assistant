@@ -8,6 +8,8 @@ Reports print a warning while it is False.
 
 The cache multipliers (writes 1.25x base input, reads 0.1x base input, 5-minute TTL) are the
 documented defaults for ephemeral prompt caching at the time of writing; verify them too.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -24,6 +26,7 @@ CACHE_READ_MULTIPLIER = 0.10
 
 @dataclass(frozen=True)
 class ModelPrice:
+    """List prices of one model in USD per million tokens."""
     input_per_mtok: float
     output_per_mtok: float
 

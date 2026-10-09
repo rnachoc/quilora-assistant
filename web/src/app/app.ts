@@ -1,3 +1,4 @@
+// Author: Ignacio Rodríguez Caro
 import { Component } from '@angular/core';
 
 import { ChatWidget } from './chat/chat-widget';

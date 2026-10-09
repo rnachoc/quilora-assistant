@@ -11,6 +11,8 @@ Attribute names follow the OpenTelemetry GenAI semantic conventions
 (https://opentelemetry.io/docs/specs/semconv/gen-ai/), which are still marked as
 "Development" and may change; check that page when upgrading. Prompt and reply TEXT is not
 recorded (personal data); only sizes, names, codes and redacted tool arguments.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations

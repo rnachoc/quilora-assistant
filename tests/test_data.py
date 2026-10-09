@@ -1,4 +1,7 @@
-"""Phase 1: the synthetic dataset is deterministic and contains the scenarios evals rely on."""
+"""Phase 1: the synthetic dataset is deterministic and contains the scenarios evals rely on.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

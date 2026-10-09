@@ -2,6 +2,8 @@
 
 Why sections? They are the unit a human would cite ("Returns Policy, section 1"), they
 are short enough for small embedding models, and they keep one idea per chunk.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -17,6 +19,7 @@ _SECTION = re.compile(r"^##\s+(\d+)\.\s+(.+)$", re.MULTILINE)
 
 @dataclass(frozen=True)
 class PolicyChunk:
+    """One numbered section of a policy document, the unit we search and cite."""
     id: str
     doc_id: str
     doc_title: str
@@ -26,10 +29,12 @@ class PolicyChunk:
 
     @property
     def citation(self) -> str:
+        """Human-readable citation, e.g. 'Returns Policy §1 (Return window)'."""
         return f"{self.doc_title} §{self.section_no} ({self.section_title})"
 
 
 def parse_policy(markdown: str) -> list[PolicyChunk]:
+    """Split one policy Markdown file into section chunks with stable IDs."""
     title_match = _TITLE.search(markdown)
     doc_match = _DOC_ID.search(markdown)
     if not title_match or not doc_match:
@@ -56,6 +61,7 @@ def parse_policy(markdown: str) -> list[PolicyChunk]:
 
 
 def load_policies(directory: Path) -> list[PolicyChunk]:
+    """Parse every policy file in a directory."""
     chunks: list[PolicyChunk] = []
     for file in sorted(directory.glob("*.md")):
         chunks.extend(parse_policy(file.read_text(encoding="utf-8")))

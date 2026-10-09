@@ -1,4 +1,7 @@
-"""Phase 5: returns with confirmation and handoff to a human."""
+"""Phase 5: returns with confirmation and handoff to a human.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

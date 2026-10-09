@@ -1,4 +1,7 @@
-"""search_policies: retrieve the store policy sections that answer a question."""
+"""search_policies: retrieve the store policy sections that answer a question.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -9,6 +12,7 @@ from quilora.tools.base import ToolContext, ToolSpec
 
 
 class SearchPoliciesInput(BaseModel):
+    """Input of search_policies: the question rephrased in English."""
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
 
     query: str = Field(min_length=2, max_length=200,
@@ -19,6 +23,7 @@ class SearchPoliciesInput(BaseModel):
 
 
 def search_policies(ctx: ToolContext, args: SearchPoliciesInput) -> dict:
+    """Handler: retrieve policy sections with the configured backend and a citation hint."""
     with ctx.db.connection() as conn:
         hits, backend = policies.search(
             conn, args.query, backend=ctx.settings.policy_search_backend,

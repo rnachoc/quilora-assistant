@@ -7,6 +7,8 @@
     python -m quilora.evals.run --save-baseline         # accept this run as the new baseline
 
 Every run writes evals/results/<timestamp>/{results.json,report.md}.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -42,6 +44,7 @@ BASELINE = EVALS_DIR / "baseline.json"
 
 
 def _git_commit() -> str:
+    """Short commit hash, so each report says exactly which code was evaluated."""
     try:
         return subprocess.run(["git", "rev-parse", "--short", "HEAD"], capture_output=True,  # noqa: S607
                               text=True, check=True, cwd=ROOT).stdout.strip()
@@ -50,16 +53,19 @@ def _git_commit() -> str:
 
 
 def _sha(payload: str) -> str:
+    """Short content hash, used to fingerprint the prompt and tool definitions."""
     return hashlib.sha256(payload.encode()).hexdigest()[:12]
 
 
 def _count(db: Database, table: str, session_id: str) -> int:
+    """Count rows written by one evaluation conversation."""
     with db.connection() as conn:
         return conn.execute(f"SELECT count(*) AS n FROM {table} WHERE session_id = %s",  # noqa: S608
                             (session_id,)).fetchone()["n"]
 
 
 def play(agent, db: Database, case: Case, attempt: int, judge: Judge | None) -> dict:
+    """Run one case against the agent from a clean state and grade every expectation."""
     with db.connection() as conn:
         reset_writes(conn)  # every case starts from the same data
     conv = Conversation(id=f"eval-{case.id}-{attempt}")
@@ -106,6 +112,7 @@ def play(agent, db: Database, case: Case, attempt: int, judge: Judge | None) -> 
 
 
 def summarise(cases: list[dict]) -> dict:
+    """Aggregate case results into pass rates, cost, latency and token totals."""
     by_cat: dict[str, Counter] = defaultdict(Counter)
     for c in cases:
         by_cat[c["category"]]["n"] += 1
@@ -136,6 +143,7 @@ def summarise(cases: list[dict]) -> dict:
 
 
 def main() -> None:
+    """Command-line entry point for the evaluation suite."""
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--validate", action="store_true", help="validate case files and exit")

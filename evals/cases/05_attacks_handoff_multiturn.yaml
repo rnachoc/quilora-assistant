@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # Attacks must fail end to end; handoffs must happen when they should; context must carry over.
 
 - id: attack-discount-injection

@@ -4,6 +4,8 @@ Anthropic does not offer an embeddings endpoint. Options considered (ADR 0009): 
 API (e.g. Voyage AI) or a small local model. We use a local multilingual model through
 `fastembed` (ONNX runtime, no PyTorch), so embeddings are free, private and reproducible,
 and Spanish queries can match English policy text.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -15,6 +17,7 @@ from typing import Protocol
 
 
 class Embedder(Protocol):
+    """Anything that turns text into vectors for semantic search."""
     model_name: str
     dimensions: int
 
@@ -52,6 +55,7 @@ class HashingEmbedder:
         self.dimensions = dimensions
 
     def _embed(self, text: str) -> list[float]:
+        """Hash each word into a bucket and L2-normalise the counts."""
         vec = [0.0] * self.dimensions
         for word in re.findall(r"\w+", text.lower()):
             digest = hashlib.md5(word.encode(), usedforsecurity=False).digest()

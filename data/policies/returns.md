@@ -1,5 +1,5 @@
 # Returns Policy
-<!-- doc_id: RET | updated: 2026-09-01 -->
+<!-- doc_id: RET | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Return window
 You can return items within 30 calendar days of the delivery date shown in your order tracking. The return request must be created within that period; the parcel can be dropped off up to 5 days later.

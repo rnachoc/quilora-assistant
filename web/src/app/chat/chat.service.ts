@@ -1,3 +1,4 @@
+// Author: Ignacio Rodríguez Caro
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, tap } from 'rxjs';
@@ -11,6 +12,7 @@ const SESSION_KEY = 'quilora.session_id';
 export class ChatService {
   private readonly http = inject(HttpClient);
 
+  /** Post one message, reusing the stored session ID so the server keeps the context. */
   send(message: string): Observable<ChatResponse> {
     const sessionId = this.sessionId();
     const body = sessionId ? { session_id: sessionId, message } : { message };
@@ -19,6 +21,7 @@ export class ChatService {
       .pipe(tap((res) => this.storeSession(res.session_id)));
   }
 
+  /** Drop the stored session ID; the next message starts a new conversation. */
   reset(): void {
     try {
       sessionStorage.removeItem(SESSION_KEY);

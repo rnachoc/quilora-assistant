@@ -1,5 +1,7 @@
 # Phase 0: Design
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Goal
 
 Agree on the architecture before writing code, create the repository skeleton and record the

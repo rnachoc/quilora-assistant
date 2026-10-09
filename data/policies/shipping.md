@@ -1,5 +1,5 @@
 # Shipping Policy
-<!-- doc_id: SHP | updated: 2026-09-01 -->
+<!-- doc_id: SHP | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Processing time
 Orders placed before 14:00 (Spanish peninsula time) on business days are prepared and handed to the carrier the same or the next business day. Orders placed at weekends or on public holidays are processed the next business day.

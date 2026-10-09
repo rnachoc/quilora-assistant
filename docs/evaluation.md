@@ -1,5 +1,7 @@
 # Evaluation
 
+_Author: Ignacio Rodríguez Caro_
+
 The evaluation suite is what turns this from a demo into something that can be changed
 safely. Every change to the prompt, a tool, the model or retrieval is measured against
 the same cases and compared with the previous run.

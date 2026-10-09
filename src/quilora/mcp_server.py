@@ -11,6 +11,8 @@ Agent vs MCP, in one sentence each:
 
 Both use the same ToolRegistry, so validation, security rules and error shapes are
 identical whichever way a tool is called. Only read-only tools are exposed here (ADR 0014).
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -50,6 +52,8 @@ def _signature_for(spec: ToolSpec) -> inspect.Signature:
 
 
 def _wrap(spec: ToolSpec, registry: ToolRegistry, context_factory) -> Any:
+    """Adapt a ToolSpec into a function MCPServer can register, delegating to the shared registry.
+    """
     def handler(**kwargs: Any) -> str:
         args = {k: v for k, v in kwargs.items() if v is not None}
         outcome = registry.execute(spec.name, args, context_factory())
@@ -68,6 +72,7 @@ def _wrap(spec: ToolSpec, registry: ToolRegistry, context_factory) -> Any:
 
 
 def create_server(settings: Settings, db: Database) -> MCPServer:
+    """Build the MCP server with the read-only tools and the policies as resources."""
     server = MCPServer(
         name="quilora-store",
         instructions="Read-only access to the Quilora demo store: catalog, stock, size "
@@ -98,6 +103,7 @@ def create_server(settings: Settings, db: Database) -> MCPServer:
 
 
 def _policies_by_doc() -> dict[str, list]:
+    """Group policy sections by document, one MCP resource per document."""
     grouped: dict[str, list] = {}
     for chunk in load_policies(DATA_DIR / "policies"):
         grouped.setdefault(chunk.doc_id.lower(), []).append(chunk)
@@ -105,6 +111,7 @@ def _policies_by_doc() -> dict[str, list]:
 
 
 def _register_policy_resource(server: MCPServer, doc: str, chunks: list) -> None:
+    """Publish one policy document as quilora://policies/{doc}."""
     title = chunks[0].doc_title
     body = f"# {title}\n\n" + "\n\n".join(
         f"## {c.section_no}. {c.section_title}\n{c.content}" for c in chunks)
@@ -118,6 +125,7 @@ def _register_policy_resource(server: MCPServer, doc: str, chunks: list) -> None
 
 
 def main() -> None:
+    """Run the MCP server over stdio (default) or Streamable HTTP."""
     parser = argparse.ArgumentParser(description="Quilora MCP server")
     parser.add_argument("--http", action="store_true", help="serve Streamable HTTP")
     parser.add_argument("--host", default="127.0.0.1")

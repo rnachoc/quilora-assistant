@@ -1,4 +1,7 @@
-"""Evaluation case schema. Cases live in evals/cases/*.yaml and are validated on load."""
+"""Evaluation case schema. Cases live in evals/cases/*.yaml and are validated on load.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -44,12 +47,14 @@ class Expect(BaseModel):
 
 
 class Turn(BaseModel):
+    """One customer message in a case, optionally with checks for that turn only."""
     model_config = ConfigDict(extra="forbid")
     user: str
     expect: Expect | None = None
 
 
 class Case(BaseModel):
+    """One evaluation scenario: customer turns plus the expected behaviour."""
     model_config = ConfigDict(extra="forbid")
 
     id: str
@@ -63,12 +68,14 @@ class Case(BaseModel):
     @model_validator(mode="before")
     @classmethod
     def _plain_string_turns(cls, data: Any) -> Any:
+        """Allow turns to be written as plain strings in YAML."""
         if isinstance(data, dict) and isinstance(data.get("turns"), list):
             data["turns"] = [{"user": t} if isinstance(t, str) else t for t in data["turns"]]
         return data
 
 
 def load_cases(directory: Path = CASES_DIR) -> list[Case]:
+    """Load and validate every YAML case file, rejecting duplicate IDs."""
     cases: list[Case] = []
     for file in sorted(directory.glob("*.yaml")):
         for raw in yaml.safe_load(file.read_text(encoding="utf-8")) or []:

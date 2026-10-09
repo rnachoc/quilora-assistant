@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # Common tasks. Run `make help` to list them.
 .DEFAULT_GOAL := help
 PY ?= python

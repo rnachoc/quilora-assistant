@@ -1,4 +1,7 @@
-"""Phase 4: policy retrieval backends and the search_policies tool."""
+"""Phase 4: policy retrieval backends and the search_policies tool.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

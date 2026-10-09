@@ -1,3 +1,4 @@
+-- Author: Ignacio Rodríguez Caro
 -- 004: conversations persisted for the HTTP API.
 -- Contains personal data (customer messages, emails): keep retention short. See
 -- PostgresSessionStore.purge_older_than and docs/phases/09-api-widget-docker.md.

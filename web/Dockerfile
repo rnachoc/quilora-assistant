@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 # Build the Angular app, then serve it with nginx, which also proxies /api to the API.
 FROM node:24-alpine AS build
 WORKDIR /web

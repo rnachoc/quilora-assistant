@@ -1,5 +1,5 @@
 # Garment Care Guide
-<!-- doc_id: CARE | updated: 2026-09-01 -->
+<!-- doc_id: CARE | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Linen
 Wash linen at 30 degrees on a gentle cycle and avoid the tumble dryer. Linen creases naturally; iron it while it is still slightly damp for the smoothest finish.

@@ -1,5 +1,5 @@
 # Frequently Asked Questions
-<!-- doc_id: FAQ | updated: 2026-09-01 -->
+<!-- doc_id: FAQ | updated: 2026-09-01 | author: Ignacio Rodríguez Caro -->
 
 ## 1. Gift cards
 We do not sell gift cards at the moment.

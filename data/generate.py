@@ -6,6 +6,8 @@ Output: data/generated/{size_charts,products,customers,orders}.json
 Everything is generated from a fixed seed, so the output is identical on every run and
 evaluation cases can reference exact names, prices and stock levels. No real brands,
 people or addresses are used: emails use the reserved example.com domain.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations

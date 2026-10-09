@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Author: Ignacio Rodríguez Caro
 # Lightweight secret scan. Run before every push (also wired as a git pre-push hook
 # by `make hooks`, and executed in CI). It is intentionally simple and dependency-free;
 # for a stronger scan use gitleaks (https://github.com/gitleaks/gitleaks).

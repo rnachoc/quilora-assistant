@@ -1,4 +1,7 @@
-"""Phase 7: the evaluation harness itself (case files, graders, runner, report)."""
+"""Phase 7: the evaluation harness itself (case files, graders, runner, report).
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

@@ -1,4 +1,7 @@
-"""Phase 3: pure business rules (sizing and return eligibility)."""
+"""Phase 3: pure business rules (sizing and return eligibility).
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

@@ -2,6 +2,7 @@
 
 - **Status:** Proposed | Accepted | Superseded by NNNN
 - **Date:** YYYY-MM-DD
+- **Author:** Name
 
 ## Context
 

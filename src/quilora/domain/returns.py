@@ -1,4 +1,7 @@
-"""Return eligibility rules (see data/policies/returns.md). Pure functions, fully tested."""
+"""Return eligibility rules (see data/policies/returns.md). Pure functions, fully tested.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 
@@ -10,6 +13,7 @@ RETURN_WINDOW_DAYS = 30  # Returns Policy §1
 
 @dataclass(frozen=True)
 class Eligibility:
+    """Whether an order line can be returned, why, how many units and until when."""
     eligible: bool
     # eligible | not_delivered | cancelled | final_sale | window_expired | already_returned
     reason: str
@@ -17,6 +21,7 @@ class Eligibility:
     deadline: date | None
 
     def as_dict(self) -> dict:
+        """JSON-friendly form included in tool results."""
         return {
             "eligible": self.eligible,
             "reason": self.reason,
@@ -34,6 +39,9 @@ def item_eligibility(
     quantity: int,
     already_returned: int,
 ) -> Eligibility:
+    """Apply the Returns Policy rules (status, final sale, 30-day window, prior returns) to one
+    line.
+    """
     deadline = delivered_on + timedelta(days=RETURN_WINDOW_DAYS) if delivered_on else None
     remaining = max(0, quantity - already_returned)
 

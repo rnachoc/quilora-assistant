@@ -1,4 +1,7 @@
-"""Phase 2: model client wrapper and cost estimation (no network)."""
+"""Phase 2: model client wrapper and cost estimation (no network).
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

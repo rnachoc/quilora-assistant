@@ -1,3 +1,4 @@
+# Author: Ignacio Rodríguez Caro
 [project]
 name = "quilora-assistant"
 version = "0.1.0"
@@ -5,7 +6,7 @@ description = "Customer-support agent for a fictional online fashion store, buil
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "MIT" }
-authors = [{ name = "Ignacio" }]
+authors = [{ name = "Ignacio Rodríguez Caro" }]
 # Every runtime dependency is justified in docs/dependencies.md.
 dependencies = [
     "psycopg[binary]==3.3.6",

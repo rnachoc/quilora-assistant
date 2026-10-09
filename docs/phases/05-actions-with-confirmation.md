@@ -1,5 +1,7 @@
 # Phase 5: Actions with confirmation (returns and handoff)
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 Reading data is low risk; **changing** it is not. For actions with side effects, an agent

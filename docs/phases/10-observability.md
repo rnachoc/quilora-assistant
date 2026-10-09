@@ -1,5 +1,7 @@
 # Phase 10: Observability (traces, cost, latency)
 
+_Author: Ignacio Rodríguez Caro_
+
 ## Concept
 
 A **trace** is the tree of operations that served one request; each node is a **span**

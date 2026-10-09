@@ -1,4 +1,7 @@
-"""Phase 6: deterministic guardrails."""
+"""Phase 6: deterministic guardrails.
+
+Author: Ignacio Rodríguez Caro
+"""
 
 from __future__ import annotations
 

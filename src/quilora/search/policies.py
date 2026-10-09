@@ -6,6 +6,8 @@
   queries; can return confidently wrong neighbours and is harder to explain.
 * Hybrid: Reciprocal Rank Fusion of both lists, score = sum(1 / (K + rank)). Robust
   default when neither signal dominates; no score calibration needed.
+
+Author: Ignacio Rodríguez Caro
 """
 
 from __future__ import annotations
@@ -23,6 +25,7 @@ CANDIDATES = 10
 
 @dataclass(frozen=True)
 class PolicyHit:
+    """A retrieved policy section with its relevance score."""
     chunk_id: str
     doc_title: str
     section_no: int
@@ -32,6 +35,7 @@ class PolicyHit:
 
     @property
     def citation(self) -> str:
+        """Human-readable citation for the assistant to quote."""
         return f"{self.doc_title} §{self.section_no} ({self.section_title})"
 
 
@@ -41,11 +45,13 @@ def _hit(row: dict, score: float) -> PolicyHit:
 
 
 def _or_terms(query: str) -> str:
+    """Turn free text into an OR tsquery of its words, so partial matches still rank."""
     words = [w for w in re.findall(r"[^\W\d_]+", query.lower()) if len(w) > 1]
     return " | ".join(words)
 
 
 def search_fts(conn: psycopg.Connection, query: str, limit: int) -> list[PolicyHit]:
+    """Full-text search with the English stemmer, ranked by cover density."""
     terms = _or_terms(query)
     if not terms:
         return []
@@ -62,6 +68,7 @@ def search_fts(conn: psycopg.Connection, query: str, limit: int) -> list[PolicyH
 
 def search_vector(conn: psycopg.Connection, query: str, limit: int,
                   embedder: Embedder) -> list[PolicyHit]:
+    """Semantic search: cosine distance between the query embedding and chunk embeddings."""
     vector = to_pgvector(embedder.embed_query(query))
     rows = conn.execute(
         "SELECT id, doc_title, section_no, section_title, content,"
@@ -75,6 +82,7 @@ def search_vector(conn: psycopg.Connection, query: str, limit: int,
 
 def search_hybrid(conn: psycopg.Connection, query: str, limit: int,
                   embedder: Embedder) -> list[PolicyHit]:
+    """Merge FTS and vector rankings with Reciprocal Rank Fusion."""
     fts = search_fts(conn, query, CANDIDATES)
     vec = search_vector(conn, query, CANDIDATES, embedder)
     scores: dict[str, float] = {}
@@ -88,6 +96,7 @@ def search_hybrid(conn: psycopg.Connection, query: str, limit: int,
 
 
 def embeddings_available(conn: psycopg.Connection) -> bool:
+    """True if the embedding column exists and has been filled."""
     row = conn.execute(
         "SELECT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name ="
         " 'policy_chunks' AND column_name = 'embedding') AS has_col"
