@@ -18,7 +18,7 @@ What makes an eval case good:
 
 | Path | Content |
 |------|---------|
-| `evals/cases/*.yaml` | 72 cases, 11 categories, 15 multi-turn |
+| `evals/cases/*.yaml` | 72 cases, 11 categories, 8 multi-turn |
 | `src/quilora/evals/cases.py` | Validated case schema |
 | `src/quilora/evals/graders.py` | Deterministic checks |
 | `src/quilora/evals/judge.py` | Optional LLM judge (structured output, JSON fallback) |

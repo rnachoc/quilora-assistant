@@ -15,7 +15,7 @@ the same cases and compared with the previous run.
 ## Agent evaluation
 
 - **Cases**: `evals/cases/*.yaml`, 72 cases in 11 categories (product search, sizing, stock,
-  order status, returns, policies, off-topic, ambiguous, attacks, handoff, multi-turn), 15
+  order status, returns, policies, off-topic, ambiguous, attacks, handoff, multi-turn), 8
   of them multi-turn. Each case lists customer turns and expectations.
 - **Deterministic graders** (`src/quilora/evals/graders.py`): tools called or not called,
   tool arguments (`{"max_price_eur": {"lte": 60}}`), error codes, reply contains / does not
