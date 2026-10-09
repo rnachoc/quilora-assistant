@@ -8,7 +8,9 @@ from typing import Any, Literal
 import yaml
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-CASES_DIR = Path(__file__).resolve().parents[3] / "evals" / "cases"
+from quilora.paths import EVALS_DIR
+
+CASES_DIR = EVALS_DIR / "cases"
 
 Category = Literal["product_search", "sizing", "stock", "order_status", "returns", "policies",
                    "off_topic", "ambiguous", "attacks", "handoff", "multi_turn"]

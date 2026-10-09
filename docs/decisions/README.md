@@ -24,5 +24,7 @@ Status values:
 | [0012](0012-guardrails.md) | Guardrails: defence in depth, deterministic checks | Proposed |
 | [0013](0013-evaluation-strategy.md) | Evaluation: deterministic graders, optional LLM judge, baseline | Proposed |
 | [0014](0014-mcp-read-only.md) | MCP server exposes read-only tools and policies | Proposed |
+| [0015](0015-api-and-sessions.md) | Sync FastAPI, sessions in Postgres with optimistic locking | Proposed |
+| [0016](0016-angular-widget.md) | Chat widget in Angular | Proposed |
 
 Template: [`template.md`](template.md).

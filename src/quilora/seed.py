@@ -10,7 +10,6 @@ from __future__ import annotations
 import argparse
 import json
 from datetime import datetime
-from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import psycopg
@@ -18,10 +17,9 @@ from psycopg.rows import tuple_row
 
 from quilora.config import load_settings
 from quilora.db import migrate
+from quilora.paths import DATA_DIR
 from quilora.search.chunking import load_policies
 
-ROOT = Path(__file__).resolve().parents[2]
-DATA_DIR = ROOT / "data"
 STORE_TZ = ZoneInfo("Europe/Madrid")
 
 DATA_TABLES = [

@@ -14,6 +14,8 @@ dependencies = [
     "pydantic==2.14.0",
     "pyyaml==6.0.3",
     "mcp==2.3.0",
+    "fastapi==0.143.0",
+    "uvicorn==0.54.0",
 ]
 
 [project.optional-dependencies]
@@ -24,6 +26,7 @@ embeddings = [
 dev = [
     "pytest==9.1.1",
     "ruff==0.16.10",
+    "httpx==0.28.1",  # FastAPI TestClient
 ]
 
 [build-system]

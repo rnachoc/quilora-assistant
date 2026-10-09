@@ -10,7 +10,7 @@ import psycopg
 from psycopg.rows import dict_row, tuple_row
 from psycopg_pool import ConnectionPool
 
-MIGRATIONS_DIR = Path(__file__).resolve().parents[2] / "db" / "migrations"
+from quilora.paths import MIGRATIONS_DIR
 
 # Any single query slower than this is cancelled by Postgres itself. Tools also have an
 # application-level timeout (TOOL_TIMEOUT_SECONDS); this is the second line of defence.

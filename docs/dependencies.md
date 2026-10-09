@@ -14,3 +14,12 @@ against PyPI on 2026-10-09.
 | pyyaml | 6.0.3 | 4 | Human-readable labelled query and evaluation case files | JSON (noisier to hand-edit, no comments) |
 | fastembed (optional extra) | 0.9.0 | 4 | Local ONNX embedding models, no PyTorch (ADR 0009) | sentence-transformers (PyTorch), Voyage AI API |
 | mcp | 2.3.0 | 8 | Official MCP SDK (server class `MCPServer`, in-process `Client` for tests) | Hand-written JSON-RPC (error-prone, no transport support) |
+| fastapi | 0.143.0 | 9 | HTTP API with request validation and OpenAPI docs from the same Pydantic models | Flask (no built-in validation), Starlette alone |
+| uvicorn | 0.54.0 | 9 | ASGI server for FastAPI | Gunicorn + uvicorn workers (more moving parts for a demo) |
+| httpx (dev) | 0.28.1 | 9 | Required by FastAPI's TestClient | requests (not supported by TestClient) |
+
+## Front end (web/package.json)
+
+Generated with Angular CLI 22.2.2 (`ng new --minimal`); `@angular/router` and `@angular/forms`
+were removed because the widget does not need them. Angular 22 needs Node.js
+22.22.3+ or 24.15+ (the Docker build uses `node:24-alpine`).

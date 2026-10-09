@@ -1,0 +1,20 @@
+:root {
+  --ink: #1f1c18;
+  --paper: #fbf8f3;
+  --card: #ffffff;
+  --line: #e4ddd2;
+  --muted: #6f675d;
+  --accent: #9a5b3c;
+  --accent-soft: #f3e6dc;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+}

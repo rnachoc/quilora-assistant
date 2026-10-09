@@ -52,3 +52,12 @@ eval-baseline: ## Run the suite and save it as evals/baseline.json
 
 mcp: ## Run the MCP server over stdio
 	$(PY) -m quilora.mcp_server
+
+api: ## Run the HTTP API locally with auto-reload
+	uvicorn quilora.api.app:app --reload --port 8000
+
+web: ## Run the Angular widget (proxies /api to localhost:8000)
+	cd web && npm start
+
+up: ## Start the whole stack with Docker Compose
+	docker compose up --build

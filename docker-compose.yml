@@ -1,0 +1,55 @@
+# One command for the whole stack:  docker compose up --build
+#   http://localhost:4200   storefront + chat widget
+#   http://localhost:8000/docs   API (OpenAPI)
+# Needs ANTHROPIC_API_KEY in .env (copy .env.example).
+name: quilora
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: quilora
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-quilora_dev}
+      POSTGRES_DB: quilora
+    ports: ["5432:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U quilora"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  # One-shot job: migrations + synthetic data. The API starts only if it succeeds.
+  seed:
+    build: .
+    command: ["python", "-m", "quilora.seed"]
+    environment:
+      DATABASE_URL: postgresql://quilora:${POSTGRES_PASSWORD:-quilora_dev}@db:5432/quilora
+    depends_on:
+      db: {condition: service_healthy}
+
+  api:
+    build: .
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DATABASE_URL: postgresql://quilora:${POSTGRES_PASSWORD:-quilora_dev}@db:5432/quilora
+      STORE_TODAY: ${STORE_TODAY:-2026-10-01}
+    ports: ["8000:8000"]
+    depends_on:
+      seed: {condition: service_completed_successfully}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/readyz')"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  web:
+    build: ./web
+    ports: ["4200:80"]
+    depends_on:
+      api: {condition: service_healthy}
+
+volumes:
+  pgdata:

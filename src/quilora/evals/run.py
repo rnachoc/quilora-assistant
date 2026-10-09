@@ -32,11 +32,12 @@ from quilora.evals.cases import Case, load_cases
 from quilora.evals.graders import CaseRun, Check, grade
 from quilora.evals.judge import Judge
 from quilora.evals.report import render_report
+from quilora.paths import EVALS_DIR, PROJECT_ROOT
 from quilora.seed import reset_writes
 
-ROOT = Path(__file__).resolve().parents[3]
-RESULTS_DIR = ROOT / "evals" / "results"
-BASELINE = ROOT / "evals" / "baseline.json"
+ROOT = PROJECT_ROOT
+RESULTS_DIR = EVALS_DIR / "results"
+BASELINE = EVALS_DIR / "baseline.json"
 
 
 def _git_commit() -> str:

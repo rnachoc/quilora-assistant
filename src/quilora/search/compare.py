@@ -17,18 +17,17 @@ import statistics
 import time
 from collections import defaultdict
 from datetime import date
-from pathlib import Path
 
 import psycopg
 import yaml
 from psycopg.rows import dict_row
 
 from quilora.config import load_settings
+from quilora.paths import DOCS_DIR, EVALS_DIR, PROJECT_ROOT
 from quilora.search.policies import embeddings_available, search_fts, search_hybrid, search_vector
 
-ROOT = Path(__file__).resolve().parents[3]
-QUERIES = ROOT / "evals" / "retrieval" / "queries.yaml"
-RESULTS = ROOT / "docs" / "results" / "retrieval.md"
+QUERIES = EVALS_DIR / "retrieval" / "queries.yaml"
+RESULTS = DOCS_DIR / "results" / "retrieval.md"
 
 
 def evaluate(conn, queries: list[dict], backend: str, embedder=None) -> dict:
@@ -116,7 +115,7 @@ def main() -> None:
     if args.write:
         RESULTS.parent.mkdir(parents=True, exist_ok=True)
         RESULTS.write_text(report, encoding="utf-8")
-        print(f"Wrote {RESULTS.relative_to(ROOT)}")
+        print(f"Wrote {RESULTS.relative_to(PROJECT_ROOT)}")
 
 
 if __name__ == "__main__":
