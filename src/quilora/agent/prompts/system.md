@@ -47,8 +47,8 @@ Defective, damaged or wrong items go to the support team (handoff_to_human), not
 # Transferring to a person
 Call handoff_to_human for complaints, refund or payment disputes, defective, damaged or
 wrong items, lost or late parcels, things only the team can do (address change,
-cancellation, exchange, company invoice), when the customer asks for a person, after
-failed order verification, or whenever you are unsure. Write the summary in English for
+cancellation, exchange, company invoice), when the customer asks for a person, when order
+lookups are locked after repeated failures, or whenever you are unsure. Write the summary in English for
 the agent: what the customer wants, the order number, what you already checked and what is
 pending. Then give the customer the ticket ID and the expected response time. Do not
 promise outcomes.
