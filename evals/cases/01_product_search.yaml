@@ -1,0 +1,84 @@
+# Product search: right tool, right filters, only real products and prices in the reply.
+
+- id: search-linen-dresses-under-60
+  category: product_search
+  description: Brief example. Only linen dresses under 60 EUR, real names and prices.
+  turns: ["¿Tenéis vestidos de lino por menos de 60 €?"]
+  expect:
+    tools_called: [search_products]
+    tool_args: {search_products: {max_price_eur: {lte: 60}}}
+    reply_contains_all: [Garza, Brisa, Dalia]
+    reply_not_contains: [Gala Linen, Marea Linen]
+    language: es
+    flags_exclude: [ungrounded_amount]
+  judge: Every dress listed costs less than 60 EUR according to the tool results, and prices match the tool results exactly.
+
+- id: search-black-jeans-women-en
+  category: product_search
+  description: English query; colour filter translated to the catalog's colour name.
+  turns: ["Do you have black jeans for women?"]
+  expect:
+    tools_called: [search_products]
+    tool_args: {search_products: {color: {contains: black}}}
+    reply_contains_any: [Straight Jeans]
+    language: en
+    flags_exclude: [ungrounded_amount]
+
+- id: search-men-linen-shirt
+  category: product_search
+  description: Spanish keywords translated; department filter for men.
+  turns: ["Busco una camisa de lino para hombre"]
+  expect:
+    tools_called: [search_products]
+    reply_contains_any: [Brisa Linen Shirt, Marea Linen Shirt, Faro Linen Shirt]
+    reply_not_contains: [Linen Blouse]
+    language: es
+
+- id: search-sneakers-under-70
+  category: product_search
+  description: Budget filter; must exclude sneakers above 70 EUR.
+  turns: ["¿Qué zapatillas tenéis por debajo de 70 euros?"]
+  expect:
+    tools_called: [search_products]
+    tool_args: {search_products: {max_price_eur: {lte: 70}}}
+    reply_contains_any: [Quima Leather Sneakers, Faro Leather Sneakers, Cierzo Canvas Sneakers]
+    reply_not_contains: [Zafra Leather Sneakers, Mara Leather Sneakers]
+    flags_exclude: [ungrounded_amount]
+
+- id: search-silk-scarf-en
+  category: product_search
+  description: Accessories search in English.
+  turns: ["I'm looking for a silk scarf"]
+  expect:
+    tools_called: [search_products]
+    reply_contains_any: [Vela Silk Scarf, Hebra Silk Scarf]
+    language: en
+
+- id: search-nonexistent-leather-coat
+  category: product_search
+  description: Product type the store does not sell. Must say so, not invent one.
+  turns: ["¿Tenéis abrigos de cuero?"]
+  expect:
+    tools_called: [search_products]
+    flags_exclude: [ungrounded_amount]
+    language: es
+  judge: The reply makes clear that no leather coats were found and does not present any non-leather product as a leather coat. It may suggest real alternatives returned by the tools.
+
+- id: search-satin-dresses
+  category: product_search
+  description: Style keyword (satin) mapped to the catalog.
+  turns: ["Quiero ver vestidos de satén para una boda"]
+  expect:
+    tools_called: [search_products]
+    reply_contains_any: [Luma Satin Slip Dress, Alba Satin Slip Dress, Kora Satin Slip Dress]
+
+- id: search-women-linen-trousers-under-50-en
+  category: product_search
+  description: Combined filters (category, department, price).
+  turns: ["Show me women's linen trousers under 50 euros"]
+  expect:
+    tools_called: [search_products]
+    tool_args: {search_products: {max_price_eur: {lte: 50}}}
+    reply_contains_any: [Iris Linen Trousers, Helia Linen Trousers, Marea Linen Trousers]
+    reply_not_contains: [Cierzo Linen Trousers]
+    language: en

@@ -1,0 +1,78 @@
+# Agent evaluation against the real model. Costs money, so it runs only when something that
+# changes behaviour changes (prompt, tools, agent, cases), or on demand.
+# Requires the repository secret ANTHROPIC_API_KEY; without it the job is skipped.
+name: Evals
+
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: "Model to evaluate (default: AGENT_MODEL)"
+        required: false
+      repeat:
+        description: "Attempts per case"
+        required: false
+        default: "1"
+  pull_request:
+    paths:
+      - "src/quilora/agent/**"
+      - "src/quilora/tools/**"
+      - "src/quilora/search/**"
+      - "evals/cases/**"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: evals-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: quilora
+          POSTGRES_PASSWORD: quilora_ci
+          POSTGRES_DB: quilora
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U quilora"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://quilora:quilora_ci@localhost:5432/quilora
+      STORE_TODAY: "2026-10-01"
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - name: Skip without API key
+        if: env.ANTHROPIC_API_KEY == ''
+        run: echo "::notice::ANTHROPIC_API_KEY secret not set; skipping evals."
+      - uses: actions/checkout@v4
+        if: env.ANTHROPIC_API_KEY != ''
+      - uses: actions/setup-python@v5
+        if: env.ANTHROPIC_API_KEY != ''
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install and seed
+        if: env.ANTHROPIC_API_KEY != ''
+        run: |
+          pip install -e ".[dev]"
+          python -m quilora.seed
+      - name: Run evaluation (compared with evals/baseline.json)
+        if: env.ANTHROPIC_API_KEY != ''
+        run: |
+          ARGS="--repeat ${{ github.event.inputs.repeat || '1' }} --min-pass-rate 0.85 --fail-on-regression"
+          if [ -n "${{ github.event.inputs.model }}" ]; then ARGS="$ARGS --model ${{ github.event.inputs.model }}"; fi
+          python -m quilora.evals.run $ARGS
+      - name: Publish report in the job summary
+        if: always() && env.ANTHROPIC_API_KEY != ''
+        run: cat evals/results/*/report.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always() && env.ANTHROPIC_API_KEY != ''
+        with:
+          name: eval-results
+          path: evals/results/

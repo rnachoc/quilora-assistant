@@ -43,7 +43,7 @@ flowchart LR
 | 4 | Conversation per session | Sessions persisted in Postgres with optimistic locking | Survives restarts and multiple API replicas |
 | 5 | Size recommendation tool | Deterministic algorithm in code; the model only explains the result | Numbers must not depend on model reasoning |
 | 6 | Stock check | Return stock *levels* (in stock / low / out), not raw counts | Business information leakage; customers do not need exact counts |
-| 7 | MCP server with the same tools | Expose read-only tools only | Confirmation semantics for writes belong to the MCP host; documented in [ADR 0013](../decisions/0013-mcp-read-only.md) |
+| 7 | MCP server with the same tools | Expose read-only tools only | Confirmation semantics for writes belong to the MCP host; documented in [ADR 0014](../decisions/0014-mcp-read-only.md) |
 | 8 | Evaluation | Deterministic graders first; LLM-as-judge only for tone and language | Cheaper, reproducible, debuggable |
 | 9 | Dates | A configurable store clock (`STORE_TODAY`) | Return-window logic and evals must be reproducible |
 

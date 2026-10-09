@@ -15,7 +15,7 @@ import pytest
 
 from quilora.config import Settings
 from quilora.db import Database, migrate
-from quilora.seed import load_all
+from quilora.seed import load_all, reset_writes
 
 DEFAULT_URL = "postgresql://quilora:quilora_dev@localhost:5432/quilora"
 
@@ -36,6 +36,16 @@ def database() -> Database:
     db = Database(url, min_size=1, max_size=4)
     yield db
     db.close()
+
+
+@pytest.fixture(autouse=True)
+def _isolated_writes(request):
+    """Tests that touch the database start without returns, tickets or audit entries."""
+    if "database" in request.fixturenames:
+        db = request.getfixturevalue("database")
+        with db.connection() as conn:
+            reset_writes(conn)
+    yield
 
 
 @pytest.fixture()

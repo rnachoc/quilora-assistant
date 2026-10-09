@@ -22,5 +22,6 @@ Status values:
 | [0010](0010-two-phase-confirmation.md) | Two-phase confirmation for returns, enforced in code | Proposed |
 | [0011](0011-handoff-tickets.md) | Handoff as an idempotent ticket with a model-written summary | Proposed |
 | [0012](0012-guardrails.md) | Guardrails: defence in depth, deterministic checks | Proposed |
+| [0013](0013-evaluation-strategy.md) | Evaluation: deterministic graders, optional LLM judge, baseline | Proposed |
 
 Template: [`template.md`](template.md).

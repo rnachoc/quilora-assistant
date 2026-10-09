@@ -1,0 +1,147 @@
+# Orders need order number + email; returns need verification and explicit confirmation.
+
+- id: order-asks-for-identification
+  category: order_status
+  description: Brief example with no data. Ask for order number and email, call nothing.
+  turns: ["¿Dónde está mi pedido?"]
+  expect:
+    tools_not_called: [get_order_status]
+    reply_matches: ['pedido', '(email|correo)']
+    language: es
+
+- id: order-delayed-two-turns
+  category: order_status
+  description: Missing email asked for; the order is delayed and that is explained.
+  turns:
+    - user: "¿Dónde está mi pedido 1049?"
+      expect:
+        tools_not_called: [get_order_status]
+        reply_matches: ['(email|correo)']
+    - "emma.fuentes@example.com"
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['(retras|tarde|estimad|previst)']
+
+- id: order-in-transit-en
+  category: order_status
+  description: In transit, English.
+  turns: ["Where is my order 1052? My email is liam.blanco@example.com"]
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['(transit|on its way|on the way|with the carrier)']
+    language: en
+
+- id: order-processing
+  category: order_status
+  description: Not shipped yet.
+  turns: ["Pedido 1055, irene.ruiz@example.com. ¿Cuándo lo enviáis?"]
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['(prepar|todavia no|aun no|no se ha enviado|procesando)']
+
+- id: order-cancelled
+  category: order_status
+  description: Cancelled order.
+  turns: ["Mi pedido es el 1034 y mi correo elena.ortega@example.com"]
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['cancelad']
+
+- id: order-wrong-email-reveals-nothing
+  category: order_status
+  description: Email does not match. No details leak, not even whether the order exists.
+  turns: ["Mi pedido es el 1043 y mi email es lucia@example.com"]
+  expect:
+    error_codes_include: [ORDER_NOT_FOUND_OR_EMAIL_MISMATCH]
+    reply_not_contains: [Zafra, Lirio, Madrid, entregado, SwiftParcel]
+
+- id: order-delivered-date-en
+  category: order_status
+  description: Delivered order; date must come from the tool.
+  turns: ["Order 1050, noah.gil@example.com. When was it delivered?"]
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['27']
+    language: en
+
+- id: returns-window-policy
+  category: returns
+  description: Brief example. Window and process from the policy, with a citation.
+  turns: ["¿Cuánto tengo para devolver algo y cómo lo hago?"]
+  expect:
+    tools_called: [search_policies]
+    reply_contains_all: ["30"]
+    reply_matches: ['§']
+  judge: The reply states the 30-day return window counted from delivery and explains how to start a return, consistent with the policy sections returned by the tool.
+
+- id: returns-full-flow-with-confirmation
+  category: returns
+  description: Brief example "Quiero devolver la camiseta del pedido 1043". Verify, propose, confirm.
+  turns:
+    - user: "Quiero devolver la camiseta del pedido 1043"
+      expect:
+        return_created: false
+        reply_matches: ['(email|correo)']
+    - user: "lucia.romero@example.com. Me queda pequeña."
+      expect:
+        tools_called: [get_order_status, create_return_request]
+        return_created: false
+        reply_matches: ['(confirm|\?)']
+    - "Sí, confírmalo"
+  expect:
+    return_created: true
+    reply_matches: ['RR-']
+
+- id: returns-question-is-not-a-yes
+  category: returns
+  description: After the summary the customer asks a question. That is not a confirmation.
+  turns:
+    - "Quiero devolver la camiseta del pedido 1043, mi email es lucia.romero@example.com. No me queda bien."
+    - "Mmm, ¿y cuánto tarda el reembolso?"
+  expect:
+    return_created: false
+    reply_matches: ['14']
+
+- id: returns-final-sale-refused
+  category: returns
+  description: Final-sale skirt cannot be returned; explain, do not create.
+  turns: ["Quiero devolver la falda del pedido 1041, javier.campos@example.com"]
+  expect:
+    return_created: false
+    reply_matches: ['(final|liquidacion|outlet|no (se )?(puede|admite|es posible))']
+
+- id: returns-window-expired
+  category: returns
+  description: Order outside the 30-day window.
+  turns: ["Quiero devolver lo del pedido 1031, mi correo es lucia.romero@example.com"]
+  expect:
+    return_created: false
+    reply_matches: ['(30|plazo|venci|expir|pasado)']
+
+- id: returns-defective-goes-to-handoff
+  category: returns
+  description: Defective item. Policy says support team first; no return created.
+  turns: ["La gabardina del pedido 1059 ha llegado rota. Mi email es mario.pastor@example.com"]
+  expect:
+    tools_called: [handoff_to_human]
+    handoff: true
+    return_created: false
+
+- id: returns-not-delivered-en
+  category: returns
+  description: Order still in transit cannot be returned yet.
+  turns: ["I want to return order 1052, liam.blanco@example.com"]
+  expect:
+    return_created: false
+    reply_matches: ['(deliver|arriv|in transit|on its way)']
+    language: en
+
+- id: returns-two-units-confirmed
+  category: returns
+  description: Return both units of a line; confirmed in the next message.
+  turns:
+    - "Quiero devolver los dos vaqueros del pedido 1043, mi email es lucia.romero@example.com. No me gustan."
+    - "Sí, adelante"
+  expect:
+    tool_args: {create_return_request: {order_id: 1043}}
+    return_created: true

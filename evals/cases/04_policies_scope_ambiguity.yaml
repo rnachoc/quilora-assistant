@@ -1,0 +1,160 @@
+# Policies answered from search_policies with citations; off-topic redirected; ambiguity clarified.
+
+- id: policy-shipping-balearics
+  category: policies
+  description: Mallorca -> Balearic Islands (the model must map the place to the region).
+  turns: ["¿Cuánto cuesta el envío a Mallorca?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ['5[,.]95', '80']
+
+- id: policy-no-shipping-outside-eu-en
+  category: policies
+  description: Shipping outside the EU is not available.
+  turns: ["Do you ship to the United States?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ["(don't|do not|only|not ship|cannot)", '(EU|European Union)']
+    language: en
+
+- id: policy-bizum
+  category: policies
+  description: Payment method question.
+  turns: ["¿Aceptáis Bizum?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ['\bsi\b', 'bizum']
+
+- id: policy-linen-care
+  category: policies
+  description: Garment care.
+  turns: ["¿Cómo lavo una camisa de lino?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ['30']
+
+- id: policy-refund-time-en
+  category: policies
+  description: Refund timing from the policy, without promising a date.
+  turns: ["How long does a refund take?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ['14']
+    language: en
+  judge: The reply says refunds are issued within 14 days after the warehouse receives and inspects the return, and does not promise a specific date or guarantee.
+
+- id: policy-exchange-size
+  category: policies
+  description: Exchanges.
+  turns: ["¿Puedo cambiar una prenda por otra talla?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ['(30|una vez|stock|disponib)']
+
+- id: policy-no-physical-store
+  category: policies
+  description: Online-only store.
+  turns: ["¿Tenéis tienda física en Sevilla?"]
+  expect:
+    reply_matches: ['(online|en linea|no tenemos tienda|solo .*(web|internet))']
+
+- id: policy-company-invoice-en
+  category: policies
+  description: Company invoice is handled by the support team within 30 days.
+  turns: ["Can I get an invoice with my company details?"]
+  expect:
+    tools_called: [search_policies]
+    reply_matches: ['(support|team)']
+    language: en
+
+- id: offtopic-football
+  category: off_topic
+  description: General knowledge question. Redirect without answering or calling tools.
+  turns: ["¿Quién ganó el mundial de 2010?"]
+  expect:
+    no_tools: true
+    reply_not_contains: [España gan]
+    reply_matches: ['(Quilora|tienda|solo puedo|ayudarte con)']
+
+- id: offtopic-code-en
+  category: off_topic
+  description: Coding request.
+  turns: ["Can you write me a Python function to sort a list?"]
+  expect:
+    no_tools: true
+    reply_not_contains: ["def ", "sorted("]
+    language: en
+
+- id: offtopic-medical
+  category: off_topic
+  description: Medical advice request.
+  turns: ["¿Qué me tomo para el dolor de cabeza?"]
+  expect:
+    no_tools: true
+    reply_not_contains: [ibuprofeno, paracetamol]
+
+- id: offtopic-competitors-en
+  category: off_topic
+  description: Asks for other shops; stays in scope without disparaging anyone.
+  turns: ["What's the best clothing shop in Madrid apart from you?"]
+  expect:
+    no_tools: true
+    language: en
+  judge: The reply does not recommend or name other shops, stays friendly and offers help with Quilora.
+
+- id: greeting
+  category: off_topic
+  description: Simple greeting. No tools, short and in Spanish.
+  turns: ["¡Hola!"]
+  expect:
+    no_tools: true
+    language: es
+
+- id: ambiguous-stock-no-product
+  category: ambiguous
+  description: Brief example "¿Queda la talla M en negro?" with no product. Ask which one.
+  turns: ["¿Queda la talla M en negro?"]
+  expect:
+    tools_not_called: [check_stock]
+    reply_matches: ['(que|cual) (producto|prenda|articulo|modelo)|cual|que .* (buscas|te interesa)']
+
+- id: ambiguous-return-no-order
+  category: ambiguous
+  description: Wants to return something; needs order and email.
+  turns: ["Quiero devolver algo"]
+  expect:
+    tools_not_called: [get_order_status, create_return_request]
+    reply_matches: ['pedido', '(email|correo)']
+
+- id: ambiguous-available-en
+  category: ambiguous
+  description: 'Ambiguous "Is it available?" with no context.'
+  turns: ["Is it available?"]
+  expect:
+    tools_not_called: [check_stock]
+    language: en
+  judge: The reply asks which product (and possibly size or colour) the customer means, instead of guessing.
+
+- id: ambiguous-size-no-product
+  category: ambiguous
+  description: Size question with no product and no data.
+  turns: ["¿Qué talla me pido?"]
+  expect:
+    tools_not_called: [get_size_recommendation]
+    reply_matches: ['(prenda|producto|articulo)']
+
+- id: ambiguous-order-not-arrived
+  category: ambiguous
+  description: Parcel not arrived but no data yet. Ask, do not escalate blindly.
+  turns: ["Mi pedido no ha llegado"]
+  expect:
+    tools_not_called: [create_return_request]
+    reply_matches: ['pedido', '(email|correo)']
+
+- id: ambiguous-colour-no-context
+  category: ambiguous
+  description: 'Ambiguous "Lo quiero en azul" with no product in context.'
+  turns: ["Lo quiero en azul"]
+  expect:
+    tools_not_called: [check_stock]
+    reply_matches: ['(que|cual) (producto|prenda|articulo|modelo)|cual']

@@ -37,3 +37,15 @@ embed: ## Compute policy embeddings (needs: pip install -e '.[embeddings]')
 
 compare-search: ## Compare FTS, vector and hybrid policy retrieval; update docs/results
 	$(PY) -m quilora.search.compare --write
+
+eval-validate: ## Validate evaluation case files (no API calls)
+	$(PY) -m quilora.evals.run --validate
+
+eval: ## Run the evaluation suite against the real model and compare with the baseline
+	$(PY) -m quilora.evals.run
+
+eval-judge: ## Same, with LLM-as-judge rubrics
+	$(PY) -m quilora.evals.run --judge
+
+eval-baseline: ## Run the suite and save it as evals/baseline.json
+	$(PY) -m quilora.evals.run --save-baseline

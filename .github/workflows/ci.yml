@@ -1,0 +1,54 @@
+# Runs on every push and pull request. No API key needed: the agent loop is tested with a
+# scripted fake model, tools are tested against a real Postgres with pgvector.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: quilora
+          POSTGRES_PASSWORD: quilora_ci
+          POSTGRES_DB: quilora
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U quilora"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DATABASE_URL: postgresql://quilora:quilora_ci@localhost:5432/quilora
+      STORE_TODAY: "2026-10-01"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history for the secret scan
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Secret scan
+        run: scripts/check_secrets.sh
+      - name: Lint
+        run: ruff check src tests data
+      - name: Synthetic data is up to date
+        run: python data/generate.py && git diff --exit-code data/generated
+      - name: Seed database
+        run: python -m quilora.seed
+      - name: Tests
+        run: pytest -q
+      - name: Evaluation cases are valid
+        run: python -m quilora.evals.run --validate
+      - name: Retrieval benchmark (FTS)
+        run: python -m quilora.search.compare
+

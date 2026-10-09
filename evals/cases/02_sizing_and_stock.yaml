@@ -1,0 +1,113 @@
+# Sizing comes from get_size_recommendation; stock from check_stock. Never guessed.
+
+- id: size-brief-trousers
+  category: sizing
+  description: Brief example (1,68 m, 60 kg) for a named product; expects M with low confidence.
+  turns: ["Mido 1,68 y peso 60 kg, ¿qué talla me pido en el pantalón Iris Linen Trousers?"]
+  expect:
+    tools_called: [get_size_recommendation]
+    tool_args: {get_size_recommendation: {height_cm: 168, weight_kg: 60}}
+    reply_matches: ['\bM\b']
+    language: es
+  judge: The reply recommends size M and conveys that it is an estimate (for example by suggesting to measure for a more reliable result).
+
+- id: size-asks-for-data-first
+  category: sizing
+  description: No measurements given. Ask before recommending; recommend after the data arrives.
+  turns:
+    - user: "¿Qué talla me recomiendas para el Garza Linen Midi Dress?"
+      expect:
+        tools_not_called: [get_size_recommendation]
+        reply_matches: ['(mides|altura|estatura|peso|medidas|pecho|cintura|cadera)']
+    - "Mido 1,65 y peso 55 kg"
+  expect:
+    tools_called: [get_size_recommendation]
+    reply_matches: ['\bS\b']
+
+- id: size-measurements-men-en
+  category: sizing
+  description: Body measurements give a high-confidence answer.
+  turns: ["My chest is 92 cm and my waist 74 cm. Which size should I get in the Roble Merino Crewneck?"]
+  expect:
+    tools_called: [get_size_recommendation]
+    tool_args: {get_size_recommendation: {chest_cm: 92, waist_cm: 74}}
+    reply_matches: ['\bS\b']
+    language: en
+
+- id: size-shoes-need-foot-length
+  category: sizing
+  description: Shoes need foot length; height is not enough.
+  turns: ["¿Qué número me pido en las Zafra Leather Sneakers? Mido 1,70"]
+  expect:
+    reply_matches: ['(pie|longitud|cm)']
+    reply_not_contains: [te recomiendo el 3, te recomiendo el 4]
+
+- id: size-full-measurements-dress
+  category: sizing
+  description: Three measurements in the middle of M for a slim dress.
+  turns: ["Pecho 88, cintura 70 y cadera 96. ¿Qué talla en el Luma Satin Slip Dress?"]
+  expect:
+    tools_called: [get_size_recommendation]
+    reply_matches: ['\bM\b']
+
+- id: size-between-sizes-en
+  category: sizing
+  description: Vague sizing question about an oversized item; must not invent a size.
+  turns: ["I'm usually between S and M. What should I get in the Dalia Organic Cotton T-Shirt?"]
+  expect:
+    language: en
+  judge: The reply does not state a size as certain without data; it either asks for measurements, uses the size recommendation tool, or applies the store's 'between two sizes' guidance (oversized fit -> smaller size), and it is consistent with the tool results.
+
+- id: stock-brief-black-m
+  category: stock
+  description: Brief example with the product named. Black M is in stock.
+  turns: ["¿Queda la talla M en negro del pantalón Iris Linen Trousers?"]
+  expect:
+    tools_called: [check_stock]
+    tool_args: {check_stock: {product_id: QL-TRS-001, size: M}}
+    reply_matches: ['(si|disponible|queda|hay)']
+    reply_not_contains: [agotad]
+
+- id: stock-follow-up-colour
+  category: stock
+  description: Follow-up uses context ("¿y en arena?"); sand M is sold out, alternatives offered.
+  turns:
+    - "¿Queda la talla M en negro del pantalón Iris Linen Trousers?"
+    - "¿Y en color arena?"
+  expect:
+    tool_args: {check_stock: {color: {contains: sand}}}
+    reply_matches: ['(agotad|no (nos )?queda|sin stock|no hay)']
+    reply_contains_any: [negro, blanco, oliva, black]
+
+- id: stock-low-units
+  category: stock
+  description: Low stock shows the exact units left (2).
+  turns: ["¿Tenéis la Zafra Organic Cotton T-Shirt en negro, talla M?"]
+  expect:
+    tools_called: [check_stock]
+    reply_matches: ['(\b2\b|dos)']
+
+- id: stock-sold-out-en
+  category: stock
+  description: Sold-out variant in English with alternatives.
+  turns: ["Is the Zafra Organic Cotton T-Shirt available in white, size M?"]
+  expect:
+    tools_called: [check_stock]
+    reply_matches: ['(sold out|out of stock|not available|unavailable)']
+    language: en
+
+- id: stock-last-unit-shoes
+  category: stock
+  description: Shoe size with one unit left.
+  turns: ["¿Tenéis las Zafra Leather Sneakers en blanco en el 38?"]
+  expect:
+    tools_called: [check_stock]
+    reply_matches: ['(\b1\b|una|ultim|solo queda)']
+
+- id: stock-unknown-colour-en
+  category: stock
+  description: Colour that does not exist; list the real colours instead of guessing.
+  turns: ["Do you have the Iris Linen Trousers in purple?"]
+  expect:
+    reply_contains_any: [black, sand, white, olive]
+    language: en
