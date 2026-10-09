@@ -19,5 +19,7 @@ Status values:
 | [0007](0007-synthetic-data.md) | Fictional store, synthetic data, English catalog | Proposed |
 | [0008](0008-policy-retrieval.md) | Policy retrieval: FTS first, vector and hybrid measured | Proposed |
 | [0009](0009-local-embedding-model.md) | Local multilingual embedding model (fastembed) | Proposed |
+| [0010](0010-two-phase-confirmation.md) | Two-phase confirmation for returns, enforced in code | Proposed |
+| [0011](0011-handoff-tickets.md) | Handoff as an idempotent ticket with a model-written summary | Proposed |
 
 Template: [`template.md`](template.md).

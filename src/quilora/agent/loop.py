@@ -149,6 +149,9 @@ class Agent:
                         name=call["name"], input=call["input"], is_error=outcome.is_error,
                         error_code=outcome.error_code, duration_ms=outcome.duration_ms,
                         iteration=iteration))
+                    if call["name"] == "handoff_to_human" and not outcome.is_error:
+                        result.handed_off = True
+                        result.ticket_id = outcome.payload.get("ticket_id")
                     tool_results.append({
                         "type": "tool_result",
                         "tool_use_id": call["id"],

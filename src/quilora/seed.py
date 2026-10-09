@@ -14,6 +14,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import psycopg
+from psycopg.rows import tuple_row
 
 from quilora.config import load_settings
 from quilora.db import migrate
@@ -36,9 +37,10 @@ def _ts(value: str | None) -> datetime | None:
 
 
 def _existing(conn: psycopg.Connection, tables: list[str]) -> list[str]:
-    rows = conn.execute(
-        "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
-    ).fetchall()
+    with conn.cursor(row_factory=tuple_row) as cur:
+        rows = cur.execute(
+            "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
+        ).fetchall()
     present = {r[0] for r in rows}
     return [t for t in tables if t in present]
 

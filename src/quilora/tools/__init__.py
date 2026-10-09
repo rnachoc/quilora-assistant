@@ -4,8 +4,10 @@ from __future__ import annotations
 
 from quilora.tools.base import ToolRegistry, ToolSpec
 from quilora.tools.catalog import CHECK_STOCK, GET_PRODUCT, GET_SIZE_RECOMMENDATION, SEARCH_PRODUCTS
+from quilora.tools.handoff import HANDOFF_TO_HUMAN
 from quilora.tools.orders import GET_ORDER_STATUS
 from quilora.tools.policies import SEARCH_POLICIES
+from quilora.tools.returns import CREATE_RETURN_REQUEST
 
 ALL_TOOLS: list[ToolSpec] = [
     SEARCH_PRODUCTS,
@@ -14,6 +16,8 @@ ALL_TOOLS: list[ToolSpec] = [
     GET_SIZE_RECOMMENDATION,
     SEARCH_POLICIES,
     GET_ORDER_STATUS,
+    CREATE_RETURN_REQUEST,
+    HANDOFF_TO_HUMAN,
 ]
 
 
