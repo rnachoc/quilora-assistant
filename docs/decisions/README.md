@@ -17,5 +17,7 @@ Status values:
 | [0005](0005-postgres-single-datastore.md) | PostgreSQL as the single datastore | Proposed |
 | [0006](0006-tool-design-principles.md) | Tool design: few tools, invariants enforced in code | Proposed |
 | [0007](0007-synthetic-data.md) | Fictional store, synthetic data, English catalog | Proposed |
+| [0008](0008-policy-retrieval.md) | Policy retrieval: FTS first, vector and hybrid measured | Proposed |
+| [0009](0009-local-embedding-model.md) | Local multilingual embedding model (fastembed) | Proposed |
 
 Template: [`template.md`](template.md).

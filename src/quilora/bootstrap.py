@@ -15,4 +15,13 @@ def build_agent(settings: Settings, db: Database | None = None,
     model = model or AnthropicModelClient(settings.anthropic_api_key, settings.agent_model,
                                           settings.model_timeout_s)
     return Agent(model=model, registry=build_registry(), settings=settings, db=db,
-                 prompt_name=prompt_name)
+                 prompt_name=prompt_name, embedder=build_embedder(settings))
+
+
+def build_embedder(settings: Settings):
+    """Only load the embedding model when a vector-based backend is configured."""
+    if settings.policy_search_backend == "fts":
+        return None
+    from quilora.search.embeddings import FastEmbedEmbedder
+
+    return FastEmbedEmbedder(settings.embedding_model)

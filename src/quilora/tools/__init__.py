@@ -5,12 +5,14 @@ from __future__ import annotations
 from quilora.tools.base import ToolRegistry, ToolSpec
 from quilora.tools.catalog import CHECK_STOCK, GET_PRODUCT, GET_SIZE_RECOMMENDATION, SEARCH_PRODUCTS
 from quilora.tools.orders import GET_ORDER_STATUS
+from quilora.tools.policies import SEARCH_POLICIES
 
 ALL_TOOLS: list[ToolSpec] = [
     SEARCH_PRODUCTS,
     GET_PRODUCT,
     CHECK_STOCK,
     GET_SIZE_RECOMMENDATION,
+    SEARCH_POLICIES,
     GET_ORDER_STATUS,
 ]
 

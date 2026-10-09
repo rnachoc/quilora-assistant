@@ -1,0 +1,45 @@
+# Labelled queries for policy retrieval. `relevant` lists the chunk IDs that answer the
+# query (any of them counts as a hit). Groups:
+#   en_keyword    - English, uses the same words as the policy text
+#   en_paraphrase - English, natural customer phrasing with different words
+#   es            - Spanish, as customers actually write (the agent normally translates
+#                   to English first; this group measures what happens if it does not)
+
+- {group: en_keyword, query: "return window days", relevant: [RET-1]}
+- {group: en_keyword, query: "shipping cost mainland Spain", relevant: [SHP-2]}
+- {group: en_keyword, query: "Canary Islands customs fees", relevant: [SHP-4]}
+- {group: en_keyword, query: "discount code", relevant: [PAY-3]}
+- {group: en_keyword, query: "accepted payment methods", relevant: [PAY-1]}
+- {group: en_keyword, query: "wash linen", relevant: [CARE-1]}
+- {group: en_keyword, query: "exchange size colour", relevant: [EXC-1]}
+- {group: en_keyword, query: "refund original payment method", relevant: [RET-6]}
+- {group: en_keyword, query: "gift cards", relevant: [FAQ-1]}
+- {group: en_keyword, query: "invoice company details", relevant: [PAY-4]}
+- {group: en_keyword, query: "non-returnable swimwear", relevant: [RET-3]}
+- {group: en_keyword, query: "cancel an order", relevant: [FAQ-4]}
+
+- {group: en_paraphrase, query: "how long do I have to send something back?", relevant: [RET-1]}
+- {group: en_paraphrase, query: "when will I get my money back?", relevant: [RET-6]}
+- {group: en_paraphrase, query: "my parcel never arrived", relevant: [SHP-7]}
+- {group: en_paraphrase, query: "is delivery free if I spend a lot?", relevant: [SHP-2, SHP-3, SHP-5]}
+- {group: en_paraphrase, query: "can I swap these jeans for a bigger one?", relevant: [EXC-1]}
+- {group: en_paraphrase, query: "do you have a shop I can visit?", relevant: [FAQ-5]}
+- {group: en_paraphrase, query: "how should I look after my wool jumper?", relevant: [CARE-3]}
+- {group: en_paraphrase, query: "the item I got is broken", relevant: [RET-7]}
+- {group: en_paraphrase, query: "I bought something and now it is cheaper", relevant: [FAQ-2]}
+- {group: en_paraphrase, query: "I want to talk to a real person", relevant: [SUP-2]}
+- {group: en_paraphrase, query: "how do I know which size I am?", relevant: [SIZE-1, SIZE-4]}
+- {group: en_paraphrase, query: "can you send it somewhere else instead?", relevant: [SHP-8]}
+
+- {group: es, query: "¿cuánto tiempo tengo para devolver algo?", relevant: [RET-1]}
+- {group: es, query: "¿cuándo me devolvéis el dinero?", relevant: [RET-6]}
+- {group: es, query: "¿cuánto cuesta el envío a Mallorca?", relevant: [SHP-3]}
+- {group: es, query: "¿aceptáis Bizum?", relevant: [PAY-1]}
+- {group: es, query: "mi paquete no ha llegado", relevant: [SHP-7]}
+- {group: es, query: "¿cómo lavo una camisa de lino?", relevant: [CARE-1]}
+- {group: es, query: "¿puedo cambiar la talla?", relevant: [EXC-1]}
+- {group: es, query: "¿me dais un código de descuento?", relevant: [PAY-3]}
+- {group: es, query: "quiero hablar con una persona", relevant: [SUP-2]}
+- {group: es, query: "¿tenéis tienda física?", relevant: [FAQ-5]}
+- {group: es, query: "me ha llegado un artículo defectuoso", relevant: [RET-7]}
+- {group: es, query: "estoy entre dos tallas", relevant: [SIZE-3]}

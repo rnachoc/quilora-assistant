@@ -31,3 +31,9 @@ chat-raw: ## Phase 2: chat with the model, no tools
 
 chat: ## Chat with the full agent in the terminal (needs ANTHROPIC_API_KEY)
 	$(PY) -m quilora.cli --verbose
+
+embed: ## Compute policy embeddings (needs: pip install -e '.[embeddings]')
+	$(PY) -m quilora.search.embed
+
+compare-search: ## Compare FTS, vector and hybrid policy retrieval; update docs/results
+	$(PY) -m quilora.search.compare --write
