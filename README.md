@@ -2,8 +2,8 @@
 
 _Author: Ignacio Rodríguez Caro_
 
-A production-minded customer-support agent for **Quilora**, a fictional online fashion
-store. Customers write in Spanish or English; the assistant answers by calling a small set
+A production-minded customer-support agent for **any online fashion store**, shipped with
+**Quilora**, a fictional demo shop. Customers write in Spanish or English; the assistant answers by calling a small set
 of well-defined tools over the store's data (catalog, stock, size charts, policies,
 orders, returns) and hands the case to a person when it should.
 
@@ -25,7 +25,10 @@ Assistant: Sí, tenemos tres: Garza Linen Midi Dress (49,95 €), Brisa Linen Mi
 - **Quality from tool design**, not prompt tweaking: task-shaped tools, strict schemas,
   errors with hints the model can act on, deterministic logic (sizes, return eligibility)
   in code.
-- **Measured, not demoed:** 72 evaluation cases in 11 categories with deterministic
+- **Store-agnostic:** everything shop-specific (languages, shipping zones and times, return
+  terms, cancellation rules, tracking links, public promotions) lives in a validated
+  `store.yaml`; a Shopify importer and a policy consistency check help onboard a real shop.
+- **Measured, not demoed:** 83 evaluation cases in 12 categories with deterministic
   graders, an optional LLM judge, a baseline and CI that fails on regressions; a retrieval
   benchmark comparing full-text, vector and hybrid search.
 - **Production concerns:** cost and latency per turn, prompt caching, timeouts and
@@ -73,9 +76,28 @@ One customer turn:
 | `check_stock` | Availability per colour/size, alternatives when sold out, unknown colours listed |
 | `get_size_recommendation` | Deterministic algorithm on the product's size chart and fit; confidence reported |
 | `search_policies` | Citable sections (`Returns Policy §1`); "do not guess" when nothing matches |
-| `get_order_status` | Order number **and** email; identical error for "not found" and "wrong email"; lockout after 3 failures; masked email; untrusted notes labelled |
+| `estimate_delivery` | Business-day arithmetic from the store profile: cut-off hour, weekends, holidays, zone transit times, cost and free-shipping threshold |
+| `get_active_promotions` | Public promotions from the profile: the only codes the assistant may share |
+| `get_order_status` | Order number **and** email; identical error for "not found" and "wrong email"; lockout after 3 failures; masked email; untrusted notes labelled; tracking link, expected window if not shipped, and whether cancellation or address change can still be requested |
 | `create_return_request` | Only on orders verified in this session; eligibility checked; two-phase confirmation with a token redeemable only in a **later** customer turn; idempotent; audited |
 | `handoff_to_human` | One open ticket per conversation; complaints and money disputes forced to high priority; summary for the agent |
+
+## Use it for your own store
+
+The demo shop is just one store directory (`data/`). To serve another shop, create a
+directory with `store.yaml`, `policies/` and a catalog, then point `STORE_DIR` at it:
+
+```bash
+python -m quilora.importers.shopify products.json --store-dir my_store --domain shop.example
+STORE_DIR=my_store make check-store   # profile warnings + contradictions in the policies
+STORE_DIR=my_store make seed && STORE_DIR=my_store make chat
+```
+
+Step by step: [`docs/adding-a-store.md`](docs/adding-a-store.md). The design comes from
+reviewing a real Shopify fashion store ([phase 12](docs/phases/12-any-store.md)): free-form
+IDs and categories, sizes 2XS-4XL, sale prices, products without material or size chart,
+availability without unit counts, long ranged delivery times, returns to a warehouse
+abroad, no cancellations, and policies that contradict themselves.
 
 ## Quickstart
 
@@ -108,7 +130,7 @@ make help             # everything else
 |-------|---------|---------|
 | Unit + integration tests (tools on real Postgres, loop with a scripted model) | `make test` | No |
 | Retrieval benchmark (36 labelled queries, Hit@k / MRR) | `make compare-search` | No |
-| Agent evaluation (72 cases, 11 categories, multi-turn, attacks) | `make eval` | Yes |
+| Agent evaluation (83 cases, 12 categories, multi-turn, attacks) | `make eval` | Yes |
 
 Categories: product search, sizing, stock, order status, returns, policies, off-topic,
 ambiguous requests, attacks (direct and indirect prompt injection, other customers' data,
@@ -152,21 +174,23 @@ Details in [`docs/results/retrieval.md`](docs/results/retrieval.md) and
 src/quilora/
   agent/       loop, model client, prompts, guardrails, sessions, pricing
   tools/       registry + the 8 tools
-  domain/      sizing and return-eligibility rules (pure functions)
+  domain/      sizing, size labels, delivery dates, return eligibility (pure functions)
+  store/       store profile (store.yaml) and policy consistency check
+  importers/   Shopify catalog importer
   search/      chunking, FTS / vector / hybrid retrieval, embeddings, benchmark
   evals/       case schema, graders, judge, runner, report
   api/         FastAPI app
   mcp_server.py, observability.py, seed.py, cli.py
 data/          synthetic data generator, generated JSON, policies (Markdown)
-db/migrations/ SQL schema (4 forward-only migrations)
-evals/         72 cases (YAML), retrieval queries, baseline
+db/migrations/ SQL schema (6 forward-only migrations)
+evals/         83 cases (YAML), retrieval queries, baseline
 web/           Angular 22 storefront + chat widget
 docs/          ADRs, phase notes, evaluation guide, demo script, interview guide
 ```
 
 ## Decisions
 
-17 Architecture Decision Records in [`docs/decisions/`](docs/decisions/), e.g. Python vs
+21 Architecture Decision Records in [`docs/decisions/`](docs/decisions/), e.g. Python vs
 Java + Spring AI, one model vs a router, hand-written loop vs frameworks, two-phase
 confirmation, guardrail layering, read-only MCP, evaluation strategy.
 
@@ -184,16 +208,23 @@ confirmation, guardrail layering, read-only MCP, evaluation strategy.
 - Regex-based guardrails miss creative phrasing; injection detection only flags.
 - No authentication or rate limiting on the public endpoint (expected at the gateway).
 - MCP server state is per process (fine for stdio, not for multi-client HTTP).
+- One process serves one shop; orders for a real shop must come from an adapter that does
+  not exist yet (only the catalog importer does).
+- The policy consistency check covers three facts (return window, refund time, processing
+  time) and is a heuristic for human review.
+- The demo storefront and the package name (`quilora`) keep the demo shop's name; the
+  assistant itself takes the name from `store.yaml`.
 
 ## Next steps
 
 1. Run the evaluation, commit the baseline, compare Sonnet vs Haiku ([ADR 0003](docs/decisions/0003-model-strategy.md)).
-2. Embed policies and decide FTS vs hybrid with numbers.
-3. Confirm/Cancel buttons in the widget for returns (out-of-band confirmation).
-4. Streaming replies (SSE) to cut perceived latency.
-5. OTel metrics and dashboards (latency, cost, handoff rate, guardrail flags).
-6. Calibrate the LLM judge against 30-50 human-labelled transcripts.
-7. Port the tool layer to Spring Boot to compare ergonomics in a JVM stack.
+2. Orders adapter for Shopify (Admin API) so a real shop's orders reach `get_order_status`.
+3. Embed policies and decide FTS vs hybrid with numbers.
+4. Confirm/Cancel buttons in the widget for returns (out-of-band confirmation).
+5. Streaming replies (SSE) to cut perceived latency.
+6. OTel metrics and dashboards (latency, cost, handoff rate, guardrail flags).
+7. Calibrate the LLM judge against 30-50 human-labelled transcripts.
+8. Port the tool layer to Spring Boot to compare ergonomics in a JVM stack.
 
 ## Built in phases
 
@@ -208,7 +239,8 @@ Each phase has a short note explaining the concept and the decisions:
 [7 evaluation](docs/phases/07-evaluation.md) ·
 [8 MCP](docs/phases/08-mcp-server.md) ·
 [9 API, widget, Docker](docs/phases/09-api-widget-docker.md) ·
-[10 observability](docs/phases/10-observability.md)
+[10 observability](docs/phases/10-observability.md) ·
+[12 any store](docs/phases/12-any-store.md)
 
 Stack: Python 3.13 · anthropic 1.12.1 · FastAPI · Pydantic 2 · PostgreSQL 16 + pgvector ·
 MCP SDK 2.3.0 · OpenTelemetry · Angular 22 · Docker Compose · GitHub Actions.

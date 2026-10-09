@@ -43,7 +43,7 @@ repository, and the latest evaluation report. Rehearse once: model answers vary.
 ## 3:45 – 4:30 · How I know it works
 
 9. Open the evaluation report: pass rate per category, cost per conversation, p50/p95.
-   "72 cases, run in CI on every change to prompt, tools or model, compared with a baseline;
+   "83 cases, run in CI on every change to prompt, tools or model, compared with a baseline;
    regressions fail the build."
 10. Open Jaeger: one trace per turn, model calls vs tool calls, tokens and cost.
 

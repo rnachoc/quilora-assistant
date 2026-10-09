@@ -12,12 +12,12 @@ the same cases and compared with the previous run.
 |-------|------|-------|---------------|
 | Unit and integration tests | Tools, rules, loop mechanics with a scripted model | `tests/` | No |
 | Retrieval benchmark | Hit@k / MRR of policy search on labelled queries | `make compare-search` | No |
-| Agent evaluation | Real model, real tools, 72 conversations | `make eval` | Yes |
+| Agent evaluation | Real model, real tools, 83 conversations | `make eval` | Yes |
 
 ## Agent evaluation
 
-- **Cases**: `evals/cases/*.yaml`, 72 cases in 11 categories (product search, sizing, stock,
-  order status, returns, policies, off-topic, ambiguous, attacks, handoff, multi-turn), 8
+- **Cases**: `evals/cases/*.yaml`, 83 cases in 12 categories (product search, sizing, stock,
+  order status, returns, policies, off-topic, ambiguous, attacks, handoff, multi-turn, delivery), 8
   of them multi-turn. Each case lists customer turns and expectations.
 - **Deterministic graders** (`src/quilora/evals/graders.py`): tools called or not called,
   tool arguments (`{"max_price_eur": {"lte": 60}}`), error codes, reply contains / does not
@@ -68,7 +68,7 @@ In this repository the judge is optional (`--judge`), only applies to cases that
 
 ## Known limitations
 
-- 72 cases is a small sample: one case is ~1.4 points. Treat small deltas as noise; use
+- 83 cases is a small sample: one case is ~1.2 points. Treat small deltas as noise; use
   `--repeat` before drawing conclusions.
 - Regex checks are brittle to phrasing; they were written to be permissive (alternatives,
   accent- and case-insensitive) and should be reviewed when they fail.

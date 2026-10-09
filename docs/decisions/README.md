@@ -29,5 +29,9 @@ Status values:
 | [0015](0015-api-and-sessions.md) | Sync FastAPI, sessions in Postgres with optimistic locking | Proposed |
 | [0016](0016-angular-widget.md) | Chat widget in Angular | Proposed |
 | [0017](0017-observability.md) | OpenTelemetry traces with GenAI semantic conventions | Proposed |
+| [0018](0018-store-profile.md) | Store-agnostic assistant driven by a validated store profile | Proposed |
+| [0019](0019-generic-catalog.md) | A catalog model that fits real shops' data | Proposed |
+| [0020](0020-shopify-import.md) | Platform adapters, starting with a Shopify catalog importer | Proposed |
+| [0021](0021-policy-consistency-check.md) | Check policy texts against the profile before going live | Proposed |
 
 Template: [`template.md`](template.md).

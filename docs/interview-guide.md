@@ -9,7 +9,7 @@ _Author: Ignacio Rodríguez Caro_
 | 0–1 | Problem | "A support assistant must be useful *and* truthful *and* safe. Prompting alone gives you two of the three." |
 | 1–3 | Architecture | Widget → FastAPI → agent loop ↔ Claude; loop → tool registry → Postgres. Same registry behind an MCP server. |
 | 3–5 | Three ideas | (1) The model proposes, the code decides. (2) Quality comes from tool design. (3) Measured with evals. |
-| 5–7 | Evaluation | 72 cases, deterministic graders on behaviour and database effects, baseline, CI. Retrieval benchmark with numbers. |
+| 5–7 | Evaluation | 83 cases, deterministic graders on behaviour and database effects, baseline, CI. Retrieval benchmark with numbers. |
 | 7–9 | Production | Cost and latency per turn, caching, timeouts and fallbacks, idempotency, PII, traces, Docker. |
 | 9–10 | Limits and next steps | What is not measured yet, what I would do next, what I learned. |
 
@@ -57,7 +57,7 @@ Confirm/Cancel buttons that call the API directly (ADR 0010, option 4).
 **How do you know your eval suite is any good?**
 Cases come from business rules and from the brief; every category includes negative and
 adversarial cases; checks are behavioural; I read failing transcripts before changing
-anything. Its limits: 72 cases is small (one case ≈ 1.4 points), regexes are brittle, and
+anything. Its limits: 83 cases is small (one case ≈ 1.2 points), regexes are brittle, and
 the LLM judge is not yet calibrated against human labels.
 
 **LLMs are non-deterministic. Doesn't that make CI flaky?**
@@ -116,6 +116,15 @@ Answer honestly from the ADRs: which defaults I accepted, which I changed and wh
 of judgment over suggestions worth mentioning only if true for you: verifying model IDs and
 SDK APIs against the installed packages (the MCP SDK 2.x renamed `FastMCP` to `MCPServer`),
 refusing to present unverified prices as facts, keeping injection detection as a flag.
+
+**Is this only for one shop?**
+No. Everything shop-specific lives in a validated store profile (`store.yaml`): languages,
+shipping zones and times, return terms, cancellation rules, tracking links, public
+promotions. I reviewed a real Shopify fashion store and generalised what differed: free
+IDs and categories, sale prices, products without material or size chart, availability
+without unit counts, delivery estimates in business days, and a check that finds
+contradictions between the policies and the profile. A second fictional shop in Spanish
+runs end to end in the tests (ADRs 0018-0021, `docs/adding-a-store.md`).
 
 **What would you do differently?**
 Start the eval cases even earlier (before the tools), and design the confirmation as an
