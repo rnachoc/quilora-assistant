@@ -117,7 +117,7 @@ class ToolSpec:
         return {
             "name": self.name,
             "description": self.description,
-            "input_schema": clean_schema(self.input_model.model_json_schema()),
+            "input_schema": clean_schema(inline_refs(self.input_model.model_json_schema())),
         }
 
 
@@ -135,6 +135,29 @@ class ToolOutcome:
 
     def content(self) -> str:
         return to_json(self.payload)
+
+
+def inline_refs(schema: dict[str, Any]) -> dict[str, Any]:
+    """Replace local `$ref`s with their definitions, producing one flat, self-contained schema.
+
+    Nested models (e.g. a list of return items) make Pydantic emit `$defs` + `$ref`. Inlining
+    keeps the schema simple for the model to read and avoids relying on `$ref` support.
+    """
+    defs = schema.get("$defs", {})
+
+    def resolve(node: Any) -> Any:
+        if isinstance(node, dict):
+            ref = node.get("$ref")
+            if isinstance(ref, str) and ref.startswith("#/$defs/"):
+                merged = {**defs[ref.split("/")[-1]], **{k: v for k, v in node.items()
+                                                          if k != "$ref"}}
+                return resolve(merged)
+            return {k: resolve(v) for k, v in node.items() if k != "$defs"}
+        if isinstance(node, list):
+            return [resolve(x) for x in node]
+        return node
+
+    return resolve(schema)
 
 
 def clean_schema(schema: Any) -> Any:

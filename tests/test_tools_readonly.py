@@ -204,3 +204,4 @@ def test_tool_definitions_are_compact_and_valid():
         assert schema["type"] == "object"
         assert "title" not in schema
         assert schema.get("additionalProperties") is False
+        assert "$ref" not in json.dumps(schema) and "$defs" not in schema
