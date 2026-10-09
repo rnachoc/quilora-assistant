@@ -19,6 +19,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Any
 
+from quilora.agent.guardrails import check_input, check_output, grounding_text
 from quilora.agent.model import ModelClient, ModelError, TokenUsage
 from quilora.agent.pricing import estimate_cost_usd
 from quilora.agent.prompts import render
@@ -118,9 +119,12 @@ class Agent:
         if rejected:
             return rejected
 
+        # Input guard: redact card/IBAN/ID numbers before the model, logs or history see them.
+        guarded_input = check_input(user_text)
         conv.turn_count += 1
-        conv.messages.append({"role": "user", "content": user_text})
-        result = TurnResult(reply="", stop_reason="end_turn", model=self.model.model)
+        conv.messages.append({"role": "user", "content": guarded_input.text})
+        result = TurnResult(reply="", stop_reason="end_turn", model=self.model.model,
+                            flags=list(guarded_input.flags))
         ctx = ToolContext(db=self.db, settings=self.settings, state=conv.state,
                           session_id=conv.id, turn_index=conv.turn_count, embedder=self.embedder)
         system = self.system_prompt()
@@ -172,6 +176,7 @@ class Agent:
 
             result.reply = response.text
             result.stop_reason = "end_turn"
+            self._guard_output(conv, result, lang)
             break
         else:
             result.stop_reason = "max_iterations"
@@ -187,6 +192,17 @@ class Agent:
         result.cost_usd = estimate_cost_usd(self.model.model, result.usage)
         result.latency_ms = (time.perf_counter() - started) * 1000
         return result
+
+    def _guard_output(self, conv: Conversation, result: TurnResult, lang: str) -> None:
+        """Output guard: block prompt leaks and discount codes, flag ungrounded amounts."""
+        guarded = check_output(result.reply, grounding_text=grounding_text(conv.messages),
+                               lang=lang)
+        result.flags.extend(guarded.flags)
+        if guarded.blocked:
+            result.reply = guarded.text
+            # Store the safe text, so the blocked content never re-enters the context.
+            conv.messages[-1] = {"role": "assistant",
+                                 "content": [{"type": "text", "text": guarded.text}]}
 
     def _check_input(self, conv: Conversation, text: str, lang: str) -> TurnResult | None:
         if not text:
