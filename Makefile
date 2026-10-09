@@ -49,3 +49,6 @@ eval-judge: ## Same, with LLM-as-judge rubrics
 
 eval-baseline: ## Run the suite and save it as evals/baseline.json
 	$(PY) -m quilora.evals.run --save-baseline
+
+mcp: ## Run the MCP server over stdio
+	$(PY) -m quilora.mcp_server

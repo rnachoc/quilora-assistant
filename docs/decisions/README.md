@@ -23,5 +23,6 @@ Status values:
 | [0011](0011-handoff-tickets.md) | Handoff as an idempotent ticket with a model-written summary | Proposed |
 | [0012](0012-guardrails.md) | Guardrails: defence in depth, deterministic checks | Proposed |
 | [0013](0013-evaluation-strategy.md) | Evaluation: deterministic graders, optional LLM judge, baseline | Proposed |
+| [0014](0014-mcp-read-only.md) | MCP server exposes read-only tools and policies | Proposed |
 
 Template: [`template.md`](template.md).

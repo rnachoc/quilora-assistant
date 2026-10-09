@@ -13,3 +13,4 @@ against PyPI on 2026-10-09.
 | pydantic | 2.14.0 | 3 | Validates every tool input before it reaches business code; generates the JSON Schema sent to the model, so schema and validation cannot drift | Hand-written JSON Schema + manual checks (two sources of truth) |
 | pyyaml | 6.0.3 | 4 | Human-readable labelled query and evaluation case files | JSON (noisier to hand-edit, no comments) |
 | fastembed (optional extra) | 0.9.0 | 4 | Local ONNX embedding models, no PyTorch (ADR 0009) | sentence-transformers (PyTorch), Voyage AI API |
+| mcp | 2.3.0 | 8 | Official MCP SDK (server class `MCPServer`, in-process `Client` for tests) | Hand-written JSON-RPC (error-prone, no transport support) |
