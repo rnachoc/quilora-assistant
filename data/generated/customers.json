@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "full_name": "Lucia Romero",
+    "email": "lucia.romero@example.com",
+    "city": "Madrid",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 2,
+    "full_name": "Marta Navarro",
+    "email": "marta.navarro@example.com",
+    "city": "Valencia",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 3,
+    "full_name": "Sofia Molina",
+    "email": "sofia.molina@example.com",
+    "city": "Bilbao",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 4,
+    "full_name": "Elena Ortega",
+    "email": "elena.ortega@example.com",
+    "city": "Palma",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 5,
+    "full_name": "Paula Delgado",
+    "email": "paula.delgado@example.com",
+    "city": "Malaga",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 6,
+    "full_name": "Carmen Castro",
+    "email": "carmen.castro@example.com",
+    "city": "Zaragoza",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 7,
+    "full_name": "Irene Ruiz",
+    "email": "irene.ruiz@example.com",
+    "city": "Lisboa",
+    "country": "PT",
+    "preferred_language": "es"
+  },
+  {
+    "id": 8,
+    "full_name": "Laura Vidal",
+    "email": "laura.vidal@example.com",
+    "city": "Porto",
+    "country": "PT",
+    "preferred_language": "es"
+  },
+  {
+    "id": 9,
+    "full_name": "Nuria Herrera",
+    "email": "nuria.herrera@example.com",
+    "city": "Lyon",
+    "country": "FR",
+    "preferred_language": "es"
+  },
+  {
+    "id": 10,
+    "full_name": "Andrea Prieto",
+    "email": "andrea.prieto@example.com",
+    "city": "Sevilla",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 11,
+    "full_name": "Javier Campos",
+    "email": "javier.campos@example.com",
+    "city": "Madrid",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 12,
+    "full_name": "Pablo Vega",
+    "email": "pablo.vega@example.com",
+    "city": "Valencia",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 13,
+    "full_name": "Diego Soler",
+    "email": "diego.soler@example.com",
+    "city": "Bilbao",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 14,
+    "full_name": "Hugo Rey",
+    "email": "hugo.rey@example.com",
+    "city": "Palma",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 15,
+    "full_name": "Mario Pastor",
+    "email": "mario.pastor@example.com",
+    "city": "Malaga",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 16,
+    "full_name": "Alvaro Moreno",
+    "email": "alvaro.moreno@example.com",
+    "city": "Zaragoza",
+    "country": "ES",
+    "preferred_language": "es"
+  },
+  {
+    "id": 17,
+    "full_name": "Emma Fuentes",
+    "email": "emma.fuentes@example.com",
+    "city": "Lisboa",
+    "country": "PT",
+    "preferred_language": "en"
+  },
+  {
+    "id": 18,
+    "full_name": "Noah Gil",
+    "email": "noah.gil@example.com",
+    "city": "Porto",
+    "country": "PT",
+    "preferred_language": "en"
+  },
+  {
+    "id": 19,
+    "full_name": "Olivia Marin",
+    "email": "olivia.marin@example.com",
+    "city": "Lyon",
+    "country": "FR",
+    "preferred_language": "en"
+  },
+  {
+    "id": 20,
+    "full_name": "Liam Blanco",
+    "email": "liam.blanco@example.com",
+    "city": "Sevilla",
+    "country": "ES",
+    "preferred_language": "en"
+  }
+]

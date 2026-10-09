@@ -7,7 +7,10 @@ requires-python = ">=3.12"
 license = { text = "MIT" }
 authors = [{ name = "Ignacio" }]
 # Every runtime dependency is justified in docs/dependencies.md.
-dependencies = []
+dependencies = [
+    "psycopg[binary]==3.3.6",
+    "psycopg-pool==3.3.3",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -25,6 +28,10 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = [
+    "db: needs a PostgreSQL database (skipped if unavailable)",
+    "live: calls the real Anthropic API (needs ANTHROPIC_API_KEY)",
+]
 
 [tool.ruff]
 line-length = 100
@@ -36,3 +43,5 @@ ignore = ["S101"]  # assert is fine in tests
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S"]
+# Generator data tables are wide by nature; random is used for reproducible fake data.
+"data/**" = ["E501", "S311"]

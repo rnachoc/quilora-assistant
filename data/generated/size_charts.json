@@ -1,0 +1,409 @@
+[
+  {
+    "id": "women-tops",
+    "name": "Women's tops, shirts and knitwear",
+    "garment_type": "top",
+    "gender": "women",
+    "sizes": {
+      "XS": {
+        "chest": [
+          78,
+          82
+        ],
+        "waist": [
+          60,
+          64
+        ]
+      },
+      "S": {
+        "chest": [
+          82,
+          86
+        ],
+        "waist": [
+          64,
+          68
+        ]
+      },
+      "M": {
+        "chest": [
+          86,
+          90
+        ],
+        "waist": [
+          68,
+          72
+        ]
+      },
+      "L": {
+        "chest": [
+          90,
+          96
+        ],
+        "waist": [
+          72,
+          78
+        ]
+      },
+      "XL": {
+        "chest": [
+          96,
+          102
+        ],
+        "waist": [
+          78,
+          84
+        ]
+      }
+    }
+  },
+  {
+    "id": "women-bottoms",
+    "name": "Women's trousers, jeans and skirts",
+    "garment_type": "bottom",
+    "gender": "women",
+    "sizes": {
+      "XS": {
+        "waist": [
+          60,
+          64
+        ],
+        "hip": [
+          86,
+          90
+        ]
+      },
+      "S": {
+        "waist": [
+          64,
+          68
+        ],
+        "hip": [
+          90,
+          94
+        ]
+      },
+      "M": {
+        "waist": [
+          68,
+          72
+        ],
+        "hip": [
+          94,
+          98
+        ]
+      },
+      "L": {
+        "waist": [
+          72,
+          78
+        ],
+        "hip": [
+          98,
+          104
+        ]
+      },
+      "XL": {
+        "waist": [
+          78,
+          84
+        ],
+        "hip": [
+          104,
+          110
+        ]
+      }
+    }
+  },
+  {
+    "id": "women-dresses",
+    "name": "Women's dresses",
+    "garment_type": "dress",
+    "gender": "women",
+    "sizes": {
+      "XS": {
+        "chest": [
+          78,
+          82
+        ],
+        "waist": [
+          60,
+          64
+        ],
+        "hip": [
+          86,
+          90
+        ]
+      },
+      "S": {
+        "chest": [
+          82,
+          86
+        ],
+        "waist": [
+          64,
+          68
+        ],
+        "hip": [
+          90,
+          94
+        ]
+      },
+      "M": {
+        "chest": [
+          86,
+          90
+        ],
+        "waist": [
+          68,
+          72
+        ],
+        "hip": [
+          94,
+          98
+        ]
+      },
+      "L": {
+        "chest": [
+          90,
+          96
+        ],
+        "waist": [
+          72,
+          78
+        ],
+        "hip": [
+          98,
+          104
+        ]
+      },
+      "XL": {
+        "chest": [
+          96,
+          102
+        ],
+        "waist": [
+          78,
+          84
+        ],
+        "hip": [
+          104,
+          110
+        ]
+      }
+    }
+  },
+  {
+    "id": "men-tops",
+    "name": "Men's tops, shirts and knitwear",
+    "garment_type": "top",
+    "gender": "men",
+    "sizes": {
+      "S": {
+        "chest": [
+          88,
+          94
+        ],
+        "waist": [
+          74,
+          80
+        ]
+      },
+      "M": {
+        "chest": [
+          94,
+          100
+        ],
+        "waist": [
+          80,
+          86
+        ]
+      },
+      "L": {
+        "chest": [
+          100,
+          106
+        ],
+        "waist": [
+          86,
+          92
+        ]
+      },
+      "XL": {
+        "chest": [
+          106,
+          112
+        ],
+        "waist": [
+          92,
+          98
+        ]
+      },
+      "XXL": {
+        "chest": [
+          112,
+          118
+        ],
+        "waist": [
+          98,
+          104
+        ]
+      }
+    }
+  },
+  {
+    "id": "men-bottoms",
+    "name": "Men's trousers and jeans",
+    "garment_type": "bottom",
+    "gender": "men",
+    "sizes": {
+      "S": {
+        "waist": [
+          74,
+          80
+        ],
+        "hip": [
+          90,
+          96
+        ]
+      },
+      "M": {
+        "waist": [
+          80,
+          86
+        ],
+        "hip": [
+          96,
+          102
+        ]
+      },
+      "L": {
+        "waist": [
+          86,
+          92
+        ],
+        "hip": [
+          102,
+          108
+        ]
+      },
+      "XL": {
+        "waist": [
+          92,
+          98
+        ],
+        "hip": [
+          108,
+          114
+        ]
+      },
+      "XXL": {
+        "waist": [
+          98,
+          104
+        ],
+        "hip": [
+          114,
+          120
+        ]
+      }
+    }
+  },
+  {
+    "id": "women-shoes",
+    "name": "Women's shoes (EU sizes)",
+    "garment_type": "shoes",
+    "gender": "women",
+    "sizes": {
+      "36": {
+        "foot_length": [
+          22.5,
+          23.2
+        ]
+      },
+      "37": {
+        "foot_length": [
+          23.2,
+          23.9
+        ]
+      },
+      "38": {
+        "foot_length": [
+          23.9,
+          24.6
+        ]
+      },
+      "39": {
+        "foot_length": [
+          24.6,
+          25.3
+        ]
+      },
+      "40": {
+        "foot_length": [
+          25.3,
+          26.0
+        ]
+      },
+      "41": {
+        "foot_length": [
+          26.0,
+          26.7
+        ]
+      }
+    }
+  },
+  {
+    "id": "men-shoes",
+    "name": "Men's shoes (EU sizes)",
+    "garment_type": "shoes",
+    "gender": "men",
+    "sizes": {
+      "40": {
+        "foot_length": [
+          25.3,
+          26.0
+        ]
+      },
+      "41": {
+        "foot_length": [
+          26.0,
+          26.7
+        ]
+      },
+      "42": {
+        "foot_length": [
+          26.7,
+          27.4
+        ]
+      },
+      "43": {
+        "foot_length": [
+          27.4,
+          28.1
+        ]
+      },
+      "44": {
+        "foot_length": [
+          28.1,
+          28.8
+        ]
+      },
+      "45": {
+        "foot_length": [
+          28.8,
+          29.5
+        ]
+      }
+    }
+  },
+  {
+    "id": "one-size",
+    "name": "Accessories (one size)",
+    "garment_type": "one_size",
+    "gender": "unisex",
+    "sizes": {
+      "ONE SIZE": {}
+    }
+  }
+]

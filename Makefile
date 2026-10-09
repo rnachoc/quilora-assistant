@@ -15,7 +15,13 @@ secrets-check: ## Scan tracked files for secrets
 	scripts/check_secrets.sh
 
 lint: ## Lint with ruff
-	ruff check src tests
+	ruff check src tests data
 
 test: ## Run the test suite
 	$(PY) -m pytest -q
+
+data: ## Regenerate the synthetic dataset (deterministic)
+	$(PY) data/generate.py
+
+seed: ## Create the schema and load the synthetic data into Postgres
+	$(PY) -m quilora.seed

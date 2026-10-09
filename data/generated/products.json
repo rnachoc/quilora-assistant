@@ -1,0 +1,7235 @@
+[
+  {
+    "id": "QL-DRS-001",
+    "name": "Garza Linen Midi Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 49.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-001-TERRAC-XS",
+        "color": "terracotta",
+        "size": "XS",
+        "stock": 15
+      },
+      {
+        "sku": "QL-DRS-001-TERRAC-S",
+        "color": "terracotta",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-DRS-001-TERRAC-M",
+        "color": "terracotta",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-DRS-001-TERRAC-L",
+        "color": "terracotta",
+        "size": "L",
+        "stock": 26
+      },
+      {
+        "sku": "QL-DRS-001-TERRAC-XL",
+        "color": "terracotta",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "sku": "QL-DRS-001-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 19
+      },
+      {
+        "sku": "QL-DRS-001-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-001-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 9
+      },
+      {
+        "sku": "QL-DRS-001-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-001-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-002",
+    "name": "Brisa Linen Midi Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 55% linen, 45% cotton. Regular fit: true to size.",
+    "material": "55% linen, 45% cotton",
+    "fit": "regular",
+    "price_eur": 54.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C. Iron at medium temperature. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-002-TERRAC-XS",
+        "color": "terracotta",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "sku": "QL-DRS-002-TERRAC-S",
+        "color": "terracotta",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-002-TERRAC-M",
+        "color": "terracotta",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-DRS-002-TERRAC-L",
+        "color": "terracotta",
+        "size": "L",
+        "stock": 26
+      },
+      {
+        "sku": "QL-DRS-002-TERRAC-XL",
+        "color": "terracotta",
+        "size": "XL",
+        "stock": 8
+      },
+      {
+        "sku": "QL-DRS-002-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 18
+      },
+      {
+        "sku": "QL-DRS-002-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-002-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 14
+      },
+      {
+        "sku": "QL-DRS-002-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-DRS-002-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-003",
+    "name": "Gala Linen Midi Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 55% linen, 45% cotton. Relaxed fit: roomy through the body.",
+    "material": "55% linen, 45% cotton",
+    "fit": "relaxed",
+    "price_eur": 74.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C. Iron at medium temperature. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-003-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 18
+      },
+      {
+        "sku": "QL-DRS-003-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-003-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-003-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-003-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 21
+      },
+      {
+        "sku": "QL-DRS-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 15
+      },
+      {
+        "sku": "QL-DRS-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "sku": "QL-DRS-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 23
+      },
+      {
+        "sku": "QL-DRS-003-TERRAC-XS",
+        "color": "terracotta",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "sku": "QL-DRS-003-TERRAC-S",
+        "color": "terracotta",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-DRS-003-TERRAC-M",
+        "color": "terracotta",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-DRS-003-TERRAC-L",
+        "color": "terracotta",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-DRS-003-TERRAC-XL",
+        "color": "terracotta",
+        "size": "XL",
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-004",
+    "name": "Dalia Linen Midi Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 59.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-004-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 20
+      },
+      {
+        "sku": "QL-DRS-004-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 27
+      },
+      {
+        "sku": "QL-DRS-004-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-DRS-004-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-004-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-004-TERRAC-XS",
+        "color": "terracotta",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-DRS-004-TERRAC-S",
+        "color": "terracotta",
+        "size": "S",
+        "stock": 10
+      },
+      {
+        "sku": "QL-DRS-004-TERRAC-M",
+        "color": "terracotta",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-004-TERRAC-L",
+        "color": "terracotta",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-004-TERRAC-XL",
+        "color": "terracotta",
+        "size": "XL",
+        "stock": 18
+      },
+      {
+        "sku": "QL-DRS-004-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-004-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-DRS-004-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-004-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-DRS-004-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-004-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-004-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-004-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-004-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-004-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-005",
+    "name": "Marea Linen Midi Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 79.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-005-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 5
+      },
+      {
+        "sku": "QL-DRS-005-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-005-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-005-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-DRS-005-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 28
+      },
+      {
+        "sku": "QL-DRS-005-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 17
+      },
+      {
+        "sku": "QL-DRS-005-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-005-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-005-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 19
+      },
+      {
+        "sku": "QL-DRS-005-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-006",
+    "name": "Luma Satin Slip Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% viscose. Slim fit: close to the body.",
+    "material": "100% viscose",
+    "fit": "slim",
+    "price_eur": 55.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-006-CHAMPA-XS",
+        "color": "champagne",
+        "size": "XS",
+        "stock": 16
+      },
+      {
+        "sku": "QL-DRS-006-CHAMPA-S",
+        "color": "champagne",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "sku": "QL-DRS-006-CHAMPA-M",
+        "color": "champagne",
+        "size": "M",
+        "stock": 12
+      },
+      {
+        "sku": "QL-DRS-006-CHAMPA-L",
+        "color": "champagne",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "sku": "QL-DRS-006-CHAMPA-XL",
+        "color": "champagne",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-DRS-006-EMERAL-XS",
+        "color": "emerald",
+        "size": "XS",
+        "stock": 19
+      },
+      {
+        "sku": "QL-DRS-006-EMERAL-S",
+        "color": "emerald",
+        "size": "S",
+        "stock": 19
+      },
+      {
+        "sku": "QL-DRS-006-EMERAL-M",
+        "color": "emerald",
+        "size": "M",
+        "stock": 21
+      },
+      {
+        "sku": "QL-DRS-006-EMERAL-L",
+        "color": "emerald",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-006-EMERAL-XL",
+        "color": "emerald",
+        "size": "XL",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-006-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-DRS-006-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-006-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-006-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 21
+      },
+      {
+        "sku": "QL-DRS-006-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-007",
+    "name": "Alba Satin Slip Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% viscose. Slim fit: close to the body.",
+    "material": "100% viscose",
+    "fit": "slim",
+    "price_eur": 56.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-007-CHAMPA-XS",
+        "color": "champagne",
+        "size": "XS",
+        "stock": 25
+      },
+      {
+        "sku": "QL-DRS-007-CHAMPA-S",
+        "color": "champagne",
+        "size": "S",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-007-CHAMPA-M",
+        "color": "champagne",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-DRS-007-CHAMPA-L",
+        "color": "champagne",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-007-CHAMPA-XL",
+        "color": "champagne",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-007-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 27
+      },
+      {
+        "sku": "QL-DRS-007-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-DRS-007-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "sku": "QL-DRS-007-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 15
+      },
+      {
+        "sku": "QL-DRS-007-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 15
+      },
+      {
+        "sku": "QL-DRS-007-EMERAL-XS",
+        "color": "emerald",
+        "size": "XS",
+        "stock": 23
+      },
+      {
+        "sku": "QL-DRS-007-EMERAL-S",
+        "color": "emerald",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-007-EMERAL-M",
+        "color": "emerald",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-DRS-007-EMERAL-L",
+        "color": "emerald",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-DRS-007-EMERAL-XL",
+        "color": "emerald",
+        "size": "XL",
+        "stock": 2
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-008",
+    "name": "Kora Satin Slip Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% recycled polyester. Regular fit: true to size.",
+    "material": "100% recycled polyester",
+    "fit": "regular",
+    "price_eur": 60.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C. Cool iron.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-008-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-008-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-008-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-DRS-008-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-DRS-008-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 12
+      },
+      {
+        "sku": "QL-DRS-008-CHAMPA-XS",
+        "color": "champagne",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-008-CHAMPA-S",
+        "color": "champagne",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-DRS-008-CHAMPA-M",
+        "color": "champagne",
+        "size": "M",
+        "stock": 11
+      },
+      {
+        "sku": "QL-DRS-008-CHAMPA-L",
+        "color": "champagne",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-DRS-008-CHAMPA-XL",
+        "color": "champagne",
+        "size": "XL",
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-009",
+    "name": "Vela Wrap Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% viscose. Regular fit: true to size.",
+    "material": "100% viscose",
+    "fit": "regular",
+    "price_eur": 63.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-009-FLORAL-XS",
+        "color": "floral print",
+        "size": "XS",
+        "stock": 23
+      },
+      {
+        "sku": "QL-DRS-009-FLORAL-S",
+        "color": "floral print",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "sku": "QL-DRS-009-FLORAL-M",
+        "color": "floral print",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "QL-DRS-009-FLORAL-L",
+        "color": "floral print",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "sku": "QL-DRS-009-FLORAL-XL",
+        "color": "floral print",
+        "size": "XL",
+        "stock": 11
+      },
+      {
+        "sku": "QL-DRS-009-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-009-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "sku": "QL-DRS-009-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "sku": "QL-DRS-009-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-009-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 11
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-010",
+    "name": "Bruma Wrap Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% viscose. Regular fit: true to size.",
+    "material": "100% viscose",
+    "fit": "regular",
+    "price_eur": 64.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-010-RED-XS",
+        "color": "red",
+        "size": "XS",
+        "stock": 11
+      },
+      {
+        "sku": "QL-DRS-010-RED-S",
+        "color": "red",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-010-RED-M",
+        "color": "red",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-DRS-010-RED-L",
+        "color": "red",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-DRS-010-RED-XL",
+        "color": "red",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-010-FLORAL-XS",
+        "color": "floral print",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-010-FLORAL-S",
+        "color": "floral print",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-010-FLORAL-M",
+        "color": "floral print",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-DRS-010-FLORAL-L",
+        "color": "floral print",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-DRS-010-FLORAL-XL",
+        "color": "floral print",
+        "size": "XL",
+        "stock": 5
+      },
+      {
+        "sku": "QL-DRS-010-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 9
+      },
+      {
+        "sku": "QL-DRS-010-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 20
+      },
+      {
+        "sku": "QL-DRS-010-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "QL-DRS-010-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 23
+      },
+      {
+        "sku": "QL-DRS-010-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-011",
+    "name": "Palma Wrap Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% viscose. Regular fit: true to size.",
+    "material": "100% viscose",
+    "fit": "regular",
+    "price_eur": 65.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-011-RED-XS",
+        "color": "red",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-011-RED-S",
+        "color": "red",
+        "size": "S",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-011-RED-M",
+        "color": "red",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-011-RED-L",
+        "color": "red",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-DRS-011-RED-XL",
+        "color": "red",
+        "size": "XL",
+        "stock": 17
+      },
+      {
+        "sku": "QL-DRS-011-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-DRS-011-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 17
+      },
+      {
+        "sku": "QL-DRS-011-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-DRS-011-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-011-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-012",
+    "name": "Olivo Knit Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 70% wool, 30% polyamide. Slim fit: close to the body.",
+    "material": "70% wool, 30% polyamide",
+    "fit": "slim",
+    "price_eur": 85.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Dry flat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-012-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-012-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 15
+      },
+      {
+        "sku": "QL-DRS-012-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 14
+      },
+      {
+        "sku": "QL-DRS-012-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-012-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-DRS-012-CAMEL-XS",
+        "color": "camel",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-DRS-012-CAMEL-S",
+        "color": "camel",
+        "size": "S",
+        "stock": 25
+      },
+      {
+        "sku": "QL-DRS-012-CAMEL-M",
+        "color": "camel",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-012-CAMEL-L",
+        "color": "camel",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-DRS-012-CAMEL-XL",
+        "color": "camel",
+        "size": "XL",
+        "stock": 5
+      },
+      {
+        "sku": "QL-DRS-012-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-012-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-012-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 25
+      },
+      {
+        "sku": "QL-DRS-012-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-012-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-013",
+    "name": "Tela Knit Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 70% wool, 30% polyamide. Slim fit: close to the body.",
+    "material": "70% wool, 30% polyamide",
+    "fit": "slim",
+    "price_eur": 63.95,
+    "size_chart_id": "women-dresses",
+    "care": "Hand wash cold or dry clean. Dry flat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-013-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 27
+      },
+      {
+        "sku": "QL-DRS-013-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-013-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-013-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 26
+      },
+      {
+        "sku": "QL-DRS-013-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 16
+      },
+      {
+        "sku": "QL-DRS-013-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-DRS-013-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 23
+      },
+      {
+        "sku": "QL-DRS-013-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-013-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 11
+      },
+      {
+        "sku": "QL-DRS-013-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-014",
+    "name": "Arena Shirt Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 55% linen, 45% cotton. Relaxed fit: roomy through the body.",
+    "material": "55% linen, 45% cotton",
+    "fit": "relaxed",
+    "price_eur": 49.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C. Iron at medium temperature. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-014-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-DRS-014-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-014-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 30
+      },
+      {
+        "sku": "QL-DRS-014-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-DRS-014-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-DRS-014-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-014-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 27
+      },
+      {
+        "sku": "QL-DRS-014-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 25
+      },
+      {
+        "sku": "QL-DRS-014-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-014-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 12
+      },
+      {
+        "sku": "QL-DRS-014-KHAKI-XS",
+        "color": "khaki",
+        "size": "XS",
+        "stock": 28
+      },
+      {
+        "sku": "QL-DRS-014-KHAKI-S",
+        "color": "khaki",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "sku": "QL-DRS-014-KHAKI-M",
+        "color": "khaki",
+        "size": "M",
+        "stock": 18
+      },
+      {
+        "sku": "QL-DRS-014-KHAKI-L",
+        "color": "khaki",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-014-KHAKI-XL",
+        "color": "khaki",
+        "size": "XL",
+        "stock": 5
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-015",
+    "name": "Rada Shirt Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 55% linen, 45% cotton. Relaxed fit: roomy through the body.",
+    "material": "55% linen, 45% cotton",
+    "fit": "relaxed",
+    "price_eur": 44.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C. Iron at medium temperature. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-015-KHAKI-XS",
+        "color": "khaki",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-015-KHAKI-S",
+        "color": "khaki",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-DRS-015-KHAKI-M",
+        "color": "khaki",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "sku": "QL-DRS-015-KHAKI-L",
+        "color": "khaki",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-015-KHAKI-XL",
+        "color": "khaki",
+        "size": "XL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-DRS-015-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 14
+      },
+      {
+        "sku": "QL-DRS-015-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 17
+      },
+      {
+        "sku": "QL-DRS-015-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-015-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-DRS-015-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-015-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 17
+      },
+      {
+        "sku": "QL-DRS-015-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-DRS-015-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-DRS-015-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "sku": "QL-DRS-015-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": "QL-DRS-016",
+    "name": "Nilo Shirt Dress",
+    "category": "dresses",
+    "gender": "women",
+    "description": "A versatile dress that works from day to evening. Made from 100% organic cotton. Relaxed fit: roomy through the body.",
+    "material": "100% organic cotton",
+    "fit": "relaxed",
+    "price_eur": 48.95,
+    "size_chart_id": "women-dresses",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-DRS-016-KHAKI-XS",
+        "color": "khaki",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "sku": "QL-DRS-016-KHAKI-S",
+        "color": "khaki",
+        "size": "S",
+        "stock": 17
+      },
+      {
+        "sku": "QL-DRS-016-KHAKI-M",
+        "color": "khaki",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "sku": "QL-DRS-016-KHAKI-L",
+        "color": "khaki",
+        "size": "L",
+        "stock": 29
+      },
+      {
+        "sku": "QL-DRS-016-KHAKI-XL",
+        "color": "khaki",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-016-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "sku": "QL-DRS-016-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-DRS-016-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 22
+      },
+      {
+        "sku": "QL-DRS-016-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-DRS-016-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": "QL-TOP-001",
+    "name": "Jara Linen Blouse",
+    "category": "tops",
+    "gender": "women",
+    "description": "A light, breathable top for warm days. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 44.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TOP-001-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TOP-001-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TOP-001-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TOP-001-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TOP-001-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TOP-001-SKYBLU-XS",
+        "color": "sky blue",
+        "size": "XS",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TOP-001-SKYBLU-S",
+        "color": "sky blue",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TOP-001-SKYBLU-M",
+        "color": "sky blue",
+        "size": "M",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TOP-001-SKYBLU-L",
+        "color": "sky blue",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TOP-001-SKYBLU-XL",
+        "color": "sky blue",
+        "size": "XL",
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": "QL-TOP-002",
+    "name": "Gala Linen Blouse",
+    "category": "tops",
+    "gender": "women",
+    "description": "A light, breathable top for warm days. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 43.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TOP-002-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TOP-002-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TOP-002-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TOP-002-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-TOP-002-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TOP-002-SKYBLU-XS",
+        "color": "sky blue",
+        "size": "XS",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TOP-002-SKYBLU-S",
+        "color": "sky blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TOP-002-SKYBLU-M",
+        "color": "sky blue",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TOP-002-SKYBLU-L",
+        "color": "sky blue",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TOP-002-SKYBLU-XL",
+        "color": "sky blue",
+        "size": "XL",
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": "QL-TOP-003",
+    "name": "Rada Linen Blouse",
+    "category": "tops",
+    "gender": "women",
+    "description": "A light, breathable top for warm days. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 32.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TOP-003-SKYBLU-XS",
+        "color": "sky blue",
+        "size": "XS",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TOP-003-SKYBLU-S",
+        "color": "sky blue",
+        "size": "S",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TOP-003-SKYBLU-M",
+        "color": "sky blue",
+        "size": "M",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TOP-003-SKYBLU-L",
+        "color": "sky blue",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TOP-003-SKYBLU-XL",
+        "color": "sky blue",
+        "size": "XL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TOP-003-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TOP-003-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TOP-003-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TOP-003-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-TOP-003-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TOP-003-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TOP-003-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TOP-003-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TOP-003-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TOP-003-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": "QL-TOP-004",
+    "name": "Elda Silk Camisole",
+    "category": "tops",
+    "gender": "women",
+    "description": "A light, breathable top for warm days. Made from 100% silk. Regular fit: true to size.",
+    "material": "100% silk",
+    "fit": "regular",
+    "price_eur": 58.95,
+    "size_chart_id": "women-tops",
+    "care": "Dry clean only.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TOP-004-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TOP-004-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 11
+      },
+      {
+        "sku": "QL-TOP-004-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TOP-004-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TOP-004-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TOP-004-IVORY-XS",
+        "color": "ivory",
+        "size": "XS",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TOP-004-IVORY-S",
+        "color": "ivory",
+        "size": "S",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TOP-004-IVORY-M",
+        "color": "ivory",
+        "size": "M",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TOP-004-IVORY-L",
+        "color": "ivory",
+        "size": "L",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TOP-004-IVORY-XL",
+        "color": "ivory",
+        "size": "XL",
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-001",
+    "name": "Zafra Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "women",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 22.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-001-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TEE-001-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-001-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-001-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TEE-001-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TEE-001-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TEE-001-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-001-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TEE-001-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TEE-001-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TEE-001-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TEE-001-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TEE-001-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TEE-001-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TEE-001-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-001-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 27
+      },
+      {
+        "sku": "QL-TEE-001-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TEE-001-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TEE-001-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TEE-001-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-002",
+    "name": "Tela Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "women",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 21.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-002-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TEE-002-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-002-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TEE-002-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TEE-002-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TEE-002-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TEE-002-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-002-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TEE-002-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TEE-002-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TEE-002-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TEE-002-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TEE-002-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TEE-002-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TEE-002-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TEE-002-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TEE-002-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TEE-002-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-002-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TEE-002-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-003",
+    "name": "Isla Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "women",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 14.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-003-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-003-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TEE-003-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 11
+      },
+      {
+        "sku": "QL-TEE-003-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TEE-003-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 12
+      },
+      {
+        "sku": "QL-TEE-003-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-003-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TEE-003-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 11
+      },
+      {
+        "sku": "QL-TEE-003-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TEE-003-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TEE-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TEE-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TEE-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TEE-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TEE-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-004",
+    "name": "Dalia Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "women",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Oversized fit: intentionally loose; consider sizing down for a closer fit.",
+    "material": "100% organic cotton",
+    "fit": "oversized",
+    "price_eur": 18.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-004-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TEE-004-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TEE-004-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-004-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TEE-004-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TEE-004-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-004-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TEE-004-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TEE-004-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TEE-004-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TEE-004-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TEE-004-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TEE-004-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TEE-004-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TEE-004-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TEE-004-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TEE-004-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-004-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TEE-004-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-TEE-004-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-001",
+    "name": "Duna Poplin Shirt",
+    "category": "shirts",
+    "gender": "women",
+    "description": "A crisp shirt that layers easily. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 43.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-001-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHI-001-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHI-001-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SHI-001-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHI-001-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 11
+      },
+      {
+        "sku": "QL-SHI-001-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 24
+      },
+      {
+        "sku": "QL-SHI-001-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHI-001-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-001-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SHI-001-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHI-001-STRIPE-XS",
+        "color": "striped",
+        "size": "XS",
+        "stock": 20
+      },
+      {
+        "sku": "QL-SHI-001-STRIPE-S",
+        "color": "striped",
+        "size": "S",
+        "stock": 30
+      },
+      {
+        "sku": "QL-SHI-001-STRIPE-M",
+        "color": "striped",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SHI-001-STRIPE-L",
+        "color": "striped",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHI-001-STRIPE-XL",
+        "color": "striped",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-002",
+    "name": "Flora Poplin Shirt",
+    "category": "shirts",
+    "gender": "women",
+    "description": "A crisp shirt that layers easily. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 42.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-002-STRIPE-XS",
+        "color": "striped",
+        "size": "XS",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHI-002-STRIPE-S",
+        "color": "striped",
+        "size": "S",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHI-002-STRIPE-M",
+        "color": "striped",
+        "size": "M",
+        "stock": 17
+      },
+      {
+        "sku": "QL-SHI-002-STRIPE-L",
+        "color": "striped",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "sku": "QL-SHI-002-STRIPE-XL",
+        "color": "striped",
+        "size": "XL",
+        "stock": 11
+      },
+      {
+        "sku": "QL-SHI-002-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-002-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-002-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-002-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 18
+      },
+      {
+        "sku": "QL-SHI-002-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-001",
+    "name": "Iris Linen Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 49.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-001-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-001-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TRS-001-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TRS-001-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-001-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TRS-001-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 11
+      },
+      {
+        "sku": "QL-TRS-001-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TRS-001-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TRS-001-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-001-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TRS-001-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 12
+      },
+      {
+        "sku": "QL-TRS-001-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TRS-001-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-001-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TRS-001-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-001-OLIVE-XS",
+        "color": "olive",
+        "size": "XS",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TRS-001-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TRS-001-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TRS-001-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-001-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-002",
+    "name": "Marea Linen Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% linen. Regular fit: true to size.",
+    "material": "100% linen",
+    "fit": "regular",
+    "price_eur": 48.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-002-OLIVE-XS",
+        "color": "olive",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TRS-002-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 11
+      },
+      {
+        "sku": "QL-TRS-002-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-002-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TRS-002-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TRS-002-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-002-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TRS-002-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-002-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TRS-002-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TRS-002-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-002-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-002-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TRS-002-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-002-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 9
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-003",
+    "name": "Helia Linen Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 41.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TRS-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TRS-003-WHITE-XS",
+        "color": "white",
+        "size": "XS",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TRS-003-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TRS-003-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TRS-003-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TRS-003-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-003-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-003-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-003-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-003-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TRS-003-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 23
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-004",
+    "name": "Cierzo Linen Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% linen. Regular fit: true to size.",
+    "material": "100% linen",
+    "fit": "regular",
+    "price_eur": 54.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-004-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-004-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-004-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TRS-004-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TRS-004-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-004-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TRS-004-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-004-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TRS-004-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TRS-004-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TRS-004-OLIVE-XS",
+        "color": "olive",
+        "size": "XS",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-004-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TRS-004-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-004-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-004-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-005",
+    "name": "Alba Wide-Leg Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% recycled polyester. Relaxed fit: roomy through the body.",
+    "material": "100% recycled polyester",
+    "fit": "relaxed",
+    "price_eur": 48.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C. Cool iron.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-005-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-005-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-005-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-005-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-005-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TRS-005-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TRS-005-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TRS-005-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-005-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-005-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-006",
+    "name": "Duna Wide-Leg Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% recycled polyester. Relaxed fit: roomy through the body.",
+    "material": "100% recycled polyester",
+    "fit": "relaxed",
+    "price_eur": 39.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C. Cool iron.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-006-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TRS-006-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TRS-006-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TRS-006-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TRS-006-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TRS-006-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-006-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-006-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TRS-006-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-006-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 15
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-007",
+    "name": "Flora Wide-Leg Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% viscose. Relaxed fit: roomy through the body.",
+    "material": "100% viscose",
+    "fit": "relaxed",
+    "price_eur": 55.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-007-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TRS-007-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 12
+      },
+      {
+        "sku": "QL-TRS-007-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TRS-007-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TRS-007-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-007-CAMEL-XS",
+        "color": "camel",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-007-CAMEL-S",
+        "color": "camel",
+        "size": "S",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TRS-007-CAMEL-M",
+        "color": "camel",
+        "size": "M",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TRS-007-CAMEL-L",
+        "color": "camel",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-007-CAMEL-XL",
+        "color": "camel",
+        "size": "XL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TRS-007-NAVY-XS",
+        "color": "navy",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-007-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TRS-007-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-007-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-007-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 22
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-008",
+    "name": "Garza Tailored Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 95% cotton, 5% elastane. Slim fit: close to the body.",
+    "material": "95% cotton, 5% elastane",
+    "fit": "slim",
+    "price_eur": 57.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C inside out. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-008-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TRS-008-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TRS-008-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TRS-008-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-008-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TRS-008-BEIGE-XS",
+        "color": "beige",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TRS-008-BEIGE-S",
+        "color": "beige",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-008-BEIGE-M",
+        "color": "beige",
+        "size": "M",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-008-BEIGE-L",
+        "color": "beige",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-008-BEIGE-XL",
+        "color": "beige",
+        "size": "XL",
+        "stock": 24
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-009",
+    "name": "Helia Tailored Trousers",
+    "category": "trousers",
+    "gender": "women",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 95% cotton, 5% elastane. Slim fit: close to the body.",
+    "material": "95% cotton, 5% elastane",
+    "fit": "slim",
+    "price_eur": 57.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C inside out. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-009-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-009-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TRS-009-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 27
+      },
+      {
+        "sku": "QL-TRS-009-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TRS-009-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-009-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TRS-009-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-009-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TRS-009-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TRS-009-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": "QL-JNS-001",
+    "name": "Lirio Straight Jeans",
+    "category": "jeans",
+    "gender": "women",
+    "description": "Five-pocket jeans with a mid-rise waist. Made from 99% cotton, 1% elastane denim. Regular fit: true to size.",
+    "material": "99% cotton, 1% elastane denim",
+    "fit": "regular",
+    "price_eur": 45.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JNS-001-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-JNS-001-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-JNS-001-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "sku": "QL-JNS-001-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 15
+      },
+      {
+        "sku": "QL-JNS-001-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 5
+      },
+      {
+        "sku": "QL-JNS-001-MIDBLU-XS",
+        "color": "mid blue",
+        "size": "XS",
+        "stock": 26
+      },
+      {
+        "sku": "QL-JNS-001-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 28
+      },
+      {
+        "sku": "QL-JNS-001-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 12
+      },
+      {
+        "sku": "QL-JNS-001-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-JNS-001-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 9
+      },
+      {
+        "sku": "QL-JNS-001-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 19
+      },
+      {
+        "sku": "QL-JNS-001-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 28
+      },
+      {
+        "sku": "QL-JNS-001-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-001-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 21
+      },
+      {
+        "sku": "QL-JNS-001-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 24
+      }
+    ]
+  },
+  {
+    "id": "QL-JNS-002",
+    "name": "Vela Straight Jeans",
+    "category": "jeans",
+    "gender": "women",
+    "description": "Five-pocket jeans with a mid-rise waist. Made from 99% cotton, 1% elastane denim. Regular fit: true to size.",
+    "material": "99% cotton, 1% elastane denim",
+    "fit": "regular",
+    "price_eur": 45.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JNS-002-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 11
+      },
+      {
+        "sku": "QL-JNS-002-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JNS-002-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JNS-002-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 26
+      },
+      {
+        "sku": "QL-JNS-002-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "sku": "QL-JNS-002-MIDBLU-XS",
+        "color": "mid blue",
+        "size": "XS",
+        "stock": 27
+      },
+      {
+        "sku": "QL-JNS-002-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 29
+      },
+      {
+        "sku": "QL-JNS-002-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 14
+      },
+      {
+        "sku": "QL-JNS-002-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 11
+      },
+      {
+        "sku": "QL-JNS-002-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 23
+      },
+      {
+        "sku": "QL-JNS-002-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 9
+      },
+      {
+        "sku": "QL-JNS-002-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 16
+      },
+      {
+        "sku": "QL-JNS-002-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-JNS-002-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-JNS-002-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-JNS-003",
+    "name": "Rada Straight Jeans",
+    "category": "jeans",
+    "gender": "women",
+    "description": "Five-pocket jeans with a mid-rise waist. Made from 99% cotton, 1% elastane denim. Regular fit: true to size.",
+    "material": "99% cotton, 1% elastane denim",
+    "fit": "regular",
+    "price_eur": 49.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JNS-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 21
+      },
+      {
+        "sku": "QL-JNS-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-JNS-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 18
+      },
+      {
+        "sku": "QL-JNS-003-MIDBLU-XS",
+        "color": "mid blue",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-003-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-JNS-003-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-JNS-003-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-JNS-003-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JNS-003-LIGHTB-XS",
+        "color": "light blue",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JNS-003-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 19
+      },
+      {
+        "sku": "QL-JNS-003-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-003-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 16
+      },
+      {
+        "sku": "QL-JNS-003-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-SKT-001",
+    "name": "Sora Midi Skirt",
+    "category": "skirts",
+    "gender": "women",
+    "description": "A flowing skirt with a concealed side zip. Made from 100% viscose. Regular fit: true to size.",
+    "material": "100% viscose",
+    "fit": "regular",
+    "price_eur": 32.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SKT-001-FLORAL-XS",
+        "color": "floral print",
+        "size": "XS",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SKT-001-FLORAL-S",
+        "color": "floral print",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SKT-001-FLORAL-M",
+        "color": "floral print",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SKT-001-FLORAL-L",
+        "color": "floral print",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SKT-001-FLORAL-XL",
+        "color": "floral print",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-SKT-001-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SKT-001-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "sku": "QL-SKT-001-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 17
+      },
+      {
+        "sku": "QL-SKT-001-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SKT-001-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SKT-001-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SKT-001-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SKT-001-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SKT-001-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SKT-001-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 4
+      }
+    ]
+  },
+  {
+    "id": "QL-SKT-002",
+    "name": "Perla Midi Skirt",
+    "category": "skirts",
+    "gender": "women",
+    "description": "A flowing skirt with a concealed side zip. Made from 100% linen. Regular fit: true to size.",
+    "material": "100% linen",
+    "fit": "regular",
+    "price_eur": 46.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SKT-002-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 24
+      },
+      {
+        "sku": "QL-SKT-002-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SKT-002-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SKT-002-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SKT-002-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 25
+      },
+      {
+        "sku": "QL-SKT-002-FLORAL-XS",
+        "color": "floral print",
+        "size": "XS",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SKT-002-FLORAL-S",
+        "color": "floral print",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SKT-002-FLORAL-M",
+        "color": "floral print",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-SKT-002-FLORAL-L",
+        "color": "floral print",
+        "size": "L",
+        "stock": 7
+      },
+      {
+        "sku": "QL-SKT-002-FLORAL-XL",
+        "color": "floral print",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SKT-002-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 29
+      },
+      {
+        "sku": "QL-SKT-002-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SKT-002-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SKT-002-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SKT-002-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": "QL-SKT-003",
+    "name": "Jara Midi Skirt",
+    "category": "skirts",
+    "gender": "women",
+    "description": "A flowing skirt with a concealed side zip. Made from 100% viscose. Regular fit: true to size. Final sale: this item cannot be returned.",
+    "material": "100% viscose",
+    "fit": "regular",
+    "price_eur": 39.95,
+    "size_chart_id": "women-bottoms",
+    "care": "Hand wash cold or dry clean. Do not wring. Iron on reverse at low heat.",
+    "final_sale": true,
+    "variants": [
+      {
+        "sku": "QL-SKT-003-FLORAL-XS",
+        "color": "floral print",
+        "size": "XS",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SKT-003-FLORAL-S",
+        "color": "floral print",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SKT-003-FLORAL-M",
+        "color": "floral print",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SKT-003-FLORAL-L",
+        "color": "floral print",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "sku": "QL-SKT-003-FLORAL-XL",
+        "color": "floral print",
+        "size": "XL",
+        "stock": 14
+      },
+      {
+        "sku": "QL-SKT-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SKT-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SKT-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SKT-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SKT-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 21
+      },
+      {
+        "sku": "QL-SKT-003-SAND-XS",
+        "color": "sand",
+        "size": "XS",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SKT-003-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SKT-003-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SKT-003-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SKT-003-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 29
+      }
+    ]
+  },
+  {
+    "id": "QL-KNT-001",
+    "name": "Arena Merino Jumper",
+    "category": "knitwear",
+    "gender": "women",
+    "description": "A fine-gauge knit that keeps you warm without bulk. Made from 100% merino wool. Oversized fit: intentionally loose; consider sizing down for a closer fit.",
+    "material": "100% merino wool",
+    "fit": "oversized",
+    "price_eur": 74.95,
+    "size_chart_id": "women-tops",
+    "care": "Hand wash cold with wool detergent. Dry flat away from heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-KNT-001-CREAM-XS",
+        "color": "cream",
+        "size": "XS",
+        "stock": 21
+      },
+      {
+        "sku": "QL-KNT-001-CREAM-S",
+        "color": "cream",
+        "size": "S",
+        "stock": 27
+      },
+      {
+        "sku": "QL-KNT-001-CREAM-M",
+        "color": "cream",
+        "size": "M",
+        "stock": 4
+      },
+      {
+        "sku": "QL-KNT-001-CREAM-L",
+        "color": "cream",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "sku": "QL-KNT-001-CREAM-XL",
+        "color": "cream",
+        "size": "XL",
+        "stock": 27
+      },
+      {
+        "sku": "QL-KNT-001-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 18
+      },
+      {
+        "sku": "QL-KNT-001-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 25
+      },
+      {
+        "sku": "QL-KNT-001-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 15
+      },
+      {
+        "sku": "QL-KNT-001-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 20
+      },
+      {
+        "sku": "QL-KNT-001-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 12
+      }
+    ]
+  },
+  {
+    "id": "QL-KNT-002",
+    "name": "Hebra Merino Jumper",
+    "category": "knitwear",
+    "gender": "women",
+    "description": "A fine-gauge knit that keeps you warm without bulk. Made from 100% merino wool. Regular fit: true to size.",
+    "material": "100% merino wool",
+    "fit": "regular",
+    "price_eur": 62.95,
+    "size_chart_id": "women-tops",
+    "care": "Hand wash cold with wool detergent. Dry flat away from heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-KNT-002-CREAM-XS",
+        "color": "cream",
+        "size": "XS",
+        "stock": 20
+      },
+      {
+        "sku": "QL-KNT-002-CREAM-S",
+        "color": "cream",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-KNT-002-CREAM-M",
+        "color": "cream",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "QL-KNT-002-CREAM-L",
+        "color": "cream",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-KNT-002-CREAM-XL",
+        "color": "cream",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "sku": "QL-KNT-002-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 30
+      },
+      {
+        "sku": "QL-KNT-002-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 13
+      },
+      {
+        "sku": "QL-KNT-002-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "QL-KNT-002-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 27
+      },
+      {
+        "sku": "QL-KNT-002-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 13
+      }
+    ]
+  },
+  {
+    "id": "QL-KNT-003",
+    "name": "Iris Merino Jumper",
+    "category": "knitwear",
+    "gender": "women",
+    "description": "A fine-gauge knit that keeps you warm without bulk. Made from 100% merino wool. Oversized fit: intentionally loose; consider sizing down for a closer fit.",
+    "material": "100% merino wool",
+    "fit": "oversized",
+    "price_eur": 60.95,
+    "size_chart_id": "women-tops",
+    "care": "Hand wash cold with wool detergent. Dry flat away from heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-KNT-003-GREY-XS",
+        "color": "grey",
+        "size": "XS",
+        "stock": 29
+      },
+      {
+        "sku": "QL-KNT-003-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 17
+      },
+      {
+        "sku": "QL-KNT-003-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-KNT-003-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 13
+      },
+      {
+        "sku": "QL-KNT-003-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-KNT-003-CREAM-XS",
+        "color": "cream",
+        "size": "XS",
+        "stock": 18
+      },
+      {
+        "sku": "QL-KNT-003-CREAM-S",
+        "color": "cream",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-KNT-003-CREAM-M",
+        "color": "cream",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-KNT-003-CREAM-L",
+        "color": "cream",
+        "size": "L",
+        "stock": 16
+      },
+      {
+        "sku": "QL-KNT-003-CREAM-XL",
+        "color": "cream",
+        "size": "XL",
+        "stock": 8
+      },
+      {
+        "sku": "QL-KNT-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "sku": "QL-KNT-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 28
+      },
+      {
+        "sku": "QL-KNT-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 12
+      },
+      {
+        "sku": "QL-KNT-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-KNT-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-KNT-003-CAMEL-XS",
+        "color": "camel",
+        "size": "XS",
+        "stock": 11
+      },
+      {
+        "sku": "QL-KNT-003-CAMEL-S",
+        "color": "camel",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-KNT-003-CAMEL-M",
+        "color": "camel",
+        "size": "M",
+        "stock": 26
+      },
+      {
+        "sku": "QL-KNT-003-CAMEL-L",
+        "color": "camel",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "sku": "QL-KNT-003-CAMEL-XL",
+        "color": "camel",
+        "size": "XL",
+        "stock": 16
+      }
+    ]
+  },
+  {
+    "id": "QL-JKT-001",
+    "name": "Perla Trench Coat",
+    "category": "jackets",
+    "gender": "women",
+    "description": "A seasonal layer with practical pockets. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 100.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JKT-001-BEIGE-XS",
+        "color": "beige",
+        "size": "XS",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JKT-001-BEIGE-S",
+        "color": "beige",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JKT-001-BEIGE-M",
+        "color": "beige",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-JKT-001-BEIGE-L",
+        "color": "beige",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-001-BEIGE-XL",
+        "color": "beige",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JKT-001-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 23
+      },
+      {
+        "sku": "QL-JKT-001-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 19
+      },
+      {
+        "sku": "QL-JKT-001-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-JKT-001-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-001-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "QL-JKT-002",
+    "name": "Yuca Trench Coat",
+    "category": "jackets",
+    "gender": "women",
+    "description": "A seasonal layer with practical pockets. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 114.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JKT-002-BEIGE-XS",
+        "color": "beige",
+        "size": "XS",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JKT-002-BEIGE-S",
+        "color": "beige",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JKT-002-BEIGE-M",
+        "color": "beige",
+        "size": "M",
+        "stock": 29
+      },
+      {
+        "sku": "QL-JKT-002-BEIGE-L",
+        "color": "beige",
+        "size": "L",
+        "stock": 19
+      },
+      {
+        "sku": "QL-JKT-002-BEIGE-XL",
+        "color": "beige",
+        "size": "XL",
+        "stock": 12
+      },
+      {
+        "sku": "QL-JKT-002-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 5
+      },
+      {
+        "sku": "QL-JKT-002-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 27
+      },
+      {
+        "sku": "QL-JKT-002-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 12
+      },
+      {
+        "sku": "QL-JKT-002-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "sku": "QL-JKT-002-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-JKT-003",
+    "name": "Estela Denim Jacket",
+    "category": "jackets",
+    "gender": "women",
+    "description": "A seasonal layer with practical pockets. Made from 100% cotton denim. Regular fit: true to size.",
+    "material": "100% cotton denim",
+    "fit": "regular",
+    "price_eur": 64.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JKT-003-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 27
+      },
+      {
+        "sku": "QL-JKT-003-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JKT-003-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 9
+      },
+      {
+        "sku": "QL-JKT-003-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 10
+      },
+      {
+        "sku": "QL-JKT-003-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-003-MIDBLU-XS",
+        "color": "mid blue",
+        "size": "XS",
+        "stock": 3
+      },
+      {
+        "sku": "QL-JKT-003-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 13
+      },
+      {
+        "sku": "QL-JKT-003-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 5
+      },
+      {
+        "sku": "QL-JKT-003-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-003-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-JKT-004",
+    "name": "Nilo Denim Jacket",
+    "category": "jackets",
+    "gender": "women",
+    "description": "A seasonal layer with practical pockets. Made from 100% cotton denim. Regular fit: true to size.",
+    "material": "100% cotton denim",
+    "fit": "regular",
+    "price_eur": 53.95,
+    "size_chart_id": "women-tops",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JKT-004-MIDBLU-XS",
+        "color": "mid blue",
+        "size": "XS",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-004-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-004-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 21
+      },
+      {
+        "sku": "QL-JKT-004-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-004-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-004-BLACK-XS",
+        "color": "black",
+        "size": "XS",
+        "stock": 30
+      },
+      {
+        "sku": "QL-JKT-004-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "sku": "QL-JKT-004-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JKT-004-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-JKT-004-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-001",
+    "name": "Zafra Leather Sneakers",
+    "category": "shoes",
+    "gender": "women",
+    "description": "Cushioned insole for all-day comfort. Made from leather upper, rubber sole. Regular fit: true to size.",
+    "material": "leather upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 77.95,
+    "size_chart_id": "women-shoes",
+    "care": "Wipe with a damp cloth. Use leather conditioner.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-001-BLACK-36",
+        "color": "black",
+        "size": "36",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-001-BLACK-37",
+        "color": "black",
+        "size": "37",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHO-001-BLACK-38",
+        "color": "black",
+        "size": "38",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SHO-001-BLACK-39",
+        "color": "black",
+        "size": "39",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHO-001-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SHO-001-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 25
+      },
+      {
+        "sku": "QL-SHO-001-WHITE-36",
+        "color": "white",
+        "size": "36",
+        "stock": 30
+      },
+      {
+        "sku": "QL-SHO-001-WHITE-37",
+        "color": "white",
+        "size": "37",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHO-001-WHITE-38",
+        "color": "white",
+        "size": "38",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHO-001-WHITE-39",
+        "color": "white",
+        "size": "39",
+        "stock": 5
+      },
+      {
+        "sku": "QL-SHO-001-WHITE-40",
+        "color": "white",
+        "size": "40",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SHO-001-WHITE-41",
+        "color": "white",
+        "size": "41",
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-002",
+    "name": "Quima Leather Sneakers",
+    "category": "shoes",
+    "gender": "women",
+    "description": "Cushioned insole for all-day comfort. Made from leather upper, rubber sole. Regular fit: true to size.",
+    "material": "leather upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 66.95,
+    "size_chart_id": "women-shoes",
+    "care": "Wipe with a damp cloth. Use leather conditioner.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-002-WHITE-36",
+        "color": "white",
+        "size": "36",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHO-002-WHITE-37",
+        "color": "white",
+        "size": "37",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHO-002-WHITE-38",
+        "color": "white",
+        "size": "38",
+        "stock": 12
+      },
+      {
+        "sku": "QL-SHO-002-WHITE-39",
+        "color": "white",
+        "size": "39",
+        "stock": 7
+      },
+      {
+        "sku": "QL-SHO-002-WHITE-40",
+        "color": "white",
+        "size": "40",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-002-WHITE-41",
+        "color": "white",
+        "size": "41",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHO-002-BLACK-36",
+        "color": "black",
+        "size": "36",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHO-002-BLACK-37",
+        "color": "black",
+        "size": "37",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-002-BLACK-38",
+        "color": "black",
+        "size": "38",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHO-002-BLACK-39",
+        "color": "black",
+        "size": "39",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHO-002-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SHO-002-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 29
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-003",
+    "name": "Yuca Suede Ankle Boots",
+    "category": "shoes",
+    "gender": "women",
+    "description": "Cushioned insole for all-day comfort. Made from suede upper, rubber sole. Regular fit: true to size.",
+    "material": "suede upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 97.95,
+    "size_chart_id": "women-shoes",
+    "care": "Brush gently. Use suede protector spray. Avoid water.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-003-BLACK-36",
+        "color": "black",
+        "size": "36",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHO-003-BLACK-37",
+        "color": "black",
+        "size": "37",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-003-BLACK-38",
+        "color": "black",
+        "size": "38",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHO-003-BLACK-39",
+        "color": "black",
+        "size": "39",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SHO-003-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHO-003-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHO-003-TAUPE-36",
+        "color": "taupe",
+        "size": "36",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHO-003-TAUPE-37",
+        "color": "taupe",
+        "size": "37",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHO-003-TAUPE-38",
+        "color": "taupe",
+        "size": "38",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SHO-003-TAUPE-39",
+        "color": "taupe",
+        "size": "39",
+        "stock": 18
+      },
+      {
+        "sku": "QL-SHO-003-TAUPE-40",
+        "color": "taupe",
+        "size": "40",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHO-003-TAUPE-41",
+        "color": "taupe",
+        "size": "41",
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-004",
+    "name": "Oria Suede Ankle Boots",
+    "category": "shoes",
+    "gender": "women",
+    "description": "Cushioned insole for all-day comfort. Made from suede upper, rubber sole. Regular fit: true to size.",
+    "material": "suede upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 82.95,
+    "size_chart_id": "women-shoes",
+    "care": "Brush gently. Use suede protector spray. Avoid water.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-004-BLACK-36",
+        "color": "black",
+        "size": "36",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-004-BLACK-37",
+        "color": "black",
+        "size": "37",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHO-004-BLACK-38",
+        "color": "black",
+        "size": "38",
+        "stock": 25
+      },
+      {
+        "sku": "QL-SHO-004-BLACK-39",
+        "color": "black",
+        "size": "39",
+        "stock": 18
+      },
+      {
+        "sku": "QL-SHO-004-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 27
+      },
+      {
+        "sku": "QL-SHO-004-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 14
+      },
+      {
+        "sku": "QL-SHO-004-TAUPE-36",
+        "color": "taupe",
+        "size": "36",
+        "stock": 20
+      },
+      {
+        "sku": "QL-SHO-004-TAUPE-37",
+        "color": "taupe",
+        "size": "37",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SHO-004-TAUPE-38",
+        "color": "taupe",
+        "size": "38",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHO-004-TAUPE-39",
+        "color": "taupe",
+        "size": "39",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SHO-004-TAUPE-40",
+        "color": "taupe",
+        "size": "40",
+        "stock": 21
+      },
+      {
+        "sku": "QL-SHO-004-TAUPE-41",
+        "color": "taupe",
+        "size": "41",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-005",
+    "name": "Nube Leather Sandals",
+    "category": "shoes",
+    "gender": "women",
+    "description": "Cushioned insole for all-day comfort. Made from genuine leather. Regular fit: true to size.",
+    "material": "genuine leather",
+    "fit": "regular",
+    "price_eur": 38.95,
+    "size_chart_id": "women-shoes",
+    "care": "Wipe with a dry cloth. Keep away from direct heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-005-BLACK-36",
+        "color": "black",
+        "size": "36",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHO-005-BLACK-37",
+        "color": "black",
+        "size": "37",
+        "stock": 24
+      },
+      {
+        "sku": "QL-SHO-005-BLACK-38",
+        "color": "black",
+        "size": "38",
+        "stock": 21
+      },
+      {
+        "sku": "QL-SHO-005-BLACK-39",
+        "color": "black",
+        "size": "39",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHO-005-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHO-005-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHO-005-TAN-36",
+        "color": "tan",
+        "size": "36",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-005-TAN-37",
+        "color": "tan",
+        "size": "37",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHO-005-TAN-38",
+        "color": "tan",
+        "size": "38",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHO-005-TAN-39",
+        "color": "tan",
+        "size": "39",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHO-005-TAN-40",
+        "color": "tan",
+        "size": "40",
+        "stock": 11
+      },
+      {
+        "sku": "QL-SHO-005-TAN-41",
+        "color": "tan",
+        "size": "41",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-006",
+    "name": "Olivo Leather Sandals",
+    "category": "shoes",
+    "gender": "women",
+    "description": "Cushioned insole for all-day comfort. Made from genuine leather. Regular fit: true to size.",
+    "material": "genuine leather",
+    "fit": "regular",
+    "price_eur": 46.95,
+    "size_chart_id": "women-shoes",
+    "care": "Wipe with a dry cloth. Keep away from direct heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-006-BLACK-36",
+        "color": "black",
+        "size": "36",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SHO-006-BLACK-37",
+        "color": "black",
+        "size": "37",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHO-006-BLACK-38",
+        "color": "black",
+        "size": "38",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-006-BLACK-39",
+        "color": "black",
+        "size": "39",
+        "stock": 10
+      },
+      {
+        "sku": "QL-SHO-006-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHO-006-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHO-006-TAN-36",
+        "color": "tan",
+        "size": "36",
+        "stock": 29
+      },
+      {
+        "sku": "QL-SHO-006-TAN-37",
+        "color": "tan",
+        "size": "37",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-006-TAN-38",
+        "color": "tan",
+        "size": "38",
+        "stock": 14
+      },
+      {
+        "sku": "QL-SHO-006-TAN-39",
+        "color": "tan",
+        "size": "39",
+        "stock": 11
+      },
+      {
+        "sku": "QL-SHO-006-TAN-40",
+        "color": "tan",
+        "size": "40",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SHO-006-TAN-41",
+        "color": "tan",
+        "size": "41",
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-005",
+    "name": "Gala Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "men",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 18.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-005-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 21
+      },
+      {
+        "sku": "QL-TEE-005-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TEE-005-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TEE-005-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TEE-005-BLACK-XXL",
+        "color": "black",
+        "size": "XXL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TEE-005-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TEE-005-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TEE-005-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TEE-005-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TEE-005-GREY-XXL",
+        "color": "grey",
+        "size": "XXL",
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-006",
+    "name": "Duna Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "men",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 16.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-006-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TEE-006-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-006-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TEE-006-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TEE-006-OLIVE-XXL",
+        "color": "olive",
+        "size": "XXL",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TEE-006-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 29
+      },
+      {
+        "sku": "QL-TEE-006-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TEE-006-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TEE-006-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-006-BLACK-XXL",
+        "color": "black",
+        "size": "XXL",
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": "QL-TEE-007",
+    "name": "Estela Organic Cotton T-Shirt",
+    "category": "t-shirts",
+    "gender": "men",
+    "description": "An everyday essential with a soft hand feel. Made from 100% organic cotton. Oversized fit: intentionally loose; consider sizing down for a closer fit.",
+    "material": "100% organic cotton",
+    "fit": "oversized",
+    "price_eur": 17.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TEE-007-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TEE-007-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TEE-007-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TEE-007-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TEE-007-OLIVE-XXL",
+        "color": "olive",
+        "size": "XXL",
+        "stock": 12
+      },
+      {
+        "sku": "QL-TEE-007-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TEE-007-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TEE-007-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TEE-007-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TEE-007-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TEE-007-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 18
+      },
+      {
+        "sku": "QL-TEE-007-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TEE-007-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TEE-007-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TEE-007-WHITE-XXL",
+        "color": "white",
+        "size": "XXL",
+        "stock": 14
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-003",
+    "name": "Brisa Linen Shirt",
+    "category": "shirts",
+    "gender": "men",
+    "description": "A crisp shirt that layers easily. Made from 100% linen. Regular fit: true to size.",
+    "material": "100% linen",
+    "fit": "regular",
+    "price_eur": 53.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-003-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 29
+      },
+      {
+        "sku": "QL-SHI-003-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 30
+      },
+      {
+        "sku": "QL-SHI-003-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SHI-003-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHI-003-WHITE-XXL",
+        "color": "white",
+        "size": "XXL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-003-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHI-003-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHI-003-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHI-003-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHI-003-SAND-XXL",
+        "color": "sand",
+        "size": "XXL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHI-003-SKYBLU-S",
+        "color": "sky blue",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHI-003-SKYBLU-M",
+        "color": "sky blue",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SHI-003-SKYBLU-L",
+        "color": "sky blue",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-SHI-003-SKYBLU-XL",
+        "color": "sky blue",
+        "size": "XL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SHI-003-SKYBLU-XXL",
+        "color": "sky blue",
+        "size": "XXL",
+        "stock": 24
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-004",
+    "name": "Marea Linen Shirt",
+    "category": "shirts",
+    "gender": "men",
+    "description": "A crisp shirt that layers easily. Made from 100% linen. Regular fit: true to size.",
+    "material": "100% linen",
+    "fit": "regular",
+    "price_eur": 44.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-004-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHI-004-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 30
+      },
+      {
+        "sku": "QL-SHI-004-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHI-004-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHI-004-SAND-XXL",
+        "color": "sand",
+        "size": "XXL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHI-004-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 13
+      },
+      {
+        "sku": "QL-SHI-004-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHI-004-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-004-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-004-WHITE-XXL",
+        "color": "white",
+        "size": "XXL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHI-004-SKYBLU-S",
+        "color": "sky blue",
+        "size": "S",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHI-004-SKYBLU-M",
+        "color": "sky blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-004-SKYBLU-L",
+        "color": "sky blue",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHI-004-SKYBLU-XL",
+        "color": "sky blue",
+        "size": "XL",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHI-004-SKYBLU-XXL",
+        "color": "sky blue",
+        "size": "XXL",
+        "stock": 1
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-005",
+    "name": "Faro Linen Shirt",
+    "category": "shirts",
+    "gender": "men",
+    "description": "A crisp shirt that layers easily. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 43.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-005-SKYBLU-S",
+        "color": "sky blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-005-SKYBLU-M",
+        "color": "sky blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-005-SKYBLU-L",
+        "color": "sky blue",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-005-SKYBLU-XL",
+        "color": "sky blue",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "sku": "QL-SHI-005-SKYBLU-XXL",
+        "color": "sky blue",
+        "size": "XXL",
+        "stock": 20
+      },
+      {
+        "sku": "QL-SHI-005-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 7
+      },
+      {
+        "sku": "QL-SHI-005-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SHI-005-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 23
+      },
+      {
+        "sku": "QL-SHI-005-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-SHI-005-WHITE-XXL",
+        "color": "white",
+        "size": "XXL",
+        "stock": 3
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-006",
+    "name": "Olivo Oxford Shirt",
+    "category": "shirts",
+    "gender": "men",
+    "description": "A crisp shirt that layers easily. Made from 100% organic cotton. Slim fit: close to the body.",
+    "material": "100% organic cotton",
+    "fit": "slim",
+    "price_eur": 46.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-006-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 18
+      },
+      {
+        "sku": "QL-SHI-006-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHI-006-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHI-006-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 17
+      },
+      {
+        "sku": "QL-SHI-006-LIGHTB-XXL",
+        "color": "light blue",
+        "size": "XXL",
+        "stock": 12
+      },
+      {
+        "sku": "QL-SHI-006-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 1
+      },
+      {
+        "sku": "QL-SHI-006-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-006-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHI-006-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 26
+      },
+      {
+        "sku": "QL-SHI-006-WHITE-XXL",
+        "color": "white",
+        "size": "XXL",
+        "stock": 7
+      }
+    ]
+  },
+  {
+    "id": "QL-SHI-007",
+    "name": "Helia Oxford Shirt",
+    "category": "shirts",
+    "gender": "men",
+    "description": "A crisp shirt that layers easily. Made from 100% organic cotton. Slim fit: close to the body.",
+    "material": "100% organic cotton",
+    "fit": "slim",
+    "price_eur": 40.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHI-007-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "sku": "QL-SHI-007-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHI-007-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHI-007-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHI-007-LIGHTB-XXL",
+        "color": "light blue",
+        "size": "XXL",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHI-007-WHITE-S",
+        "color": "white",
+        "size": "S",
+        "stock": 14
+      },
+      {
+        "sku": "QL-SHI-007-WHITE-M",
+        "color": "white",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHI-007-WHITE-L",
+        "color": "white",
+        "size": "L",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHI-007-WHITE-XL",
+        "color": "white",
+        "size": "XL",
+        "stock": 10
+      },
+      {
+        "sku": "QL-SHI-007-WHITE-XXL",
+        "color": "white",
+        "size": "XXL",
+        "stock": 27
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-010",
+    "name": "Brisa Chino Trousers",
+    "category": "trousers",
+    "gender": "men",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 95% cotton, 5% elastane. Slim fit: close to the body.",
+    "material": "95% cotton, 5% elastane",
+    "fit": "slim",
+    "price_eur": 54.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C inside out. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-010-BEIGE-S",
+        "color": "beige",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-010-BEIGE-M",
+        "color": "beige",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-010-BEIGE-L",
+        "color": "beige",
+        "size": "L",
+        "stock": 2
+      },
+      {
+        "sku": "QL-TRS-010-BEIGE-XL",
+        "color": "beige",
+        "size": "XL",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TRS-010-BEIGE-XXL",
+        "color": "beige",
+        "size": "XXL",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-010-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-010-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-010-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-010-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-010-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-010-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-010-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TRS-010-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-TRS-010-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-010-BLACK-XXL",
+        "color": "black",
+        "size": "XXL",
+        "stock": 2
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-011",
+    "name": "Cala Chino Trousers",
+    "category": "trousers",
+    "gender": "men",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 95% cotton, 5% elastane. Slim fit: close to the body.",
+    "material": "95% cotton, 5% elastane",
+    "fit": "slim",
+    "price_eur": 52.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C inside out. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-011-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 16
+      },
+      {
+        "sku": "QL-TRS-011-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-011-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-011-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-011-BLACK-XXL",
+        "color": "black",
+        "size": "XXL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-011-BEIGE-S",
+        "color": "beige",
+        "size": "S",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-011-BEIGE-M",
+        "color": "beige",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-011-BEIGE-L",
+        "color": "beige",
+        "size": "L",
+        "stock": 25
+      },
+      {
+        "sku": "QL-TRS-011-BEIGE-XL",
+        "color": "beige",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-011-BEIGE-XXL",
+        "color": "beige",
+        "size": "XXL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-TRS-011-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-011-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-011-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-011-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-011-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TRS-011-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TRS-011-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-011-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-TRS-011-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 27
+      },
+      {
+        "sku": "QL-TRS-011-OLIVE-XXL",
+        "color": "olive",
+        "size": "XXL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-012",
+    "name": "Perla Chino Trousers",
+    "category": "trousers",
+    "gender": "men",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 95% cotton, 5% elastane. Regular fit: true to size.",
+    "material": "95% cotton, 5% elastane",
+    "fit": "regular",
+    "price_eur": 42.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C inside out. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-012-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-012-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 12
+      },
+      {
+        "sku": "QL-TRS-012-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TRS-012-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-012-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-012-BEIGE-S",
+        "color": "beige",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-012-BEIGE-M",
+        "color": "beige",
+        "size": "M",
+        "stock": 23
+      },
+      {
+        "sku": "QL-TRS-012-BEIGE-L",
+        "color": "beige",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-012-BEIGE-XL",
+        "color": "beige",
+        "size": "XL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-012-BEIGE-XXL",
+        "color": "beige",
+        "size": "XXL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-TRS-012-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-012-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TRS-012-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-012-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TRS-012-OLIVE-XXL",
+        "color": "olive",
+        "size": "XXL",
+        "stock": 8
+      },
+      {
+        "sku": "QL-TRS-012-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-012-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 19
+      },
+      {
+        "sku": "QL-TRS-012-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-012-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 17
+      },
+      {
+        "sku": "QL-TRS-012-BLACK-XXL",
+        "color": "black",
+        "size": "XXL",
+        "stock": 2
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-013",
+    "name": "Cala Linen Trousers",
+    "category": "trousers",
+    "gender": "men",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 48.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-013-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 6
+      },
+      {
+        "sku": "QL-TRS-013-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-TRS-013-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-TRS-013-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TRS-013-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-TRS-013-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TRS-013-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 26
+      },
+      {
+        "sku": "QL-TRS-013-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 30
+      },
+      {
+        "sku": "QL-TRS-013-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 7
+      },
+      {
+        "sku": "QL-TRS-013-SAND-XXL",
+        "color": "sand",
+        "size": "XXL",
+        "stock": 26
+      }
+    ]
+  },
+  {
+    "id": "QL-TRS-014",
+    "name": "Palma Linen Trousers",
+    "category": "trousers",
+    "gender": "men",
+    "description": "Comfortable trousers with an elasticated back waistband and side pockets. Made from 100% linen. Relaxed fit: roomy through the body.",
+    "material": "100% linen",
+    "fit": "relaxed",
+    "price_eur": 46.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C, gentle cycle. Iron while slightly damp. Do not tumble dry.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-TRS-014-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-014-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-014-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 9
+      },
+      {
+        "sku": "QL-TRS-014-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 14
+      },
+      {
+        "sku": "QL-TRS-014-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 5
+      },
+      {
+        "sku": "QL-TRS-014-SAND-S",
+        "color": "sand",
+        "size": "S",
+        "stock": 15
+      },
+      {
+        "sku": "QL-TRS-014-SAND-M",
+        "color": "sand",
+        "size": "M",
+        "stock": 20
+      },
+      {
+        "sku": "QL-TRS-014-SAND-L",
+        "color": "sand",
+        "size": "L",
+        "stock": 24
+      },
+      {
+        "sku": "QL-TRS-014-SAND-XL",
+        "color": "sand",
+        "size": "XL",
+        "stock": 1
+      },
+      {
+        "sku": "QL-TRS-014-SAND-XXL",
+        "color": "sand",
+        "size": "XXL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-JNS-004",
+    "name": "Isla Slim Jeans",
+    "category": "jeans",
+    "gender": "men",
+    "description": "Five-pocket jeans with a mid-rise waist. Made from 99% cotton, 1% elastane denim. Slim fit: close to the body.",
+    "material": "99% cotton, 1% elastane denim",
+    "fit": "slim",
+    "price_eur": 63.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JNS-004-DARKBL-S",
+        "color": "dark blue",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JNS-004-DARKBL-M",
+        "color": "dark blue",
+        "size": "M",
+        "stock": 26
+      },
+      {
+        "sku": "QL-JNS-004-DARKBL-L",
+        "color": "dark blue",
+        "size": "L",
+        "stock": 1
+      },
+      {
+        "sku": "QL-JNS-004-DARKBL-XL",
+        "color": "dark blue",
+        "size": "XL",
+        "stock": 24
+      },
+      {
+        "sku": "QL-JNS-004-DARKBL-XXL",
+        "color": "dark blue",
+        "size": "XXL",
+        "stock": 27
+      },
+      {
+        "sku": "QL-JNS-004-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 27
+      },
+      {
+        "sku": "QL-JNS-004-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-004-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 11
+      },
+      {
+        "sku": "QL-JNS-004-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 17
+      },
+      {
+        "sku": "QL-JNS-004-MIDBLU-XXL",
+        "color": "mid blue",
+        "size": "XXL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-JNS-005",
+    "name": "Salvia Slim Jeans",
+    "category": "jeans",
+    "gender": "men",
+    "description": "Five-pocket jeans with a mid-rise waist. Made from 99% cotton, 1% elastane denim. Slim fit: close to the body.",
+    "material": "99% cotton, 1% elastane denim",
+    "fit": "slim",
+    "price_eur": 60.95,
+    "size_chart_id": "men-bottoms",
+    "care": "Machine wash 30°C inside out with similar colours.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JNS-005-DARKBL-S",
+        "color": "dark blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-005-DARKBL-M",
+        "color": "dark blue",
+        "size": "M",
+        "stock": 21
+      },
+      {
+        "sku": "QL-JNS-005-DARKBL-L",
+        "color": "dark blue",
+        "size": "L",
+        "stock": 24
+      },
+      {
+        "sku": "QL-JNS-005-DARKBL-XL",
+        "color": "dark blue",
+        "size": "XL",
+        "stock": 28
+      },
+      {
+        "sku": "QL-JNS-005-DARKBL-XXL",
+        "color": "dark blue",
+        "size": "XXL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JNS-005-MIDBLU-S",
+        "color": "mid blue",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-005-MIDBLU-M",
+        "color": "mid blue",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JNS-005-MIDBLU-L",
+        "color": "mid blue",
+        "size": "L",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JNS-005-MIDBLU-XL",
+        "color": "mid blue",
+        "size": "XL",
+        "stock": 6
+      },
+      {
+        "sku": "QL-JNS-005-MIDBLU-XXL",
+        "color": "mid blue",
+        "size": "XXL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-JNS-005-BLACK-S",
+        "color": "black",
+        "size": "S",
+        "stock": 11
+      },
+      {
+        "sku": "QL-JNS-005-BLACK-M",
+        "color": "black",
+        "size": "M",
+        "stock": 28
+      },
+      {
+        "sku": "QL-JNS-005-BLACK-L",
+        "color": "black",
+        "size": "L",
+        "stock": 23
+      },
+      {
+        "sku": "QL-JNS-005-BLACK-XL",
+        "color": "black",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JNS-005-BLACK-XXL",
+        "color": "black",
+        "size": "XXL",
+        "stock": 21
+      }
+    ]
+  },
+  {
+    "id": "QL-KNT-004",
+    "name": "Roble Merino Crewneck",
+    "category": "knitwear",
+    "gender": "men",
+    "description": "A fine-gauge knit that keeps you warm without bulk. Made from 100% merino wool. Regular fit: true to size.",
+    "material": "100% merino wool",
+    "fit": "regular",
+    "price_eur": 65.95,
+    "size_chart_id": "men-tops",
+    "care": "Hand wash cold with wool detergent. Dry flat away from heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-KNT-004-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 16
+      },
+      {
+        "sku": "QL-KNT-004-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "sku": "QL-KNT-004-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-KNT-004-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-KNT-004-GREY-XXL",
+        "color": "grey",
+        "size": "XXL",
+        "stock": 13
+      },
+      {
+        "sku": "QL-KNT-004-BURGUN-S",
+        "color": "burgundy",
+        "size": "S",
+        "stock": 4
+      },
+      {
+        "sku": "QL-KNT-004-BURGUN-M",
+        "color": "burgundy",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-KNT-004-BURGUN-L",
+        "color": "burgundy",
+        "size": "L",
+        "stock": 5
+      },
+      {
+        "sku": "QL-KNT-004-BURGUN-XL",
+        "color": "burgundy",
+        "size": "XL",
+        "stock": 27
+      },
+      {
+        "sku": "QL-KNT-004-BURGUN-XXL",
+        "color": "burgundy",
+        "size": "XXL",
+        "stock": 7
+      },
+      {
+        "sku": "QL-KNT-004-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 8
+      },
+      {
+        "sku": "QL-KNT-004-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 25
+      },
+      {
+        "sku": "QL-KNT-004-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 24
+      },
+      {
+        "sku": "QL-KNT-004-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-KNT-004-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-KNT-005",
+    "name": "Ulla Merino Crewneck",
+    "category": "knitwear",
+    "gender": "men",
+    "description": "A fine-gauge knit that keeps you warm without bulk. Made from 100% merino wool. Regular fit: true to size.",
+    "material": "100% merino wool",
+    "fit": "regular",
+    "price_eur": 78.95,
+    "size_chart_id": "men-tops",
+    "care": "Hand wash cold with wool detergent. Dry flat away from heat.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-KNT-005-BURGUN-S",
+        "color": "burgundy",
+        "size": "S",
+        "stock": 28
+      },
+      {
+        "sku": "QL-KNT-005-BURGUN-M",
+        "color": "burgundy",
+        "size": "M",
+        "stock": 26
+      },
+      {
+        "sku": "QL-KNT-005-BURGUN-L",
+        "color": "burgundy",
+        "size": "L",
+        "stock": 10
+      },
+      {
+        "sku": "QL-KNT-005-BURGUN-XL",
+        "color": "burgundy",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-KNT-005-BURGUN-XXL",
+        "color": "burgundy",
+        "size": "XXL",
+        "stock": 0
+      },
+      {
+        "sku": "QL-KNT-005-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-KNT-005-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 7
+      },
+      {
+        "sku": "QL-KNT-005-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 3
+      },
+      {
+        "sku": "QL-KNT-005-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 3
+      },
+      {
+        "sku": "QL-KNT-005-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 4
+      },
+      {
+        "sku": "QL-KNT-005-GREY-S",
+        "color": "grey",
+        "size": "S",
+        "stock": 2
+      },
+      {
+        "sku": "QL-KNT-005-GREY-M",
+        "color": "grey",
+        "size": "M",
+        "stock": 21
+      },
+      {
+        "sku": "QL-KNT-005-GREY-L",
+        "color": "grey",
+        "size": "L",
+        "stock": 28
+      },
+      {
+        "sku": "QL-KNT-005-GREY-XL",
+        "color": "grey",
+        "size": "XL",
+        "stock": 16
+      },
+      {
+        "sku": "QL-KNT-005-GREY-XXL",
+        "color": "grey",
+        "size": "XXL",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-JKT-005",
+    "name": "Nilo Field Jacket",
+    "category": "jackets",
+    "gender": "men",
+    "description": "A seasonal layer with practical pockets. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 101.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JKT-005-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 26
+      },
+      {
+        "sku": "QL-JKT-005-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-005-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 8
+      },
+      {
+        "sku": "QL-JKT-005-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 25
+      },
+      {
+        "sku": "QL-JKT-005-OLIVE-XXL",
+        "color": "olive",
+        "size": "XXL",
+        "stock": 24
+      },
+      {
+        "sku": "QL-JKT-005-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-005-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 16
+      },
+      {
+        "sku": "QL-JKT-005-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 15
+      },
+      {
+        "sku": "QL-JKT-005-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 24
+      },
+      {
+        "sku": "QL-JKT-005-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 25
+      }
+    ]
+  },
+  {
+    "id": "QL-JKT-006",
+    "name": "Oria Field Jacket",
+    "category": "jackets",
+    "gender": "men",
+    "description": "A seasonal layer with practical pockets. Made from 100% organic cotton. Regular fit: true to size.",
+    "material": "100% organic cotton",
+    "fit": "regular",
+    "price_eur": 116.95,
+    "size_chart_id": "men-tops",
+    "care": "Machine wash 30°C inside out. Tumble dry low.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-JKT-006-NAVY-S",
+        "color": "navy",
+        "size": "S",
+        "stock": 11
+      },
+      {
+        "sku": "QL-JKT-006-NAVY-M",
+        "color": "navy",
+        "size": "M",
+        "stock": 10
+      },
+      {
+        "sku": "QL-JKT-006-NAVY-L",
+        "color": "navy",
+        "size": "L",
+        "stock": 17
+      },
+      {
+        "sku": "QL-JKT-006-NAVY-XL",
+        "color": "navy",
+        "size": "XL",
+        "stock": 22
+      },
+      {
+        "sku": "QL-JKT-006-NAVY-XXL",
+        "color": "navy",
+        "size": "XXL",
+        "stock": 11
+      },
+      {
+        "sku": "QL-JKT-006-OLIVE-S",
+        "color": "olive",
+        "size": "S",
+        "stock": 24
+      },
+      {
+        "sku": "QL-JKT-006-OLIVE-M",
+        "color": "olive",
+        "size": "M",
+        "stock": 8
+      },
+      {
+        "sku": "QL-JKT-006-OLIVE-L",
+        "color": "olive",
+        "size": "L",
+        "stock": 0
+      },
+      {
+        "sku": "QL-JKT-006-OLIVE-XL",
+        "color": "olive",
+        "size": "XL",
+        "stock": 2
+      },
+      {
+        "sku": "QL-JKT-006-OLIVE-XXL",
+        "color": "olive",
+        "size": "XXL",
+        "stock": 28
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-007",
+    "name": "Faro Leather Sneakers",
+    "category": "shoes",
+    "gender": "men",
+    "description": "Cushioned insole for all-day comfort. Made from leather upper, rubber sole. Regular fit: true to size.",
+    "material": "leather upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 64.95,
+    "size_chart_id": "men-shoes",
+    "care": "Wipe with a damp cloth. Use leather conditioner.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-007-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHO-007-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHO-007-BLACK-42",
+        "color": "black",
+        "size": "42",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHO-007-BLACK-43",
+        "color": "black",
+        "size": "43",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHO-007-BLACK-44",
+        "color": "black",
+        "size": "44",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-007-BLACK-45",
+        "color": "black",
+        "size": "45",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SHO-007-WHITE-40",
+        "color": "white",
+        "size": "40",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SHO-007-WHITE-41",
+        "color": "white",
+        "size": "41",
+        "stock": 20
+      },
+      {
+        "sku": "QL-SHO-007-WHITE-42",
+        "color": "white",
+        "size": "42",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHO-007-WHITE-43",
+        "color": "white",
+        "size": "43",
+        "stock": 7
+      },
+      {
+        "sku": "QL-SHO-007-WHITE-44",
+        "color": "white",
+        "size": "44",
+        "stock": 17
+      },
+      {
+        "sku": "QL-SHO-007-WHITE-45",
+        "color": "white",
+        "size": "45",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-008",
+    "name": "Mara Leather Sneakers",
+    "category": "shoes",
+    "gender": "men",
+    "description": "Cushioned insole for all-day comfort. Made from leather upper, rubber sole. Regular fit: true to size.",
+    "material": "leather upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 71.95,
+    "size_chart_id": "men-shoes",
+    "care": "Wipe with a damp cloth. Use leather conditioner.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-008-WHITE-40",
+        "color": "white",
+        "size": "40",
+        "stock": 3
+      },
+      {
+        "sku": "QL-SHO-008-WHITE-41",
+        "color": "white",
+        "size": "41",
+        "stock": 11
+      },
+      {
+        "sku": "QL-SHO-008-WHITE-42",
+        "color": "white",
+        "size": "42",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SHO-008-WHITE-43",
+        "color": "white",
+        "size": "43",
+        "stock": 16
+      },
+      {
+        "sku": "QL-SHO-008-WHITE-44",
+        "color": "white",
+        "size": "44",
+        "stock": 22
+      },
+      {
+        "sku": "QL-SHO-008-WHITE-45",
+        "color": "white",
+        "size": "45",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-008-BLACK-40",
+        "color": "black",
+        "size": "40",
+        "stock": 19
+      },
+      {
+        "sku": "QL-SHO-008-BLACK-41",
+        "color": "black",
+        "size": "41",
+        "stock": 12
+      },
+      {
+        "sku": "QL-SHO-008-BLACK-42",
+        "color": "black",
+        "size": "42",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHO-008-BLACK-43",
+        "color": "black",
+        "size": "43",
+        "stock": 9
+      },
+      {
+        "sku": "QL-SHO-008-BLACK-44",
+        "color": "black",
+        "size": "44",
+        "stock": 30
+      },
+      {
+        "sku": "QL-SHO-008-BLACK-45",
+        "color": "black",
+        "size": "45",
+        "stock": 2
+      }
+    ]
+  },
+  {
+    "id": "QL-SHO-009",
+    "name": "Cierzo Canvas Sneakers",
+    "category": "shoes",
+    "gender": "men",
+    "description": "Cushioned insole for all-day comfort. Made from canvas upper, rubber sole. Regular fit: true to size.",
+    "material": "canvas upper, rubber sole",
+    "fit": "regular",
+    "price_eur": 38.95,
+    "size_chart_id": "men-shoes",
+    "care": "Spot clean with mild soap.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-SHO-009-NAVY-40",
+        "color": "navy",
+        "size": "40",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHO-009-NAVY-41",
+        "color": "navy",
+        "size": "41",
+        "stock": 28
+      },
+      {
+        "sku": "QL-SHO-009-NAVY-42",
+        "color": "navy",
+        "size": "42",
+        "stock": 15
+      },
+      {
+        "sku": "QL-SHO-009-NAVY-43",
+        "color": "navy",
+        "size": "43",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHO-009-NAVY-44",
+        "color": "navy",
+        "size": "44",
+        "stock": 4
+      },
+      {
+        "sku": "QL-SHO-009-NAVY-45",
+        "color": "navy",
+        "size": "45",
+        "stock": 8
+      },
+      {
+        "sku": "QL-SHO-009-WHITE-40",
+        "color": "white",
+        "size": "40",
+        "stock": 2
+      },
+      {
+        "sku": "QL-SHO-009-WHITE-41",
+        "color": "white",
+        "size": "41",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-009-WHITE-42",
+        "color": "white",
+        "size": "42",
+        "stock": 6
+      },
+      {
+        "sku": "QL-SHO-009-WHITE-43",
+        "color": "white",
+        "size": "43",
+        "stock": 26
+      },
+      {
+        "sku": "QL-SHO-009-WHITE-44",
+        "color": "white",
+        "size": "44",
+        "stock": 0
+      },
+      {
+        "sku": "QL-SHO-009-WHITE-45",
+        "color": "white",
+        "size": "45",
+        "stock": 19
+      }
+    ]
+  },
+  {
+    "id": "QL-ACC-001",
+    "name": "Elda Canvas Tote Bag",
+    "category": "accessories",
+    "gender": "unisex",
+    "description": "A finishing touch that pairs with everything. Made from 100% cotton canvas. Regular fit: true to size.",
+    "material": "100% cotton canvas",
+    "fit": "regular",
+    "price_eur": 28.95,
+    "size_chart_id": "one-size",
+    "care": "Spot clean with mild soap.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-ACC-001-BLACK-ONESIZE",
+        "color": "black",
+        "size": "ONE SIZE",
+        "stock": 18
+      },
+      {
+        "sku": "QL-ACC-001-NATURA-ONESIZE",
+        "color": "natural",
+        "size": "ONE SIZE",
+        "stock": 30
+      }
+    ]
+  },
+  {
+    "id": "QL-ACC-002",
+    "name": "Garza Canvas Tote Bag",
+    "category": "accessories",
+    "gender": "unisex",
+    "description": "A finishing touch that pairs with everything. Made from 100% cotton canvas. Regular fit: true to size. Final sale: this item cannot be returned.",
+    "material": "100% cotton canvas",
+    "fit": "regular",
+    "price_eur": 21.95,
+    "size_chart_id": "one-size",
+    "care": "Spot clean with mild soap.",
+    "final_sale": true,
+    "variants": [
+      {
+        "sku": "QL-ACC-002-NATURA-ONESIZE",
+        "color": "natural",
+        "size": "ONE SIZE",
+        "stock": 8
+      },
+      {
+        "sku": "QL-ACC-002-BLACK-ONESIZE",
+        "color": "black",
+        "size": "ONE SIZE",
+        "stock": 18
+      }
+    ]
+  },
+  {
+    "id": "QL-ACC-003",
+    "name": "Arena Leather Belt",
+    "category": "accessories",
+    "gender": "women",
+    "description": "A finishing touch that pairs with everything. Made from genuine leather. Regular fit: true to size. Final sale: this item cannot be returned.",
+    "material": "genuine leather",
+    "fit": "regular",
+    "price_eur": 32.95,
+    "size_chart_id": "one-size",
+    "care": "Wipe with a dry cloth. Keep away from direct heat.",
+    "final_sale": true,
+    "variants": [
+      {
+        "sku": "QL-ACC-003-TAN-ONESIZE",
+        "color": "tan",
+        "size": "ONE SIZE",
+        "stock": 5
+      },
+      {
+        "sku": "QL-ACC-003-BLACK-ONESIZE",
+        "color": "black",
+        "size": "ONE SIZE",
+        "stock": 6
+      }
+    ]
+  },
+  {
+    "id": "QL-ACC-004",
+    "name": "Vela Silk Scarf",
+    "category": "accessories",
+    "gender": "unisex",
+    "description": "A finishing touch that pairs with everything. Made from 100% silk. Regular fit: true to size.",
+    "material": "100% silk",
+    "fit": "regular",
+    "price_eur": 29.95,
+    "size_chart_id": "one-size",
+    "care": "Dry clean only.",
+    "final_sale": false,
+    "variants": [
+      {
+        "sku": "QL-ACC-004-TERRAC-ONESIZE",
+        "color": "terracotta print",
+        "size": "ONE SIZE",
+        "stock": 17
+      },
+      {
+        "sku": "QL-ACC-004-BLUEPR-ONESIZE",
+        "color": "blue print",
+        "size": "ONE SIZE",
+        "stock": 0
+      }
+    ]
+  },
+  {
+    "id": "QL-ACC-005",
+    "name": "Hebra Silk Scarf",
+    "category": "accessories",
+    "gender": "unisex",
+    "description": "A finishing touch that pairs with everything. Made from 100% silk. Regular fit: true to size. Final sale: this item cannot be returned.",
+    "material": "100% silk",
+    "fit": "regular",
+    "price_eur": 35.95,
+    "size_chart_id": "one-size",
+    "care": "Dry clean only.",
+    "final_sale": true,
+    "variants": [
+      {
+        "sku": "QL-ACC-005-BLUEPR-ONESIZE",
+        "color": "blue print",
+        "size": "ONE SIZE",
+        "stock": 1
+      },
+      {
+        "sku": "QL-ACC-005-TERRAC-ONESIZE",
+        "color": "terracotta print",
+        "size": "ONE SIZE",
+        "stock": 9
+      }
+    ]
+  }
+]

@@ -7,3 +7,5 @@ against PyPI on 2026-10-09.
 |---------|---------|-------|------------------|------------------------|
 | pytest | 9.1.1 | 0 | Test runner | unittest (more boilerplate) |
 | ruff | 0.16.10 | 0 | Lint + import sorting in one fast tool | flake8 + isort + black |
+| psycopg[binary] | 3.3.6 | 1 | PostgreSQL driver (psycopg 3: native async, server-side binding, row factories) | psycopg2 (legacy), SQLAlchemy (ORM not needed for ~10 hand-written queries) |
+| psycopg-pool | 3.3.3 | 1 | Connection pool shared by API threads and tools | One connection per request (slow, exhausts connections) |
