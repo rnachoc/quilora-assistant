@@ -10,6 +10,7 @@ authors = [{ name = "Ignacio" }]
 dependencies = [
     "psycopg[binary]==3.3.6",
     "psycopg-pool==3.3.3",
+    "anthropic==1.12.1",
 ]
 
 [project.optional-dependencies]
@@ -24,6 +25,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+quilora = ["agent/prompts/*.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -25,3 +25,6 @@ data: ## Regenerate the synthetic dataset (deterministic)
 
 seed: ## Create the schema and load the synthetic data into Postgres
 	$(PY) -m quilora.seed
+
+chat-raw: ## Phase 2: chat with the model, no tools
+	$(PY) -m quilora.cli --raw
