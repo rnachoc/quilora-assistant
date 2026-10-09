@@ -23,6 +23,7 @@ from quilora.agent.loop import Agent
 from quilora.agent.session import ConcurrentUpdateError, Conversation, PostgresSessionStore
 from quilora.config import Settings, load_settings
 from quilora.db import Database
+from quilora.observability import setup_tracing
 
 log = logging.getLogger("quilora.api")
 
@@ -79,6 +80,7 @@ def visible_transcript(conv: Conversation) -> list[TranscriptMessage]:
 def create_app(settings: Settings | None = None, agent: Agent | None = None,
                store: Any = None) -> FastAPI:
     settings = settings or load_settings()
+    setup_tracing(settings)
     state: dict[str, Any] = {}
 
     @asynccontextmanager

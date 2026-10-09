@@ -32,6 +32,7 @@ from quilora.evals.cases import Case, load_cases
 from quilora.evals.graders import CaseRun, Check, grade
 from quilora.evals.judge import Judge
 from quilora.evals.report import render_report
+from quilora.observability import setup_tracing
 from quilora.paths import EVALS_DIR, PROJECT_ROOT
 from quilora.seed import reset_writes
 
@@ -165,6 +166,7 @@ def main() -> None:
         cases = cases[: args.limit]
 
     settings = load_settings()
+    setup_tracing(settings)
     if args.model:
         settings = replace(settings, agent_model=args.model)
     db = Database(settings.database_url)

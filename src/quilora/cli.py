@@ -16,6 +16,7 @@ from quilora.agent.prompts import render
 from quilora.agent.session import Conversation
 from quilora.bootstrap import build_agent
 from quilora.config import load_settings
+from quilora.observability import setup_tracing
 
 
 def _read() -> str | None:
@@ -50,6 +51,7 @@ def raw_chat(prompt_name: str) -> None:
 
 def agent_chat(verbose: bool) -> None:
     settings = load_settings()
+    setup_tracing(settings)
     agent = build_agent(settings)
     conv = Conversation()
     print(f"Quilora assistant ({settings.agent_model}). Ctrl-D to exit.")

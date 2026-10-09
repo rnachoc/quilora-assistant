@@ -26,5 +26,6 @@ Status values:
 | [0014](0014-mcp-read-only.md) | MCP server exposes read-only tools and policies | Proposed |
 | [0015](0015-api-and-sessions.md) | Sync FastAPI, sessions in Postgres with optimistic locking | Proposed |
 | [0016](0016-angular-widget.md) | Chat widget in Angular | Proposed |
+| [0017](0017-observability.md) | OpenTelemetry traces with GenAI semantic conventions | Proposed |
 
 Template: [`template.md`](template.md).

@@ -17,6 +17,8 @@ against PyPI on 2026-10-09.
 | fastapi | 0.143.0 | 9 | HTTP API with request validation and OpenAPI docs from the same Pydantic models | Flask (no built-in validation), Starlette alone |
 | uvicorn | 0.54.0 | 9 | ASGI server for FastAPI | Gunicorn + uvicorn workers (more moving parts for a demo) |
 | httpx (dev) | 0.28.1 | 9 | Required by FastAPI's TestClient | requests (not supported by TestClient) |
+| opentelemetry-sdk | 1.45.1 | 10 | Vendor-neutral tracing API/SDK (spans for turns, model calls, tools) | Logs only; a vendor SDK (Langfuse, Datadog) that locks the format |
+| opentelemetry-exporter-otlp-proto-http | 1.45.1 | 10 | Sends spans over OTLP/HTTP to any collector (Jaeger locally) | gRPC exporter (heavier dependency) |
 
 ## Front end (web/package.json)
 

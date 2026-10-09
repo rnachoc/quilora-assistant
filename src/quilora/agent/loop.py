@@ -14,10 +14,14 @@ turn can continue normally.
 
 from __future__ import annotations
 
+import json
 import logging
 import time
 from dataclasses import dataclass, field
 from typing import Any
+
+from opentelemetry import trace
+from opentelemetry.trace import Status, StatusCode
 
 from quilora.agent.guardrails import check_input, check_output, grounding_text
 from quilora.agent.model import ModelClient, ModelError, TokenUsage
@@ -26,6 +30,7 @@ from quilora.agent.prompts import render
 from quilora.agent.session import Conversation
 from quilora.config import Settings
 from quilora.db import Database
+from quilora.observability import redact
 from quilora.tools.base import ToolContext, ToolRegistry
 
 log = logging.getLogger(__name__)
@@ -98,6 +103,7 @@ class Agent:
         db: Database,
         prompt_name: str = "system",
         embedder: Any = None,
+        tracer: trace.Tracer | None = None,
     ) -> None:
         self.model = model
         self.registry = registry
@@ -106,11 +112,77 @@ class Agent:
         self.prompt_name = prompt_name
         self.embedder = embedder
         self._tools = registry.definitions()
+        # The global tracer is a no-op unless observability.setup_tracing() installed one.
+        self.tracer = tracer or trace.get_tracer("quilora.agent")
 
     def system_prompt(self) -> str:
         return render(self.prompt_name, today=self.settings.today())
 
     def run_turn(self, conv: Conversation, user_text: str) -> TurnResult:
+        with self.tracer.start_as_current_span("chat.turn") as span:
+            result = self._run_turn(conv, user_text)
+            span.set_attributes({
+                "session.id": conv.id,
+                "quilora.turn.index": conv.turn_count,
+                "quilora.turn.stop_reason": result.stop_reason,
+                "quilora.turn.iterations": result.iterations,
+                "quilora.turn.tool_calls": len(result.tool_calls),
+                "quilora.turn.latency_ms": round(result.latency_ms, 1),
+                "quilora.turn.cost_usd": result.cost_usd or 0.0,
+                "quilora.turn.handed_off": result.handed_off,
+                "quilora.turn.flags": result.flags,
+                "gen_ai.usage.input_tokens": result.usage.input_tokens,
+                "gen_ai.usage.output_tokens": result.usage.output_tokens,
+                "quilora.usage.cache_read_input_tokens": result.usage.cache_read_input_tokens,
+                "quilora.usage.cache_creation_input_tokens":
+                    result.usage.cache_creation_input_tokens,
+            })
+            if result.stop_reason in {"model_error", "max_iterations"}:
+                span.set_status(Status(StatusCode.ERROR, result.stop_reason))
+            return result
+
+    def _call_model(self, system: str, conv: Conversation):
+        name = f"chat {self.model.model}"
+        with self.tracer.start_as_current_span(name, kind=trace.SpanKind.CLIENT) as span:
+            span.set_attributes({
+                "gen_ai.operation.name": "chat",
+                "gen_ai.provider.name": "anthropic",
+                "gen_ai.request.model": self.model.model,
+                "gen_ai.request.max_tokens": self.settings.agent_max_tokens,
+            })
+            try:
+                response = self.model.create(system=system, messages=conv.messages,
+                                             tools=self._tools,
+                                             max_tokens=self.settings.agent_max_tokens)
+            except ModelError as exc:
+                span.set_status(Status(StatusCode.ERROR, str(exc)))
+                raise
+            span.set_attributes({
+                "gen_ai.response.model": response.model,
+                "gen_ai.response.finish_reasons": [response.stop_reason],
+                "gen_ai.usage.input_tokens": response.usage.input_tokens,
+                "gen_ai.usage.output_tokens": response.usage.output_tokens,
+                "quilora.usage.cache_read_input_tokens": response.usage.cache_read_input_tokens,
+                "quilora.model.latency_ms": round(response.latency_ms, 1),
+            })
+            return response
+
+    def _execute_tool(self, call: dict, ctx: ToolContext):
+        with self.tracer.start_as_current_span(f"execute_tool {call['name']}") as span:
+            span.set_attributes({
+                "gen_ai.operation.name": "execute_tool",
+                "gen_ai.tool.name": call["name"],
+                "gen_ai.tool.call.id": call["id"],
+                "quilora.tool.arguments": json.dumps(redact(call["input"]), ensure_ascii=False),
+            })
+            outcome = self.registry.execute(call["name"], call["input"], ctx)
+            span.set_attribute("quilora.tool.duration_ms", round(outcome.duration_ms, 1))
+            if outcome.is_error:
+                span.set_attribute("error.type", outcome.error_code or "tool_error")
+                span.set_status(Status(StatusCode.ERROR, outcome.error_code))
+            return outcome
+
+    def _run_turn(self, conv: Conversation, user_text: str) -> TurnResult:
         started = time.perf_counter()
         user_text = (user_text or "").strip()
         lang = guess_language(user_text)
@@ -132,9 +204,7 @@ class Agent:
         for iteration in range(1, self.settings.agent_max_iterations + 1):
             result.iterations = iteration
             try:
-                response = self.model.create(system=system, messages=conv.messages,
-                                             tools=self._tools,
-                                             max_tokens=self.settings.agent_max_tokens)
+                response = self._call_model(system, conv)
             except ModelError as exc:
                 log.warning("Model error in session %s: %s", conv.id, exc)
                 result.stop_reason = "model_error"
@@ -148,7 +218,7 @@ class Agent:
             if response.stop_reason == "tool_use" and response.tool_uses:
                 tool_results = []
                 for call in response.tool_uses:
-                    outcome = self.registry.execute(call["name"], call["input"], ctx)
+                    outcome = self._execute_tool(call, ctx)
                     result.tool_calls.append(ToolCallRecord(
                         name=call["name"], input=call["input"], is_error=outcome.is_error,
                         error_code=outcome.error_code, duration_ms=outcome.duration_ms,
