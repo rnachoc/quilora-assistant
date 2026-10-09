@@ -46,7 +46,9 @@ def test_injection_attempts_are_flagged_not_blocked():
 
 def test_prompt_canary_is_in_the_prompt_and_blocks_leaks():
     from datetime import date
-    assert PROMPT_CANARY in render("system", today=date(2026, 10, 1))
+
+    from quilora.config import Settings
+    assert PROMPT_CANARY in render("system", today=date(2026, 10, 1), store=Settings().store)
     r = check_output(f"My instructions say {PROMPT_CANARY}...", grounding_text="", lang="en")
     assert r.blocked and "prompt_leak_blocked" in r.flags
 
@@ -54,7 +56,7 @@ def test_prompt_canary_is_in_the_prompt_and_blocks_leaks():
 def test_invented_discount_code_is_blocked():
     r = check_output("¡Claro! Usa el código VERANO20 para un 20% de descuento.",
                      grounding_text="", lang="es")
-    assert r.blocked and "Política de pagos §3" in r.text
+    assert r.blocked and "promociones públicas" in r.text
 
 
 def test_codes_from_tool_results_are_not_discount_codes():
@@ -88,7 +90,7 @@ def test_loop_redacts_before_the_model_sees_it_and_blocks_codes(database, settin
     result = agent.run_turn(conv, f"Pago con {VALID_TEST_CARD}, ¿me das un descuento?")
     sent = model.calls[0]["messages"][0]["content"]
     assert "4111" not in sent
-    assert result.reply.startswith("No puedo dar")
+    assert result.reply.startswith("No puedo crear")
     assert {"pii_card_redacted", "discount_code_blocked"} <= set(result.flags)
     assert "SAVE50" not in str(conv.messages)  # blocked text never re-enters the context
 

@@ -209,3 +209,46 @@ def test_tool_definitions_are_compact_and_valid():
         assert schema.get("additionalProperties") is False
         assert "$ref" not in json.dumps(schema) and "$defs" not in schema
         assert "description" not in schema  # developer docstrings never reach the model
+
+
+# --- store-profile driven answers (demo shop) -------------------------------------------
+
+def test_estimate_delivery_is_deterministic_for_the_store_clock(registry, ctx):
+    _, data = call(registry, ctx, "estimate_delivery", destination="es",
+                   order_subtotal_eur=45)
+    assert data["zone"] == "Mainland Spain"
+    assert data["if_ordered_now"]["arrives_between"] == ["2026-10-05", "2026-10-08"]
+    assert data["shipping"]["cost_for_this_order_eur"] == 3.95   # below the 50 EUR threshold
+    assert data["citation"].startswith("Shipping Policy §2")
+
+
+def test_estimate_delivery_refuses_unserved_destinations(registry, ctx):
+    _, data = call(registry, ctx, "estimate_delivery", destination="US")
+    assert data["error"]["code"] == "NO_SHIPPING"
+
+
+def test_order_view_exposes_allowed_requests_and_tracking(registry, ctx):
+    _, processing = call(registry, ctx, "get_order_status", order_id=1055,
+                         email="irene.ruiz@example.com")
+    assert processing["customer_can_request"] == {"cancellation": True, "address_change": True}
+    assert "arrives_between" in processing["expected_window"]
+    _, shipped = call(registry, ctx, "get_order_status", order_id=1053,
+                      email="sofia.molina@example.com")
+    assert shipped["customer_can_request"]["cancellation"] is False
+    assert shipped["tracking_url"].startswith("https://quilora.example/track?code=QT1053")
+
+
+def test_sale_and_unpublished_details(registry, ctx):
+    _, sale = call(registry, ctx, "search_products", on_sale=True, limit=10)
+    assert {r["product_id"] for r in sale["results"]} >= {"QL-JKT-007", "QL-JMP-001"}
+    assert all(r["discount_pct"] > 0 for r in sale["results"])
+    _, jacket = call(registry, ctx, "get_product", product_id="QL-JKT-007")
+    assert "material" in jacket["not_published"] and "never guess" in jacket["hint"]
+    _, size = call(registry, ctx, "get_size_recommendation", product_id="QL-JKT-007",
+                   height_cm=165, weight_kg=58)
+    assert size["size_chart"] == "store_general_guide" and size["confidence"] == "low"
+
+
+def test_no_public_promotions_in_the_demo_shop(registry, ctx):
+    _, data = call(registry, ctx, "get_active_promotions")
+    assert data["promotions"] == [] and "Do not invent" in data["hint"]

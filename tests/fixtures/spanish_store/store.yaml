@@ -1,0 +1,40 @@
+# Author: Ignacio Rodríguez Caro
+# Test fixture: a fictional Spanish-language dropshipping-style shop ("Maré Demo").
+# Its policies contradict themselves on purpose, to test the consistency check.
+id: mare-demo
+name: Maré Demo
+description: una tienda online de moda que envía desde un almacén internacional
+timezone: Europe/Madrid
+currency: EUR
+languages: [es]
+eu_consumer_law: true
+catalog:
+  language: es
+  search_config: spanish
+contact:
+  email: hola@mare-demo.example
+  hours: de lunes a viernes de 9:00 a 20:00
+  response_time: en 48 horas laborables
+shipping:
+  processing_business_days: [1, 3]
+  ships_from: international warehouse
+  split_shipments_possible: true
+  zones:
+    - {id: europe, name: Europa, destinations: [EU], transit_business_days: [7, 14], cost: 0}
+    - {id: world, name: Resto del mundo, destinations: ["*"], transit_business_days: [11, 30],
+       cost: 0}
+returns:
+  window_days: 30
+  return_shipping_paid_by: customer
+  method: address_on_request
+  method_details: Escríbenos con tu número de pedido y te enviaremos la dirección de devolución.
+  exchanges_allowed: false
+  refund_days: 14
+order_changes:
+  cancellation_allowed_statuses: []
+  address_change_allowed_statuses: [processing]
+tracking_url_template: https://mare-demo.example/seguimiento?num={tracking_code}
+promotions:
+  - {code: BIENVENIDA10, description: 10% en tu primer pedido al suscribirte a la newsletter,
+     valid_until: 2026-12-31}
+  - {code: VERANO25, description: Rebajas de verano, valid_until: 2026-08-31}

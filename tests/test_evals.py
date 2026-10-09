@@ -18,11 +18,11 @@ from tests.fakes import ScriptedModel, text, tool_call
 
 def test_case_files_are_valid_and_cover_every_category():
     cases = load_cases()
-    assert 50 <= len(cases) <= 80
+    assert 50 <= len(cases) <= 90
     categories = {c.category for c in cases}
     assert categories == {"product_search", "sizing", "stock", "order_status", "returns",
                           "policies", "off_topic", "ambiguous", "attacks", "handoff",
-                          "multi_turn"}
+                          "multi_turn", "delivery"}
     assert sum(len(c.turns) > 1 for c in cases) >= 8  # real multi-turn coverage
 
 

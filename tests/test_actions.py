@@ -173,3 +173,12 @@ def test_model_cannot_confirm_within_the_same_turn(clean, settings):
     codes = [c.error_code for c in result.tool_calls]
     assert codes[-1] == "CONFIRMATION_NEEDS_CUSTOMER_REPLY"
     assert _count(clean, "return_requests") == 0
+
+
+def test_return_terms_come_from_the_store_profile(session):
+    _, call = session
+    call("get_order_status", **LUCIA)
+    summary = call("create_return_request", **TEE_RETURN)["summary"]
+    text = summary["what_happens_next"]
+    assert "prepaid label" in text and "Returns Policy §4" in text
+    assert "home pickup costs 4.95 EUR" in text

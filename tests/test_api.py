@@ -67,6 +67,7 @@ def test_unknown_session_and_validation(client_with):
         assert client.post("/api/chat", json={"message": ""}).status_code == 422
         assert client.get("/healthz").json() == {"status": "ok"}
         assert client.get("/readyz").json() == {"status": "ready"}
+        assert client.get("/api/store").json()["name"] == "Quilora"
 
 
 def test_optimistic_locking(database):

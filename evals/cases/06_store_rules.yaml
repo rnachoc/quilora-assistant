@@ -1,0 +1,101 @@
+# Author: Ignacio Rodríguez Caro
+# Behaviour driven by the store profile: delivery estimates, sale prices, unpublished
+# product details, the store's general size guide, public promotions, cancellations and
+# tracking links. With STORE_TODAY=2026-10-01 (a Thursday, 10:00) the dates are fixed.
+
+- id: delivery-estimate-mainland
+  category: delivery
+  description: Order now to mainland Spain. Dates come from estimate_delivery (5 to 8 October).
+  turns: ["Si hago el pedido hoy, ¿cuándo me llega a Sevilla?"]
+  expect:
+    tools_called: [estimate_delivery]
+    tool_args: {estimate_delivery: {destination: ES}}
+    reply_matches: ['\b5\b', '\b8\b']
+    language: es
+
+- id: delivery-canary-cost-and-customs
+  category: delivery
+  description: Island mapped to its region code; cost and customs note from the profile.
+  turns: ["¿Cuánto tarda y cuánto cuesta el envío a Tenerife?"]
+  expect:
+    tools_called: [estimate_delivery]
+    tool_args: {estimate_delivery: {destination: ES-CN}}
+    reply_matches: ['9[,.]95', '(aduan|impuest|tasas)']
+
+- id: delivery-not-shipped-country-en
+  category: delivery
+  description: Destination outside the shipping zones.
+  turns: ["Do you ship to New York?"]
+  expect:
+    tools_called: [estimate_delivery]
+    reply_matches: ["(don't|do not|only|not ship|cannot|can't)"]
+    language: en
+
+- id: delivery-processing-order-window
+  category: delivery
+  description: Order not shipped yet; the expected window comes from the order view.
+  turns: ["¿Cuándo me llegará el pedido 1056? Mi email es nuria.herrera@example.com"]
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['(octubre|oct)']
+
+- id: sale-items
+  category: product_search
+  description: What is on sale; discounts only from compare-at prices in the data.
+  turns: ["¿Qué tenéis en rebajas?"]
+  expect:
+    tools_called: [search_products]
+    tool_args: {search_products: {on_sale: true}}
+    reply_contains_any: [Nerea, Ondina, Gala, Arena Merino, Flora]
+    flags_exclude: [ungrounded_amount]
+
+- id: unpublished-material
+  category: product_search
+  description: The shop does not publish the fabric. Say so; never guess it.
+  turns: ["¿De qué tejido es la Nerea Quilted Jacket?"]
+  expect:
+    tools_called: [get_product]
+    reply_not_contains: [algodón, poliéster, polyester, cotton, nylon]
+  judge: The reply says the shop does not publish the fabric or composition of this jacket and does not suggest any specific material.
+
+- id: size-store-general-guide
+  category: sizing
+  description: Product without its own chart; approximate size from the general guide, and M is sold out.
+  turns: ["Mido 1,65 y peso 58 kg, ¿qué talla me pido en la Nerea Quilted Jacket?"]
+  expect:
+    tools_called: [get_size_recommendation]
+    reply_matches: ['\bM\b', '(aproximad|orientativ|estimaci|general|medirte|medidas)']
+
+- id: promotions-none-active
+  category: policies
+  description: Asked for current codes; none are public, so none are given.
+  turns: ["¿Tenéis algún código de descuento activo ahora mismo?"]
+  expect:
+    tools_called: [get_active_promotions]
+    flags_exclude: [discount_code_blocked]
+    reply_matches: ['(no (tenemos|hay|dispon)|newsletter|ninguna? )']
+
+- id: cancel-shipped-order
+  category: order_status
+  description: Order already shipped; cancellation is no longer possible per the store rules.
+  turns: ["Quiero cancelar mi pedido 1053, mi correo es sofia.molina@example.com"]
+  expect:
+    tools_called: [get_order_status]
+    reply_matches: ['(ya .*(enviad|salido|camino)|no .*cancelar|en camino|devol)']
+
+- id: cancel-processing-order
+  category: handoff
+  description: Order still processing; cancellation can be requested, so it goes to the team.
+  turns: ["Quiero cancelar mi pedido 1055, mi correo es irene.ruiz@example.com"]
+  expect:
+    tools_called: [get_order_status, handoff_to_human]
+    handoff: true
+
+- id: tracking-link-en
+  category: order_status
+  description: Tracking link built from the store's template.
+  turns: ["Can you give me the tracking link for order 1052? My email is liam.blanco@example.com"]
+  expect:
+    tools_called: [get_order_status]
+    reply_contains_all: [quilora.example/track]
+    language: en

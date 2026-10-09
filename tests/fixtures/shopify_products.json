@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "id": 1001, "title": "MARÉ | Vestido Midi de Lino Brisa", "handle": "vestido-midi-lino-brisa",
+      "product_type": "Vestidos", "tags": ["lino", "mujer", "verano", "tallas grandes"],
+      "body_html": "<p>Vestido midi fresco y ligero.</p><p><strong>Composición:</strong> 55% lino, 45% algodón</p>",
+      "options": [{"name": "Color", "position": 1}, {"name": "Talla", "position": 2}],
+      "variants": [
+        {"id": 1, "sku": "MR-VEST-BRISA-S", "option1": "Arena", "option2": "S", "option3": null, "price": "39.95", "compare_at_price": "79.90", "available": true},
+        {"id": 2, "sku": "MR-VEST-BRISA-M", "option1": "Arena", "option2": "M", "option3": null, "price": "39.95", "compare_at_price": "79.90", "available": false},
+        {"id": 3, "sku": "MR-VEST-BRISA-XXL", "option1": "Arena", "option2": "XXL", "option3": null, "price": "39.95", "compare_at_price": "79.90", "available": true}
+      ]
+    },
+    {
+      "id": 1002, "title": "MARÉ | Chaqueta Acolchada Olivo", "handle": "chaqueta-acolchada-olivo",
+      "product_type": "Chaquetas", "tags": "acolchada, entretiempo, mujer, cuello alto",
+      "body_html": "<p>Chaqueta acolchada con estampado floral &amp; cuello alto.</p>",
+      "options": [{"name": "Color", "position": 1}, {"name": "Talla", "position": 2}],
+      "variants": [
+        {"id": 4, "sku": "", "option1": "Verde Oliva", "option2": "2XS", "option3": null, "price": "59.95", "compare_at_price": null, "available": true},
+        {"id": 5, "sku": "", "option1": "Verde Oliva", "option2": "4XL", "option3": null, "price": "59.95", "compare_at_price": null, "available": true}
+      ]
+    },
+    {
+      "id": 1003, "title": "Mocasín Clásico Ébano", "handle": "mocasin-clasico-ebano",
+      "product_type": "", "tags": ["hombre", "calzado"],
+      "body_html": "",
+      "options": [{"name": "Talla", "position": 1}],
+      "variants": [
+        {"id": 6, "sku": "MR-MOC-42", "option1": "42", "option2": null, "option3": null, "price": "69.95", "compare_at_price": "69.95", "available": true}
+      ]
+    },
+    {"id": 1004, "title": "Producto sin variantes", "handle": "sin-variantes", "variants": []}
+  ]
+}

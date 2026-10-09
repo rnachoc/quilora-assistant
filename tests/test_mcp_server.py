@@ -26,7 +26,8 @@ def test_lists_only_read_only_tools_with_full_schemas(database, settings):
 
     tools = {t.name: t for t in _run(go())}
     assert set(tools) == {"search_products", "get_product", "check_stock",
-                          "get_size_recommendation", "search_policies", "get_order_status"}
+                          "get_size_recommendation", "search_policies", "get_order_status",
+                          "estimate_delivery", "get_active_promotions"}
     schema = tools["search_products"].input_schema
     assert schema["properties"]["max_price_eur"]["description"] == "Maximum price in EUR."
     assert tools["get_order_status"].annotations.read_only_hint is True
