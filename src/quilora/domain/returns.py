@@ -8,7 +8,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date, timedelta
 
-RETURN_WINDOW_DAYS = 30  # Returns Policy §1
+DEFAULT_RETURN_WINDOW_DAYS = 30  # the demo shop; real values come from the store profile
 
 
 @dataclass(frozen=True)
@@ -38,11 +38,12 @@ def item_eligibility(
     final_sale: bool,
     quantity: int,
     already_returned: int,
+    window_days: int = DEFAULT_RETURN_WINDOW_DAYS,
 ) -> Eligibility:
     """Apply the Returns Policy rules (status, final sale, 30-day window, prior returns) to one
     line.
     """
-    deadline = delivered_on + timedelta(days=RETURN_WINDOW_DAYS) if delivered_on else None
+    deadline = delivered_on + timedelta(days=window_days) if delivered_on else None
     remaining = max(0, quantity - already_returned)
 
     if order_status == "cancelled":

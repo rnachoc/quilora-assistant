@@ -72,6 +72,15 @@
         "size": "XL",
         "stock": 21
       }
+    ],
+    "tags": [
+      "dresses",
+      "linen",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit"
     ]
   },
   {
@@ -147,6 +156,16 @@
         "size": "XL",
         "stock": 16
       }
+    ],
+    "tags": [
+      "cotton",
+      "dresses",
+      "linen",
+      "regular"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit"
     ]
   },
   {
@@ -252,7 +271,19 @@
         "size": "XL",
         "stock": 19
       }
-    ]
+    ],
+    "tags": [
+      "cotton",
+      "dresses",
+      "linen",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit",
+      "Sale"
+    ],
+    "compare_at_price_eur": 99.95
   },
   {
     "id": "QL-DRS-004",
@@ -387,6 +418,15 @@
         "size": "XL",
         "stock": 25
       }
+    ],
+    "tags": [
+      "dresses",
+      "linen",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit"
     ]
   },
   {
@@ -462,6 +502,15 @@
         "size": "XL",
         "stock": 13
       }
+    ],
+    "tags": [
+      "dresses",
+      "linen",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit"
     ]
   },
   {
@@ -567,6 +616,14 @@
         "size": "XL",
         "stock": 7
       }
+    ],
+    "tags": [
+      "dresses",
+      "slim",
+      "viscose"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -672,6 +729,14 @@
         "size": "XL",
         "stock": 2
       }
+    ],
+    "tags": [
+      "dresses",
+      "slim",
+      "viscose"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -747,6 +812,13 @@
         "size": "XL",
         "stock": 4
       }
+    ],
+    "tags": [
+      "dresses",
+      "regular"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -822,6 +894,14 @@
         "size": "XL",
         "stock": 11
       }
+    ],
+    "tags": [
+      "dresses",
+      "regular",
+      "viscose"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -927,6 +1007,14 @@
         "size": "XL",
         "stock": 16
       }
+    ],
+    "tags": [
+      "dresses",
+      "regular",
+      "viscose"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -1002,6 +1090,14 @@
         "size": "XL",
         "stock": 3
       }
+    ],
+    "tags": [
+      "dresses",
+      "regular",
+      "viscose"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -1107,6 +1203,14 @@
         "size": "XL",
         "stock": 5
       }
+    ],
+    "tags": [
+      "dresses",
+      "slim",
+      "wool"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -1182,6 +1286,14 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "dresses",
+      "slim",
+      "wool"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -1287,6 +1399,16 @@
         "size": "XL",
         "stock": 5
       }
+    ],
+    "tags": [
+      "cotton",
+      "dresses",
+      "linen",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit"
     ]
   },
   {
@@ -1392,6 +1514,16 @@
         "size": "XL",
         "stock": 15
       }
+    ],
+    "tags": [
+      "cotton",
+      "dresses",
+      "linen",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses",
+      "Linen edit"
     ]
   },
   {
@@ -1467,6 +1599,14 @@
         "size": "XL",
         "stock": 15
       }
+    ],
+    "tags": [
+      "cotton",
+      "dresses",
+      "relaxed"
+    ],
+    "collections": [
+      "Women dresses"
     ]
   },
   {
@@ -1542,6 +1682,15 @@
         "size": "XL",
         "stock": 23
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "tops"
+    ],
+    "collections": [
+      "Women tops",
+      "Linen edit"
     ]
   },
   {
@@ -1617,6 +1766,15 @@
         "size": "XL",
         "stock": 15
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "tops"
+    ],
+    "collections": [
+      "Women tops",
+      "Linen edit"
     ]
   },
   {
@@ -1722,6 +1880,15 @@
         "size": "XL",
         "stock": 13
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "tops"
+    ],
+    "collections": [
+      "Women tops",
+      "Linen edit"
     ]
   },
   {
@@ -1797,6 +1964,14 @@
         "size": "XL",
         "stock": 12
       }
+    ],
+    "tags": [
+      "regular",
+      "silk",
+      "tops"
+    ],
+    "collections": [
+      "Women tops"
     ]
   },
   {
@@ -1932,6 +2107,14 @@
         "size": "XL",
         "stock": 23
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "t-shirts"
+    ],
+    "collections": [
+      "Women t-shirts"
     ]
   },
   {
@@ -2067,6 +2250,14 @@
         "size": "XL",
         "stock": 27
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "t-shirts"
+    ],
+    "collections": [
+      "Women t-shirts"
     ]
   },
   {
@@ -2172,6 +2363,14 @@
         "size": "XL",
         "stock": 30
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "t-shirts"
+    ],
+    "collections": [
+      "Women t-shirts"
     ]
   },
   {
@@ -2307,6 +2506,14 @@
         "size": "XL",
         "stock": 6
       }
+    ],
+    "tags": [
+      "cotton",
+      "oversized",
+      "t-shirts"
+    ],
+    "collections": [
+      "Women t-shirts"
     ]
   },
   {
@@ -2412,6 +2619,14 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "shirts"
+    ],
+    "collections": [
+      "Women shirts"
     ]
   },
   {
@@ -2487,6 +2702,14 @@
         "size": "XL",
         "stock": 27
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "shirts"
+    ],
+    "collections": [
+      "Women shirts"
     ]
   },
   {
@@ -2622,6 +2845,15 @@
         "size": "XL",
         "stock": 21
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers",
+      "Linen edit"
     ]
   },
   {
@@ -2727,6 +2959,15 @@
         "size": "XL",
         "stock": 9
       }
+    ],
+    "tags": [
+      "linen",
+      "regular",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers",
+      "Linen edit"
     ]
   },
   {
@@ -2832,6 +3073,15 @@
         "size": "XL",
         "stock": 23
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers",
+      "Linen edit"
     ]
   },
   {
@@ -2937,6 +3187,15 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "linen",
+      "regular",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers",
+      "Linen edit"
     ]
   },
   {
@@ -3012,6 +3271,13 @@
         "size": "XL",
         "stock": 28
       }
+    ],
+    "tags": [
+      "relaxed",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers"
     ]
   },
   {
@@ -3087,6 +3353,13 @@
         "size": "XL",
         "stock": 15
       }
+    ],
+    "tags": [
+      "relaxed",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers"
     ]
   },
   {
@@ -3192,7 +3465,17 @@
         "size": "XL",
         "stock": 22
       }
-    ]
+    ],
+    "tags": [
+      "relaxed",
+      "trousers",
+      "viscose"
+    ],
+    "collections": [
+      "Women trousers",
+      "Sale"
+    ],
+    "compare_at_price_eur": 79.95
   },
   {
     "id": "QL-TRS-008",
@@ -3267,6 +3550,14 @@
         "size": "XL",
         "stock": 24
       }
+    ],
+    "tags": [
+      "cotton",
+      "slim",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers"
     ]
   },
   {
@@ -3342,6 +3633,14 @@
         "size": "XL",
         "stock": 3
       }
+    ],
+    "tags": [
+      "cotton",
+      "slim",
+      "trousers"
+    ],
+    "collections": [
+      "Women trousers"
     ]
   },
   {
@@ -3447,6 +3746,15 @@
         "size": "XL",
         "stock": 24
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jeans",
+      "regular"
+    ],
+    "collections": [
+      "Women jeans"
     ]
   },
   {
@@ -3552,6 +3860,15 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jeans",
+      "regular"
+    ],
+    "collections": [
+      "Women jeans"
     ]
   },
   {
@@ -3657,6 +3974,15 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jeans",
+      "regular"
+    ],
+    "collections": [
+      "Women jeans"
     ]
   },
   {
@@ -3762,6 +4088,14 @@
         "size": "XL",
         "stock": 4
       }
+    ],
+    "tags": [
+      "regular",
+      "skirts",
+      "viscose"
+    ],
+    "collections": [
+      "Women skirts"
     ]
   },
   {
@@ -3867,6 +4201,15 @@
         "size": "XL",
         "stock": 16
       }
+    ],
+    "tags": [
+      "linen",
+      "regular",
+      "skirts"
+    ],
+    "collections": [
+      "Women skirts",
+      "Linen edit"
     ]
   },
   {
@@ -3972,6 +4315,15 @@
         "size": "XL",
         "stock": 29
       }
+    ],
+    "tags": [
+      "final sale",
+      "regular",
+      "skirts",
+      "viscose"
+    ],
+    "collections": [
+      "Women skirts"
     ]
   },
   {
@@ -4047,7 +4399,18 @@
         "size": "XL",
         "stock": 12
       }
-    ]
+    ],
+    "tags": [
+      "knitwear",
+      "merino",
+      "oversized",
+      "wool"
+    ],
+    "collections": [
+      "Women knitwear",
+      "Sale"
+    ],
+    "compare_at_price_eur": 109.95
   },
   {
     "id": "QL-KNT-002",
@@ -4122,6 +4485,15 @@
         "size": "XL",
         "stock": 13
       }
+    ],
+    "tags": [
+      "knitwear",
+      "merino",
+      "regular",
+      "wool"
+    ],
+    "collections": [
+      "Women knitwear"
     ]
   },
   {
@@ -4257,6 +4629,15 @@
         "size": "XL",
         "stock": 16
       }
+    ],
+    "tags": [
+      "knitwear",
+      "merino",
+      "oversized",
+      "wool"
+    ],
+    "collections": [
+      "Women knitwear"
     ]
   },
   {
@@ -4332,6 +4713,14 @@
         "size": "XL",
         "stock": 6
       }
+    ],
+    "tags": [
+      "cotton",
+      "jackets",
+      "regular"
+    ],
+    "collections": [
+      "Women jackets"
     ]
   },
   {
@@ -4407,6 +4796,14 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "jackets",
+      "regular"
+    ],
+    "collections": [
+      "Women jackets"
     ]
   },
   {
@@ -4482,6 +4879,15 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jackets",
+      "regular"
+    ],
+    "collections": [
+      "Women jackets"
     ]
   },
   {
@@ -4557,6 +4963,15 @@
         "size": "XL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jackets",
+      "regular"
+    ],
+    "collections": [
+      "Women jackets"
     ]
   },
   {
@@ -4644,6 +5059,14 @@
         "size": "41",
         "stock": 3
       }
+    ],
+    "tags": [
+      "leather",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Women shoes"
     ]
   },
   {
@@ -4731,6 +5154,14 @@
         "size": "41",
         "stock": 29
       }
+    ],
+    "tags": [
+      "leather",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Women shoes"
     ]
   },
   {
@@ -4818,6 +5249,14 @@
         "size": "41",
         "stock": 25
       }
+    ],
+    "tags": [
+      "regular",
+      "shoes",
+      "suede"
+    ],
+    "collections": [
+      "Women shoes"
     ]
   },
   {
@@ -4905,6 +5344,14 @@
         "size": "41",
         "stock": 0
       }
+    ],
+    "tags": [
+      "regular",
+      "shoes",
+      "suede"
+    ],
+    "collections": [
+      "Women shoes"
     ]
   },
   {
@@ -4992,6 +5439,14 @@
         "size": "41",
         "stock": 0
       }
+    ],
+    "tags": [
+      "leather",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Women shoes"
     ]
   },
   {
@@ -5079,6 +5534,14 @@
         "size": "41",
         "stock": 18
       }
+    ],
+    "tags": [
+      "leather",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Women shoes"
     ]
   },
   {
@@ -5154,6 +5617,14 @@
         "size": "XXL",
         "stock": 25
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "t-shirts"
+    ],
+    "collections": [
+      "Men t-shirts"
     ]
   },
   {
@@ -5229,6 +5700,14 @@
         "size": "XXL",
         "stock": 28
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "t-shirts"
+    ],
+    "collections": [
+      "Men t-shirts"
     ]
   },
   {
@@ -5334,6 +5813,14 @@
         "size": "XXL",
         "stock": 14
       }
+    ],
+    "tags": [
+      "cotton",
+      "oversized",
+      "t-shirts"
+    ],
+    "collections": [
+      "Men t-shirts"
     ]
   },
   {
@@ -5439,6 +5926,15 @@
         "size": "XXL",
         "stock": 24
       }
+    ],
+    "tags": [
+      "linen",
+      "regular",
+      "shirts"
+    ],
+    "collections": [
+      "Men shirts",
+      "Linen edit"
     ]
   },
   {
@@ -5544,6 +6040,15 @@
         "size": "XXL",
         "stock": 1
       }
+    ],
+    "tags": [
+      "linen",
+      "regular",
+      "shirts"
+    ],
+    "collections": [
+      "Men shirts",
+      "Linen edit"
     ]
   },
   {
@@ -5619,6 +6124,15 @@
         "size": "XXL",
         "stock": 3
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "shirts"
+    ],
+    "collections": [
+      "Men shirts",
+      "Linen edit"
     ]
   },
   {
@@ -5694,6 +6208,14 @@
         "size": "XXL",
         "stock": 7
       }
+    ],
+    "tags": [
+      "cotton",
+      "shirts",
+      "slim"
+    ],
+    "collections": [
+      "Men shirts"
     ]
   },
   {
@@ -5769,6 +6291,14 @@
         "size": "XXL",
         "stock": 27
       }
+    ],
+    "tags": [
+      "cotton",
+      "shirts",
+      "slim"
+    ],
+    "collections": [
+      "Men shirts"
     ]
   },
   {
@@ -5874,6 +6404,14 @@
         "size": "XXL",
         "stock": 2
       }
+    ],
+    "tags": [
+      "cotton",
+      "slim",
+      "trousers"
+    ],
+    "collections": [
+      "Men trousers"
     ]
   },
   {
@@ -6009,6 +6547,14 @@
         "size": "XXL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "slim",
+      "trousers"
+    ],
+    "collections": [
+      "Men trousers"
     ]
   },
   {
@@ -6144,6 +6690,14 @@
         "size": "XXL",
         "stock": 2
       }
+    ],
+    "tags": [
+      "cotton",
+      "regular",
+      "trousers"
+    ],
+    "collections": [
+      "Men trousers"
     ]
   },
   {
@@ -6219,6 +6773,15 @@
         "size": "XXL",
         "stock": 26
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "trousers"
+    ],
+    "collections": [
+      "Men trousers",
+      "Linen edit"
     ]
   },
   {
@@ -6294,6 +6857,15 @@
         "size": "XXL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "linen",
+      "relaxed",
+      "trousers"
+    ],
+    "collections": [
+      "Men trousers",
+      "Linen edit"
     ]
   },
   {
@@ -6369,6 +6941,15 @@
         "size": "XXL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jeans",
+      "slim"
+    ],
+    "collections": [
+      "Men jeans"
     ]
   },
   {
@@ -6474,6 +7055,15 @@
         "size": "XXL",
         "stock": 21
       }
+    ],
+    "tags": [
+      "cotton",
+      "denim",
+      "jeans",
+      "slim"
+    ],
+    "collections": [
+      "Men jeans"
     ]
   },
   {
@@ -6579,6 +7169,15 @@
         "size": "XXL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "knitwear",
+      "merino",
+      "regular",
+      "wool"
+    ],
+    "collections": [
+      "Men knitwear"
     ]
   },
   {
@@ -6684,6 +7283,15 @@
         "size": "XXL",
         "stock": 0
       }
+    ],
+    "tags": [
+      "knitwear",
+      "merino",
+      "regular",
+      "wool"
+    ],
+    "collections": [
+      "Men knitwear"
     ]
   },
   {
@@ -6759,6 +7367,14 @@
         "size": "XXL",
         "stock": 25
       }
+    ],
+    "tags": [
+      "cotton",
+      "jackets",
+      "regular"
+    ],
+    "collections": [
+      "Men jackets"
     ]
   },
   {
@@ -6834,6 +7450,14 @@
         "size": "XXL",
         "stock": 28
       }
+    ],
+    "tags": [
+      "cotton",
+      "jackets",
+      "regular"
+    ],
+    "collections": [
+      "Men jackets"
     ]
   },
   {
@@ -6921,6 +7545,14 @@
         "size": "45",
         "stock": 6
       }
+    ],
+    "tags": [
+      "leather",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Men shoes"
     ]
   },
   {
@@ -7008,6 +7640,14 @@
         "size": "45",
         "stock": 2
       }
+    ],
+    "tags": [
+      "leather",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Men shoes"
     ]
   },
   {
@@ -7095,6 +7735,14 @@
         "size": "45",
         "stock": 19
       }
+    ],
+    "tags": [
+      "canvas",
+      "regular",
+      "shoes"
+    ],
+    "collections": [
+      "Men shoes"
     ]
   },
   {
@@ -7122,6 +7770,15 @@
         "size": "ONE SIZE",
         "stock": 30
       }
+    ],
+    "tags": [
+      "accessories",
+      "canvas",
+      "cotton",
+      "regular"
+    ],
+    "collections": [
+      "Unisex accessories"
     ]
   },
   {
@@ -7149,6 +7806,16 @@
         "size": "ONE SIZE",
         "stock": 18
       }
+    ],
+    "tags": [
+      "accessories",
+      "canvas",
+      "cotton",
+      "final sale",
+      "regular"
+    ],
+    "collections": [
+      "Unisex accessories"
     ]
   },
   {
@@ -7176,6 +7843,15 @@
         "size": "ONE SIZE",
         "stock": 6
       }
+    ],
+    "tags": [
+      "accessories",
+      "final sale",
+      "leather",
+      "regular"
+    ],
+    "collections": [
+      "Women accessories"
     ]
   },
   {
@@ -7203,6 +7879,14 @@
         "size": "ONE SIZE",
         "stock": 0
       }
+    ],
+    "tags": [
+      "accessories",
+      "regular",
+      "silk"
+    ],
+    "collections": [
+      "Unisex accessories"
     ]
   },
   {
@@ -7229,6 +7913,166 @@
         "color": "terracotta print",
         "size": "ONE SIZE",
         "stock": 9
+      }
+    ],
+    "tags": [
+      "accessories",
+      "final sale",
+      "regular",
+      "silk"
+    ],
+    "collections": [
+      "Unisex accessories"
+    ]
+  },
+  {
+    "id": "QL-JKT-007",
+    "name": "Nerea Quilted Jacket",
+    "category": "jackets",
+    "gender": "women",
+    "description": "Lightweight quilted jacket with a high collar and a sage floral print. Ideal between seasons.",
+    "material": null,
+    "fit": null,
+    "price_eur": 59.95,
+    "compare_at_price_eur": 119.95,
+    "size_chart_id": null,
+    "care": null,
+    "final_sale": false,
+    "tags": [
+      "quilted",
+      "floral",
+      "high collar",
+      "transitional",
+      "plus sizes"
+    ],
+    "collections": [
+      "Women jackets",
+      "Sale"
+    ],
+    "variants": [
+      {
+        "sku": "QL-JKT-007-SAGEFL-2XS",
+        "color": "sage floral",
+        "size": "2XS",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-XS",
+        "color": "sage floral",
+        "size": "XS",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-S",
+        "color": "sage floral",
+        "size": "S",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-M",
+        "color": "sage floral",
+        "size": "M",
+        "stock": null,
+        "available": false
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-L",
+        "color": "sage floral",
+        "size": "L",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-XL",
+        "color": "sage floral",
+        "size": "XL",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-2XL",
+        "color": "sage floral",
+        "size": "2XL",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-3XL",
+        "color": "sage floral",
+        "size": "3XL",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JKT-007-SAGEFL-4XL",
+        "color": "sage floral",
+        "size": "4XL",
+        "stock": null,
+        "available": true
+      }
+    ]
+  },
+  {
+    "id": "QL-JMP-001",
+    "name": "Ondina Denim Jumpsuit",
+    "category": "jumpsuits",
+    "gender": "women",
+    "description": "Short-sleeved denim jumpsuit with a tie belt and front pockets.",
+    "material": null,
+    "fit": null,
+    "price_eur": 49.95,
+    "compare_at_price_eur": 99.9,
+    "size_chart_id": null,
+    "care": null,
+    "final_sale": false,
+    "tags": [
+      "denim",
+      "jumpsuit",
+      "summer",
+      "belted"
+    ],
+    "collections": [
+      "Women jumpsuits",
+      "Sale"
+    ],
+    "variants": [
+      {
+        "sku": "QL-JMP-001-LIGHTB-S",
+        "color": "light blue",
+        "size": "S",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JMP-001-LIGHTB-M",
+        "color": "light blue",
+        "size": "M",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JMP-001-LIGHTB-L",
+        "color": "light blue",
+        "size": "L",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JMP-001-LIGHTB-XL",
+        "color": "light blue",
+        "size": "XL",
+        "stock": null,
+        "available": true
+      },
+      {
+        "sku": "QL-JMP-001-LIGHTB-2XL",
+        "color": "light blue",
+        "size": "2XL",
+        "stock": null,
+        "available": false
       }
     ]
   }

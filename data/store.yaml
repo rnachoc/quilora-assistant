@@ -1,0 +1,81 @@
+# Author: Ignacio Rodríguez Caro
+# Store profile for the fictional demo shop "Quilora".
+#
+# To run the assistant for another shop, create a directory with:
+#   store.yaml        this file, adapted (validated by src/quilora/store/profile.py)
+#   policies/*.md     the shop's policies (any Markdown; numbered "## 1. Title" sections are
+#                     cited as "Doc §1", otherwise sections are numbered automatically)
+#   generated/        catalog JSON, e.g. produced by `python -m quilora.importers.shopify`
+# and point STORE_DIR to it. Check policies against this file with `make check-store`.
+
+id: quilora
+name: Quilora
+description: an online fashion store based in Spain that ships within the European Union
+website: https://quilora.example
+timezone: Europe/Madrid
+currency: EUR
+languages: [es, en]
+eu_consumer_law: true
+
+catalog:
+  language: en
+  search_config: english
+  # Used when a product has no size chart of its own (low-confidence recommendation).
+  fallback_size_charts:
+    women: women-dresses
+    men: men-tops
+    unisex: men-tops
+
+contact:
+  email: support@quilora.example
+  channels: [chat, email]
+  hours: Monday to Friday, 9:00-18:00 (Spanish peninsula time)
+  response_time: within 24 business hours
+
+shipping:
+  processing_business_days: [0, 1]   # Shipping Policy §1: same or next business day
+  cutoff_hour: 14
+  ships_from: Spain
+  split_shipments_possible: false
+  policy_ref: SHP-1
+  # Spanish national holidays 2026 (no processing or deliveries on these days).
+  holidays: [2026-01-01, 2026-01-06, 2026-04-03, 2026-05-01, 2026-08-15, 2026-10-12,
+             2026-11-01, 2026-12-06, 2026-12-08, 2026-12-25]
+  zones:
+    - {id: es-mainland, name: Mainland Spain, destinations: [ES], transit_business_days: [2, 4],
+       cost: 3.95, free_from: 50, policy_ref: SHP-2}
+    - {id: es-balearic, name: Balearic Islands, destinations: [ES-IB], transit_business_days: [3, 5],
+       cost: 5.95, free_from: 80, policy_ref: SHP-3}
+    - {id: es-canary-ceuta-melilla, name: "Canary Islands, Ceuta and Melilla",
+       destinations: [ES-CN, ES-CE, ES-ML], transit_business_days: [5, 8], cost: 9.95,
+       notes: Import taxes and customs fees may apply and are paid by the customer on delivery.,
+       policy_ref: SHP-4}
+    - {id: portugal, name: Portugal, destinations: [PT], transit_business_days: [3, 5],
+       cost: 5.95, free_from: 80, policy_ref: SHP-5}
+    - {id: eu, name: Rest of the European Union, destinations: [EU], transit_business_days: [4, 7],
+       cost: 9.95, free_from: 120, policy_ref: SHP-5}
+
+returns:
+  window_days: 30
+  return_shipping_paid_by: depends_on_method
+  method: prepaid_label
+  method_details: >-
+    A return reference and a prepaid label are sent by email. Drop-off is free in mainland
+    Spain and the Balearic Islands; home pickup costs 4.95 EUR, deducted from the refund.
+  exchanges_allowed: true
+  refund_days: 14
+  non_returnable: [final sale items, earrings, underwear, swimwear without hygiene liner,
+                   personalised items]
+  defective_items_to_support: true
+  policy_refs: {window: RET-1, start: RET-4, method: RET-5, refund: RET-6, defective: RET-7,
+                exchanges: EXC-1}
+
+order_changes:
+  cancellation_allowed_statuses: [processing]
+  address_change_allowed_statuses: [processing]
+  policy_ref: FAQ-4
+
+tracking_url_template: https://quilora.example/track?code={tracking_code}
+
+# Quilora publishes codes only in its newsletter (Payments Policy §3), so none are listed.
+promotions: []

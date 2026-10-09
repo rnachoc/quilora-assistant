@@ -44,6 +44,8 @@ jobs:
         run: ruff check src tests data
       - name: Synthetic data is up to date
         run: python data/generate.py && git diff --exit-code data/generated
+      - name: Store profile and policies are consistent
+        run: python -m quilora.store.consistency --strict
       - name: Seed database
         run: python -m quilora.seed
       - name: Tests

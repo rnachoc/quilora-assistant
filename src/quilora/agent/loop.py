@@ -125,7 +125,7 @@ class Agent:
 
     def system_prompt(self) -> str:
         """Render the system prompt with the store's current date."""
-        return render(self.prompt_name, today=self.settings.today())
+        return render(self.prompt_name, today=self.settings.today(), store=self.settings.store)
 
     def run_turn(self, conv: Conversation, user_text: str) -> TurnResult:
         """Process one customer message and return the reply; wraps the turn in a trace span."""
@@ -279,7 +279,7 @@ class Agent:
     def _guard_output(self, conv: Conversation, result: TurnResult, lang: str) -> None:
         """Output guard: block prompt leaks and discount codes, flag ungrounded amounts."""
         guarded = check_output(result.reply, grounding_text=grounding_text(conv.messages),
-                               lang=lang)
+                               lang=lang, store_name=self.settings.store.name)
         result.flags.extend(guarded.flags)
         if guarded.blocked:
             result.reply = guarded.text

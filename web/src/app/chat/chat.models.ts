@@ -36,3 +36,11 @@ export interface ChatMessage {
   text: string;
   meta?: TurnMeta;
 }
+
+/** The shop this assistant serves (GET /api/store). */
+export interface StoreInfo {
+  name: string;
+  languages: string[];
+  support_hours: string;
+  website: string | null;
+}

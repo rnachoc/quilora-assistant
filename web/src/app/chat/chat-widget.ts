@@ -1,7 +1,7 @@
 // Author: Ignacio Rodríguez Caro
 import { DecimalPipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, ElementRef, inject, signal, viewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, inject, signal, viewChild } from '@angular/core';
 
 import { ChatMessage } from './chat.models';
 import { ChatService } from './chat.service';
@@ -22,11 +22,11 @@ const SUGGESTIONS = [
   selector: 'app-chat-widget',
   template: `
     @if (open()) {
-      <section class="panel" role="dialog" aria-label="Quilora assistant">
+      <section class="panel" role="dialog" [attr.aria-label]="storeName() + ' assistant'">
         <header>
           <div>
-            <strong>Quilora assistant</strong>
-            <span class="sub">Demo store · synthetic data</span>
+            <strong>{{ storeName() }} · asistente</strong>
+            <span class="sub">Atención: {{ supportHours() }}</span>
           </div>
           <div class="actions">
             <button class="ghost" (click)="showDetails.set(!showDetails())"
@@ -94,7 +94,7 @@ const SUGGESTIONS = [
   styleUrl: './chat-widget.css',
   imports: [DecimalPipe],
 })
-export class ChatWidget {
+export class ChatWidget implements OnInit {
   private readonly chat = inject(ChatService);
   private readonly scroller = viewChild<ElementRef<HTMLElement>>('scroller');
 
@@ -105,6 +105,21 @@ export class ChatWidget {
   protected readonly draft = signal('');
   protected readonly messages = signal<ChatMessage[]>([]);
   protected readonly ticketId = signal<string | null>(null);
+  protected readonly storeName = signal('Tienda');
+  protected readonly supportHours = signal('');
+
+  /** Load the shop's name and support hours, so one widget serves any configured store. */
+  ngOnInit(): void {
+    this.chat.store().subscribe({
+      next: (info) => {
+        this.storeName.set(info.name);
+        this.supportHours.set(info.support_hours);
+      },
+      error: () => {
+        /* keep the generic defaults; chatting still works */
+      },
+    });
+  }
 
   /** Send a customer message to the API and append the reply (or a friendly error). */
   send(text: string): void {

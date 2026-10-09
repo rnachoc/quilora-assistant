@@ -62,3 +62,9 @@ web: ## Run the Angular widget (proxies /api to localhost:8000)
 
 up: ## Start the whole stack with Docker Compose
 	docker compose up --build
+
+check-store: ## Check the store profile and policies for contradictions (STORE_DIR or demo)
+	$(PY) -m quilora.store.consistency
+
+import-shopify: ## Import a Shopify feed: make import-shopify FEED=products.json STORE=my_store
+	$(PY) -m quilora.importers.shopify $(FEED) --store-dir $(STORE)

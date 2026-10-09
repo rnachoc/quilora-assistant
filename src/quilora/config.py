@@ -10,9 +10,12 @@ from __future__ import annotations
 
 import os
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import date, datetime, time
+from zoneinfo import ZoneInfo
 
 from quilora.env import load_dotenv
+from quilora.paths import DATA_DIR
+from quilora.store.profile import StoreProfile, load_profile
 
 
 def _int(name: str, default: int) -> int:
@@ -41,10 +44,25 @@ class Settings:
     otel_service_name: str = "quilora-assistant"
     otel_console: bool = False
     cors_origins: list[str] = field(default_factory=lambda: ["http://localhost:4200"])
+    # Directory with store.yaml, policies/ and generated/ (the shop being served).
+    store_dir: str = str(DATA_DIR)
+
+    @property
+    def store(self) -> StoreProfile:
+        """The validated profile of the shop this assistant serves (cached)."""
+        return load_profile(self.store_dir)
 
     def today(self) -> date:
         """The store's notion of "today". Fixed in dev/evals so results are reproducible."""
-        return self.store_today or date.today()
+        return self.store_today or datetime.now(ZoneInfo(self.store.timezone)).date()
+
+    def now(self) -> datetime:
+        """Current store-local time. With STORE_TODAY set it is that day at 10:00, so delivery
+        estimates (which depend on the order cut-off hour) are reproducible too."""
+        tz = ZoneInfo(self.store.timezone)
+        if self.store_today:
+            return datetime.combine(self.store_today, time(10, 0), tzinfo=tz)
+        return datetime.now(tz)
 
 
 def load_settings(dotenv_path: str = ".env") -> Settings:
@@ -69,6 +87,7 @@ def load_settings(dotenv_path: str = ".env") -> Settings:
         otel_endpoint=os.environ.get("OTEL_EXPORTER_OTLP_ENDPOINT") or None,
         otel_service_name=os.environ.get("OTEL_SERVICE_NAME") or Settings.otel_service_name,
         otel_console=os.environ.get("OTEL_CONSOLE") == "1",
+        store_dir=os.environ.get("STORE_DIR") or str(DATA_DIR),
         cors_origins=[
             o.strip()
             for o in (os.environ.get("CORS_ORIGINS") or "http://localhost:4200").split(",")

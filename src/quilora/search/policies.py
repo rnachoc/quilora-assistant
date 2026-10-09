@@ -57,9 +57,10 @@ def search_fts(conn: psycopg.Connection, query: str, limit: int) -> list[PolicyH
         return []
     # OR semantics + cover-density ranking: chunks matching more (and closer) terms win.
     rows = conn.execute(
+        # Each chunk is parsed with its own text-search language (set from the store profile).
         "SELECT id, doc_title, section_no, section_title, content,"
         "       ts_rank_cd(search_tsv, q) AS score"
-        "  FROM policy_chunks, to_tsquery('english', %s) AS q"
+        "  FROM policy_chunks, LATERAL to_tsquery(search_config, %s) AS q"
         " WHERE search_tsv @@ q ORDER BY score DESC, id LIMIT %s",
         (terms, limit),
     ).fetchall()

@@ -47,7 +47,7 @@ def search_policies(ctx: ToolContext, args: SearchPoliciesInput) -> dict:
 SEARCH_POLICIES = ToolSpec(
     name="search_policies",
     description=(
-        "Search Quilora's official policies: shipping (costs, delivery times by region, "
+        "Search {store_name}'s official policies: shipping (costs, delivery times by region, "
         "tracking, delays), returns (window, conditions, non-returnable items, methods, "
         "refunds), exchanges, payments (methods, discount codes, invoices), garment care, "
         "sizing advice, customer support and FAQs. Call it before answering any policy "

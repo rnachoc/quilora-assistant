@@ -51,15 +51,15 @@ _AMOUNT = re.compile(rf"(?:€\s?)?{_NUM}\s?(?:€|eur\b|euros?\b)|€\s?{_NUM}"
 
 BLOCKED_REPLY = {
     "es": "Lo siento, no puedo ayudarte con eso. Puedo ayudarte con productos, tallas, pedidos, "
-          "devoluciones y políticas de Quilora.",
-    "en": "Sorry, I can't help with that. I can help with Quilora products, sizes, orders, "
+          "devoluciones y políticas de {store}.",
+    "en": "Sorry, I can't help with that. I can help with {store} products, sizes, orders, "
           "returns and policies.",
 }
 NO_DISCOUNT_REPLY = {
-    "es": "No puedo dar ni aplicar códigos de descuento. Las promociones se publican solo en "
-          "nuestra newsletter y en la web (Política de pagos §3).",
-    "en": "I can't give or apply discount codes. Promotions are published only in our "
-          "newsletter and on the website (Payments Policy §3).",
+    "es": "No puedo crear ni aplicar códigos de descuento. Solo puedo informarte de las "
+          "promociones públicas que {store} tenga activas.",
+    "en": "I can't create or apply discount codes. I can only tell you about the public "
+          "promotions {store} is currently running.",
 }
 
 
@@ -129,17 +129,24 @@ def numbers_in(text: str) -> set[str]:
     return {normalise_amount(n) for n in re.findall(r"\d{1,5}(?:[.,]\d{1,2})?", text)}
 
 
-def check_output(reply: str, *, grounding_text: str, lang: str) -> GuardResult:
-    """`grounding_text`: tool results and customer messages of the conversation so far."""
+def check_output(reply: str, *, grounding_text: str, lang: str,
+                 store_name: str = "the shop") -> GuardResult:
+    """`grounding_text`: tool results and customer messages of the conversation so far.
+
+    Discount codes returned by a tool (the store's public promotions) are part of the
+    grounding text, so they pass; any other code-like token near "code/descuento" is blocked.
+    """
     flags: list[str] = []
 
     if PROMPT_CANARY in reply or "Rules you must always follow" in reply:
-        return GuardResult(BLOCKED_REPLY[lang], ["prompt_leak_blocked"], blocked=True)
+        return GuardResult(BLOCKED_REPLY[lang].format(store=store_name),
+                               ["prompt_leak_blocked"], blocked=True)
 
     if _CODE_CONTEXT.search(reply):
         suspicious = [t for t in _CODE_TOKEN.findall(reply) if t not in grounding_text]
         if suspicious:
-            return GuardResult(NO_DISCOUNT_REPLY[lang], ["discount_code_blocked"], blocked=True)
+            return GuardResult(NO_DISCOUNT_REPLY[lang].format(store=store_name),
+                               ["discount_code_blocked"], blocked=True)
 
     known = numbers_in(grounding_text)
     ungrounded = sorted(a for a in amounts_in(reply) if a not in known)

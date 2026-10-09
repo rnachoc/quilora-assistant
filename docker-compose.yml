@@ -39,6 +39,10 @@ services:
       DATABASE_URL: postgresql://quilora:${POSTGRES_PASSWORD:-quilora_dev}@db:5432/quilora
       STORE_TODAY: ${STORE_TODAY:-2026-10-01}
       OTEL_EXPORTER_OTLP_ENDPOINT: http://jaeger:4318
+      # To serve your own shop: mount its directory and point STORE_DIR to it (same for
+      # the seed service). See docs/adding-a-store.md.
+      # STORE_DIR: /store
+    # volumes: ["./my_store:/store:ro"]
     ports: ["8000:8000"]
     depends_on:
       seed: {condition: service_completed_successfully}

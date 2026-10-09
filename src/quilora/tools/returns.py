@@ -34,6 +34,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from quilora.tools.base import ToolContext, ToolError, ToolSpec
 from quilora.tools.orders import load_verified_order, order_view
+from quilora.tools.store_info import policy_citation
 
 CONFIRMATION_TTL = timedelta(minutes=30)
 HANDOFF_REASONS = {"defective_or_damaged", "wrong_item"}
@@ -97,7 +98,7 @@ def _validated_items(ctx: ToolContext, args: CreateReturnInput) -> tuple[dict, l
                  "again.",
         )
     order = load_verified_order(ctx, args.order_id, email)
-    view = order_view(order, ctx.settings.today())
+    view = order_view(order, ctx.settings)
     lines = {item["line_no"]: item for item in view["items"]}
 
     selected = []
@@ -126,7 +127,40 @@ def _validated_items(ctx: ToolContext, args: CreateReturnInput) -> tuple[dict, l
     return order, selected
 
 
-def _summary(order_id: int, selected: list[dict], args: CreateReturnInput) -> dict:
+METHOD_TEXT = {
+    "prepaid_label": "A return reference and a prepaid label are sent by email.",
+    "address_on_request": "The support team emails the return address; send the parcel only "
+                          "to that address.",
+    "drop_off_point": "Take the parcel to a partner drop-off point with the reference sent "
+                      "by email.",
+}
+PAID_BY_TEXT = {
+    "store": "Return shipping is free.",
+    "customer": "Return shipping is paid by the customer.",
+    "depends_on_method": None,  # explained by method_details
+}
+
+
+def _cite(ctx: ToolContext, key: str) -> str:
+    """' (Returns Policy §5 (...))' for a returns topic, or '' if the store gave no ref."""
+    citation = policy_citation(ctx, ctx.settings.store.returns.policy_refs.get(key))
+    return f" ({citation})" if citation else ""
+
+
+def return_terms(ctx: ToolContext) -> dict:
+    """How returns work in this shop, from the store profile, with citations."""
+    rules = ctx.settings.store.returns
+    steps = [METHOD_TEXT[rules.method] + _cite(ctx, "start"), rules.method_details + _cite(
+        ctx, "method")]
+    if PAID_BY_TEXT[rules.return_shipping_paid_by]:
+        steps.append(PAID_BY_TEXT[rules.return_shipping_paid_by])
+    if not rules.exchanges_allowed:
+        steps.append("Exchanges are not offered: return the item and place a new order.")
+    return {"what_happens_next": " ".join(steps)}
+
+
+def _summary(ctx: ToolContext, order_id: int, selected: list[dict],
+             args: CreateReturnInput) -> dict:
     """The summary the customer must see and confirm."""
     return {
         "order_id": order_id,
@@ -138,26 +172,24 @@ def _summary(order_id: int, selected: list[dict], args: CreateReturnInput) -> di
             for i in selected
         ],
         "reason": args.reason,
-        "what_happens_next": "A return reference and a prepaid label are sent by email "
-                             "(Returns Policy §4). Drop-off is free in mainland Spain and the "
-                             "Balearic Islands; home pickup costs 4.95 EUR (Returns Policy §5).",
+        **return_terms(ctx),
     }
 
 
 def create_return_request(ctx: ToolContext, args: CreateReturnInput) -> dict:
+    """Handler: propose (no token) or confirm (token) a return, enforcing every rule."""
     # Replay of an already confirmed token (e.g. the model repeats the call): same answer,
     # no new side effect. Checked first, because the item is no longer returnable now.
-    """Handler: propose (no token) or confirm (token) a return, enforcing every rule."""
     replay = ctx.state.pending_returns.get(args.confirmation_token or "")
     if replay and replay.get("return_id"):
         return {"status": "already_requested", "return_id": replay["return_id"],
                 "note": "This exact return was already created; nothing new was done."}
 
-    if args.reason in HANDOFF_REASONS:
+    if args.reason in HANDOFF_REASONS and ctx.settings.store.returns.defective_items_to_support:
         raise ToolError(
             "USE_HANDOFF",
-            "Defective, damaged or wrong items are reviewed by the support team first "
-            "(Returns Policy §7).",
+            "Defective, damaged or wrong items are reviewed by the support team first"
+            f"{_cite(ctx, 'defective')}.",
             hint="Call handoff_to_human with reason 'defective_or_wrong_item' and a summary.",
         )
 
@@ -187,7 +219,7 @@ def create_return_request(ctx: ToolContext, args: CreateReturnInput) -> dict:
         return {
             "status": "confirmation_required",
             "confirmation_token": token,
-            "summary": _summary(args.order_id, selected, args),
+            "summary": _summary(ctx, args.order_id, selected, args),
             "instructions": "Show this summary to the customer and ask for an explicit yes. "
                             "Only after they confirm in their next message, call this tool again "
                             "with the same order, items and reason plus this confirmation_token.",
@@ -240,10 +272,11 @@ def create_return_request(ctx: ToolContext, args: CreateReturnInput) -> dict:
     return {
         "status": "created",
         "return_id": return_id,
-        "summary": _summary(args.order_id, selected, args),
-        "refund_policy": "The refund is issued to the original payment method within 14 days "
-                         "after the warehouse receives and inspects the items (Returns Policy "
-                         "§6). Do not promise a specific date.",
+        "summary": _summary(ctx, args.order_id, selected, args),
+        "refund_policy": "The refund is issued to the original payment method within "
+                         f"{ctx.settings.store.returns.refund_days} days after the items are "
+                         f"received and inspected{_cite(ctx, 'refund')}. Do not promise a "
+                         "specific date.",
     }
 
 

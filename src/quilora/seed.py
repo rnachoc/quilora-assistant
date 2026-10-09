@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import json
 from datetime import datetime
+from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import psycopg
@@ -21,6 +22,7 @@ from quilora.config import load_settings
 from quilora.db import migrate
 from quilora.paths import DATA_DIR
 from quilora.search.chunking import load_policies
+from quilora.store.profile import load_profile
 
 STORE_TZ = ZoneInfo("Europe/Madrid")
 
@@ -54,14 +56,26 @@ def reset_writes(conn: psycopg.Connection) -> None:
         conn.execute(f"TRUNCATE {', '.join(tables)} RESTART IDENTITY CASCADE")
 
 
-def load_all(conn: psycopg.Connection) -> dict[str, int]:
-    """Replace all store data with the synthetic dataset and the chunked policies."""
-    gen = DATA_DIR / "generated"
-    charts = json.loads((gen / "size_charts.json").read_text())
-    products = json.loads((gen / "products.json").read_text())
-    customers = json.loads((gen / "customers.json").read_text())
-    orders = json.loads((gen / "orders.json").read_text())
-    chunks = load_policies(DATA_DIR / "policies")
+def _read_json(path: Path) -> list:
+    """Load a generated JSON file; missing files (e.g. a catalog-only import) mean no rows."""
+    return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else []
+
+
+def load_all(conn: psycopg.Connection, store_dir: Path | str | None = None) -> dict[str, int]:
+    """Replace all store data with the catalog, orders and chunked policies of `store_dir`.
+
+    Defaults to the bundled demo shop. Text search uses the catalog language declared in
+    the store profile.
+    """
+    root = Path(store_dir) if store_dir else DATA_DIR
+    profile = load_profile(str(root))
+    search_config = profile.catalog.search_config
+    gen = root / "generated"
+    charts = _read_json(gen / "size_charts.json")
+    products = _read_json(gen / "products.json")
+    customers = _read_json(gen / "customers.json")
+    orders = _read_json(gen / "orders.json")
+    chunks = load_policies(root / "policies")
 
     tables = _existing(conn, WRITE_TABLES + DATA_TABLES)
     conn.execute(f"TRUNCATE {', '.join(tables)} RESTART IDENTITY CASCADE")
@@ -77,15 +91,20 @@ def load_all(conn: psycopg.Connection) -> dict[str, int]:
         for p in products:
             cur.execute(
                 "INSERT INTO products (id, name, category, gender, description, material, fit,"
-                " price_eur, size_chart_id, care, final_sale)"
-                " VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                (p["id"], p["name"], p["category"], p["gender"], p["description"], p["material"],
-                 p["fit"], p["price_eur"], p["size_chart_id"], p["care"], p["final_sale"]),
+                " price_eur, size_chart_id, care, final_sale, tags, collections,"
+                " compare_at_price_eur, url, model_info, search_config)"
+                " VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                (p["id"], p["name"], p["category"], p["gender"], p["description"],
+                 p.get("material"), p.get("fit"), p["price_eur"], p.get("size_chart_id"),
+                 p.get("care"), p.get("final_sale", False), p.get("tags", []),
+                 p.get("collections", []), p.get("compare_at_price_eur"), p.get("url"),
+                 p.get("model_info"), search_config),
             )
             cur.executemany(
-                "INSERT INTO product_variants (sku, product_id, color, size, stock)"
-                " VALUES (%s, %s, %s, %s, %s)",
-                [(v["sku"], p["id"], v["color"], v["size"], v["stock"]) for v in p["variants"]],
+                "INSERT INTO product_variants (sku, product_id, color, size, stock, available)"
+                " VALUES (%s, %s, %s, %s, %s, %s)",
+                [(v["sku"], p["id"], v["color"], v["size"], v.get("stock"),
+                  v.get("available", (v.get("stock") or 0) > 0)) for v in p["variants"]],
             )
         cur.executemany(
             "INSERT INTO customers (id, full_name, email, city, country, preferred_language)"
@@ -111,10 +130,10 @@ def load_all(conn: psycopg.Connection) -> dict[str, int]:
                   i["size"], i["quantity"], i["unit_price_eur"]) for i in o["items"]],
             )
         cur.executemany(
-            "INSERT INTO policy_chunks (id, doc_id, doc_title, section_no, section_title, content)"
-            " VALUES (%s, %s, %s, %s, %s, %s)",
-            [(c.id, c.doc_id, c.doc_title, c.section_no, c.section_title, c.content)
-             for c in chunks],
+            "INSERT INTO policy_chunks (id, doc_id, doc_title, section_no, section_title, content,"
+            " search_config) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+            [(c.id, c.doc_id, c.doc_title, c.section_no, c.section_title, c.content,
+              search_config) for c in chunks],
         )
 
     return {
@@ -142,7 +161,7 @@ def main() -> None:
             reset_writes(conn)
             print("Cleared runtime tables.")
             return
-        counts = load_all(conn)
+        counts = load_all(conn, settings.store_dir)
     print("Loaded: " + ", ".join(f"{k}={v}" for k, v in counts.items()))
 
 

@@ -23,15 +23,16 @@ STATEMENT_TIMEOUT_MS = 3000
 class Database:
     """Thin wrapper around a psycopg connection pool returning rows as dicts."""
 
-    def __init__(self, url: str, min_size: int = 1, max_size: int = 10) -> None:
+    def __init__(self, url: str, min_size: int = 1, max_size: int = 10,
+                 search_path: str | None = None) -> None:
+        options = f"-c statement_timeout={STATEMENT_TIMEOUT_MS}"
+        if search_path:  # e.g. one schema per shop in a multi-store deployment, or tests
+            options += f" -c search_path={search_path},public"
         self._pool = ConnectionPool(
             url,
             min_size=min_size,
             max_size=max_size,
-            kwargs={
-                "row_factory": dict_row,
-                "options": f"-c statement_timeout={STATEMENT_TIMEOUT_MS}",
-            },
+            kwargs={"row_factory": dict_row, "options": options},
             open=True,
         )
 

@@ -52,6 +52,7 @@ class HandoffInput(BaseModel):
 
 def handoff_to_human(ctx: ToolContext, args: HandoffInput) -> dict:
     """Handler: open or update this conversation's ticket and audit it."""
+    contact = ctx.settings.store.contact
     priority = "high" if args.reason in ALWAYS_HIGH else args.priority
     verified = args.order_id is not None and str(args.order_id) in ctx.state.verified_orders
     order_id = args.order_id
@@ -88,8 +89,8 @@ def handoff_to_human(ctx: ToolContext, args: HandoffInput) -> dict:
         "ticket_id": row["id"],
         "status": "created" if row["created"] else "updated",
         "priority": priority,
-        "expected_response": "Within 24 business hours; the team works Monday to Friday, "
-                             "9:00-18:00 Spanish peninsula time (Customer Support §1).",
+        "expected_response": f"{contact.response_time.capitalize()}; the team works "
+                             f"{contact.hours}.",
         "instructions": "Give the customer the ticket ID and the expected response time. Do "
                         "not promise any outcome.",
     }
@@ -98,7 +99,8 @@ def handoff_to_human(ctx: ToolContext, args: HandoffInput) -> dict:
 HANDOFF_TO_HUMAN = ToolSpec(
     name="handoff_to_human",
     description=(
-        "Transfer the case to Quilora's support team by opening a ticket. Use it for complaints, "
+        "Transfer the case to {store_name}'s support team by opening a ticket. Use it for "
+        "complaints, "
         "refund or payment disputes, defective, damaged or wrong items, lost or delayed parcels, "
         "requests only the team can handle (address change, cancellation, exchange, invoice "
         "with company details), when the customer asks for a person, after failed order "

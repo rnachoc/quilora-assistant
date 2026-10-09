@@ -1,15 +1,17 @@
 // Author: Ignacio Rodríguez Caro
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
 import { ChatWidget } from './chat/chat-widget';
+import { ChatService } from './chat/chat.service';
 
-/** A minimal storefront so the widget can be demoed in context. */
+/** A minimal demo storefront so the widget can be shown in context; the shop name comes
+ * from the API, the rest is placeholder content. */
 @Component({
   selector: 'app-root',
   imports: [ChatWidget],
   template: `
     <header class="top">
-      <span class="logo">Quilora</span>
+      <span class="logo">{{ storeName() }}</span>
       <nav><a>Mujer</a><a>Hombre</a><a>Accesorios</a></nav>
     </header>
 
@@ -43,4 +45,13 @@ import { ChatWidget } from './chat/chat-widget';
     @media (max-width: 600px) { nav { display: none; } .top { padding: 16px; } main { padding: 40px 16px; } }
   `,
 })
-export class App {}
+export class App {
+  /** Shop name shown in the header, loaded from the API (any configured store). */
+  protected readonly storeName = signal('');
+
+  constructor() {
+    inject(ChatService)
+      .store()
+      .subscribe({ next: (info) => this.storeName.set(info.name), error: () => {} });
+  }
+}

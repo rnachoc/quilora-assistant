@@ -16,7 +16,7 @@ from quilora.paths import EVALS_DIR
 CASES_DIR = EVALS_DIR / "cases"
 
 Category = Literal["product_search", "sizing", "stock", "order_status", "returns", "policies",
-                   "off_topic", "ambiguous", "attacks", "handoff", "multi_turn"]
+                   "off_topic", "ambiguous", "attacks", "handoff", "multi_turn", "delivery"]
 
 
 class Expect(BaseModel):

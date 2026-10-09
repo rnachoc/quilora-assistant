@@ -532,11 +532,73 @@ def generate_orders(rng: random.Random, products: list[dict], customers: list[di
     return orders
 
 
+# Products shaped like a real shop's public feed: no material, care, fit or size chart,
+# availability without unit counts, free-form category and sizes 2XS-4XL, sale prices.
+# They are added AFTER the random draws so the rest of the dataset stays identical.
+FEED_STYLE_PRODUCTS = [
+    {
+        "id": "QL-JKT-007", "name": "Nerea Quilted Jacket", "category": "jackets",
+        "gender": "women", "price_eur": 59.95, "compare_at_price_eur": 119.95,
+        "description": "Lightweight quilted jacket with a high collar and a sage floral print. "
+                       "Ideal between seasons.",
+        "tags": ["quilted", "floral", "high collar", "transitional", "plus sizes"],
+        "colors": ["sage floral"], "sizes": ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+        "unavailable": [("sage floral", "M")],
+    },
+    {
+        "id": "QL-JMP-001", "name": "Ondina Denim Jumpsuit", "category": "jumpsuits",
+        "gender": "women", "price_eur": 49.95, "compare_at_price_eur": 99.90,
+        "description": "Short-sleeved denim jumpsuit with a tie belt and front pockets.",
+        "tags": ["denim", "jumpsuit", "summer", "belted"],
+        "colors": ["light blue"], "sizes": ["S", "M", "L", "XL", "2XL"],
+        "unavailable": [("light blue", "2XL")],
+    },
+]
+
+# A few existing products on sale (compare-at = previous price shown by the shop).
+SALE_PRICES = {"QL-DRS-003": 99.95, "QL-KNT-001": 109.95, "QL-TRS-007": 79.95}
+
+
+def enrich_catalog(products: list[dict]) -> None:
+    """Add tags, collections, sale prices and feed-style products (deterministic, no RNG)."""
+    for p in products:
+        material = p["material"].lower()
+        tags = [p["category"], p["fit"]]
+        tags += [m for m in ("linen", "cotton", "wool", "merino", "silk", "denim", "leather",
+                             "viscose", "suede", "canvas") if m in material]
+        if p["final_sale"]:
+            tags.append("final sale")
+        p["tags"] = sorted(set(tags))
+        p["collections"] = [f"{p['gender'].capitalize()} {p['category']}"]
+        if "linen" in material:
+            p["collections"].append("Linen edit")
+        if p["id"] in SALE_PRICES:
+            p["compare_at_price_eur"] = SALE_PRICES[p["id"]]
+            p["collections"].append("Sale")
+
+    for spec in FEED_STYLE_PRODUCTS:
+        variants = [
+            {"sku": f"{spec['id']}-{c.upper().replace(' ', '')[:6]}-{size}", "color": c,
+             "size": size, "stock": None, "available": (c, size) not in spec["unavailable"]}
+            for c in spec["colors"] for size in spec["sizes"]
+        ]
+        products.append({
+            "id": spec["id"], "name": spec["name"], "category": spec["category"],
+            "gender": spec["gender"], "description": spec["description"], "material": None,
+            "fit": None, "price_eur": spec["price_eur"],
+            "compare_at_price_eur": spec["compare_at_price_eur"], "size_chart_id": None,
+            "care": None, "final_sale": False, "tags": spec["tags"],
+            "collections": [f"{spec['gender'].capitalize()} {spec['category']}", "Sale"],
+            "variants": variants,
+        })
+
+
 def main() -> None:
     rng = random.Random(SEED)
     products = generate_products(rng)
     customers = generate_customers(rng)
     orders = generate_orders(rng, products, customers)
+    enrich_catalog(products)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     files = {

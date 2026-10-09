@@ -213,11 +213,19 @@ def to_json(payload: dict[str, Any]) -> str:
 class ToolRegistry:
     """The single entry point for executing tools, shared by the agent loop and MCP."""
 
-    def __init__(self, specs: list[ToolSpec]) -> None:
+    def __init__(self, specs: list[ToolSpec], variables: dict[str, str] | None = None) -> None:
         names = [s.name for s in specs]
         if len(names) != len(set(names)):
             raise ValueError(f"Duplicate tool names: {names}")
         self._specs = {s.name: s for s in specs}
+        # Store-specific words in tool descriptions, e.g. {store_name}, {catalog_language}.
+        self.variables = variables or {}
+
+    def render(self, text: str) -> str:
+        """Fill the store placeholders of a description."""
+        for key, value in self.variables.items():
+            text = text.replace("{" + key + "}", value)
+        return text
 
     @property
     def specs(self) -> list[ToolSpec]:
@@ -229,8 +237,9 @@ class ToolRegistry:
         return self._specs.get(name)
 
     def definitions(self) -> list[dict[str, Any]]:
-        """Tool definitions to send to the model with every request."""
-        return [s.definition() for s in self._specs.values()]
+        """Tool definitions to send to the model, with store placeholders filled in."""
+        return [json.loads(self.render(json.dumps(s.definition(), ensure_ascii=False)))
+                for s in self._specs.values()]
 
     def execute(self, name: str, raw_input: dict[str, Any], ctx: ToolContext) -> ToolOutcome:
         """Validate and run one tool call, always returning a ToolOutcome (never raising)."""

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 
-import { ChatResponse } from './chat.models';
+import { ChatResponse, StoreInfo } from './chat.models';
 
 const SESSION_KEY = 'quilora.session_id';
 
@@ -11,6 +11,11 @@ const SESSION_KEY = 'quilora.session_id';
 @Injectable({ providedIn: 'root' })
 export class ChatService {
   private readonly http = inject(HttpClient);
+
+  /** The configured shop's public details (name, languages, support hours). */
+  store(): Observable<StoreInfo> {
+    return this.http.get<StoreInfo>('/api/store');
+  }
 
   /** Post one message, reusing the stored session ID so the server keeps the context. */
   send(message: string): Observable<ChatResponse> {

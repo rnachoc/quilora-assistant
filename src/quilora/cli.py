@@ -34,7 +34,7 @@ def raw_chat(prompt_name: str) -> None:
     settings = load_settings()
     client = AnthropicModelClient(settings.anthropic_api_key, settings.agent_model,
                                   settings.model_timeout_s)
-    system = render(prompt_name, today=settings.today())
+    system = render(prompt_name, today=settings.today(), store=settings.store)
     history: list[dict] = []
     total = TokenUsage()
     print(f"Raw chat with {settings.agent_model} (prompt: {prompt_name}). Ctrl-D to exit.\n")
@@ -58,7 +58,7 @@ def agent_chat(verbose: bool) -> None:
     setup_tracing(settings)
     agent = build_agent(settings)
     conv = Conversation()
-    print(f"Quilora assistant ({settings.agent_model}). Ctrl-D to exit.")
+    print(f"{settings.store.name} assistant ({settings.agent_model}). Ctrl-D to exit.")
     if not PRICING_VERIFIED:
         print("(cost figures use an unverified price table, see agent/pricing.py)")
     print()
@@ -79,7 +79,7 @@ def agent_chat(verbose: bool) -> None:
 
 def main() -> None:
     """Command-line entry point."""
-    parser = argparse.ArgumentParser(description="Quilora assistant in the terminal")
+    parser = argparse.ArgumentParser(description="Store assistant in the terminal")
     parser.add_argument("--raw", action="store_true", help="model only, no tools (phase 2)")
     parser.add_argument("--prompt", default="minimal", help="prompt template for --raw")
     parser.add_argument("--verbose", action="store_true", help="print tool inputs")

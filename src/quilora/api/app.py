@@ -65,6 +65,15 @@ class ChatResponse(BaseModel):
     meta: TurnMeta
 
 
+class StoreInfo(BaseModel):
+    """Public facts the widget needs to present itself for the configured shop."""
+
+    name: str
+    languages: list[str]
+    support_hours: str
+    website: str | None
+
+
 class TranscriptMessage(BaseModel):
     """One customer-visible message of a conversation."""
     role: str
@@ -104,7 +113,7 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
         if agent is None:
             db.close()
 
-    app = FastAPI(title="Quilora Assistant API", version="0.1.0", lifespan=lifespan)
+    app = FastAPI(title="Fashion Store Assistant API", version="0.1.0", lifespan=lifespan)
     app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins,
                        allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
 
@@ -112,6 +121,13 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
     def healthz() -> dict[str, str]:
         """Liveness probe: the process is running."""
         return {"status": "ok"}
+
+    @app.get("/api/store", response_model=StoreInfo)
+    def store_info() -> StoreInfo:
+        """Name, languages and support hours of the shop this API serves."""
+        store = settings.store
+        return StoreInfo(name=store.name, languages=store.languages,
+                         support_hours=store.contact.hours, website=store.website)
 
     @app.get("/readyz")
     def readyz() -> dict[str, str]:
