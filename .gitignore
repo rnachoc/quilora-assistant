@@ -1,0 +1,38 @@
+# --- Secrets: never commit real credentials ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# --- Embedding model cache (downloaded at runtime) ---
+.cache/
+models_cache/
+
+# --- Evaluation outputs (only the committed baseline is versioned) ---
+evals/results/
+
+# --- Node / Angular ---
+web/node_modules/
+web/dist/
+web/.angular/
+
+# --- OS / editors ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
