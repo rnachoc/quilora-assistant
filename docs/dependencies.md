@@ -10,3 +10,4 @@ against PyPI on 2026-10-09.
 | psycopg[binary] | 3.3.6 | 1 | PostgreSQL driver (psycopg 3: native async, server-side binding, row factories) | psycopg2 (legacy), SQLAlchemy (ORM not needed for ~10 hand-written queries) |
 | psycopg-pool | 3.3.3 | 1 | Connection pool shared by API threads and tools | One connection per request (slow, exhausts connections) |
 | anthropic | 1.12.1 | 2 | Official SDK for the Messages API: typed requests, retries with backoff, timeouts | Raw HTTP with httpx (re-implementing retries and types) |
+| pydantic | 2.14.0 | 3 | Validates every tool input before it reaches business code; generates the JSON Schema sent to the model, so schema and validation cannot drift | Hand-written JSON Schema + manual checks (two sources of truth) |

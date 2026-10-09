@@ -28,3 +28,6 @@ seed: ## Create the schema and load the synthetic data into Postgres
 
 chat-raw: ## Phase 2: chat with the model, no tools
 	$(PY) -m quilora.cli --raw
+
+chat: ## Chat with the full agent in the terminal (needs ANTHROPIC_API_KEY)
+	$(PY) -m quilora.cli --verbose
