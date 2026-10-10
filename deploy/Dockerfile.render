@@ -36,6 +36,8 @@ RUN useradd --create-home --uid 1000 app && chown -R app /app
 USER app
 
 # Render injects PORT. Migrations run on every start; data loads only into an empty DB.
+# In the scripted demo, returns/tickets/sessions are cleared on each start (the free
+# instance restarts after sleeping), so the sample return can be tried again.
 # One worker fits the memory limit; --proxy-headers takes the client IP from the platform's
 # proxy, which the login throttle keys on.
-CMD ["sh", "-c", "python -m quilora.seed --if-empty && exec uvicorn quilora.api.app:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1 --proxy-headers --forwarded-allow-ips='*'"]
+CMD ["sh", "-c", "python -m quilora.seed --if-empty && if [ \"$AGENT_MODE\" = scripted ]; then python -m quilora.seed --reset-writes; fi && exec uvicorn quilora.api.app:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1 --proxy-headers --forwarded-allow-ips='*'"]

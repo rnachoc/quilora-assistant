@@ -157,7 +157,7 @@ class Agent:
         with self.tracer.start_as_current_span(name, kind=trace.SpanKind.CLIENT) as span:
             span.set_attributes({
                 "gen_ai.operation.name": "chat",
-                "gen_ai.provider.name": "anthropic",
+                "gen_ai.provider.name": getattr(self.model, "provider", "anthropic"),
                 "gen_ai.request.model": self.model.model,
                 "gen_ai.request.max_tokens": self.settings.agent_max_tokens,
             })

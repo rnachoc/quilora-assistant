@@ -31,6 +31,9 @@ class Settings:
     """All runtime configuration in one immutable object (see .env.example)."""
     database_url: str = "postgresql://quilora:quilora_dev@localhost:5432/quilora"
     anthropic_api_key: str | None = None
+    # live = Claude via the Anthropic API; scripted = deterministic demo model, no API key or
+    # cost (ADR 0023).
+    agent_mode: str = "live"
     agent_model: str = "claude-sonnet-5-5"
     judge_model: str = "claude-haiku-5-5"
     agent_max_tokens: int = 1024
@@ -79,6 +82,9 @@ def load_settings(dotenv_path: str = ".env") -> Settings:
     backend = (os.environ.get("POLICY_SEARCH_BACKEND") or "fts").lower()
     if backend not in {"fts", "vector", "hybrid"}:
         raise ValueError(f"POLICY_SEARCH_BACKEND must be fts, vector or hybrid, got {backend!r}")
+    mode = (os.environ.get("AGENT_MODE") or "live").lower()
+    if mode not in {"live", "scripted"}:
+        raise ValueError(f"AGENT_MODE must be live or scripted, got {mode!r}")
     demo_username = os.environ.get("DEMO_USERNAME") or None
     demo_password = os.environ.get("DEMO_PASSWORD") or None
     if bool(demo_username) != bool(demo_password):
@@ -93,6 +99,7 @@ def load_settings(dotenv_path: str = ".env") -> Settings:
     return Settings(
         database_url=os.environ.get("DATABASE_URL") or Settings.database_url,
         anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY") or None,
+        agent_mode=mode,
         agent_model=os.environ.get("AGENT_MODEL") or Settings.agent_model,
         judge_model=os.environ.get("JUDGE_MODEL") or Settings.judge_model,
         agent_max_tokens=_int("AGENT_MAX_TOKENS", Settings.agent_max_tokens),

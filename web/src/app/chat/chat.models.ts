@@ -43,4 +43,8 @@ export interface StoreInfo {
   languages: string[];
   support_hours: string;
   website: string | null;
+  /** True when a scripted demo model answers instead of Claude (no API cost). */
+  demo_mode: boolean;
+  /** Questions the scripted demo understands; empty when Claude answers. */
+  suggestions: string[];
 }

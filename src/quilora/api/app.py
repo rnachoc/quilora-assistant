@@ -81,6 +81,9 @@ class StoreInfo(BaseModel):
     languages: list[str]
     support_hours: str
     website: str | None
+    demo_mode: bool = False
+    # Sample questions the scripted demo understands; empty when Claude answers.
+    suggestions: list[str] = Field(default_factory=list)
 
 
 class TranscriptMessage(BaseModel):
@@ -142,8 +145,13 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
     def store_info() -> StoreInfo:
         """Name, languages and support hours of the shop this API serves."""
         store = settings.store
+        scripted = settings.agent_mode == "scripted"
+        if scripted:
+            from quilora.agent.scripted import DEMO_SUGGESTIONS
         return StoreInfo(name=store.name, languages=store.languages,
-                         support_hours=store.contact.hours, website=store.website)
+                         support_hours=store.contact.hours, website=store.website,
+                         demo_mode=scripted,
+                         suggestions=list(DEMO_SUGGESTIONS) if scripted else [])
 
     @app.get("/readyz")
     def readyz() -> dict[str, str]:

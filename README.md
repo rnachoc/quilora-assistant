@@ -129,6 +129,14 @@ make help             # everything else
 A free deployment (Render + Neon) behind a login and a daily message cap: see
 [`docs/deploy.md`](docs/deploy.md). Access is shared on request.
 
+To cost nothing, the hosted site runs a **scripted demo model** (`AGENT_MODE=scripted`,
+[ADR 0023](docs/decisions/0023-scripted-demo-model.md)): the tools, database, verification,
+confirmations and guardrails are the real ones, but a script instead of Claude picks the
+tool and writes the reply, so it understands only the sample questions shown in the widget.
+The full assistant with Claude runs locally (`make chat`, Docker Compose), and the store
+tools can be used live from Claude Desktop through the MCP server
+([phase 8](docs/phases/08-mcp-server.md)).
+
 ## Evaluation
 
 | Level | Command | API key |

@@ -26,6 +26,9 @@ const SUGGESTIONS = [
         <header>
           <div>
             <strong>{{ storeName() }} · asistente</strong>
+            @if (demoMode()) {
+              <span class="badge" title="Scripted demo: real tools and data, no AI model">Demo</span>
+            }
             <span class="sub">Atención: {{ supportHours() }}</span>
           </div>
           <div class="actions">
@@ -40,9 +43,14 @@ const SUGGESTIONS = [
 
         <div class="messages" #scroller aria-live="polite">
           @if (messages().length === 0) {
-            <p class="hint">Hola, ¿en qué te ayudo? Prueba con:</p>
+            @if (demoMode()) {
+              <p class="hint">Demo guionizada: las herramientas, los datos y las comprobaciones de
+                seguridad son reales, pero las respuestas siguen un guion. Prueba con:</p>
+            } @else {
+              <p class="hint">Hola, ¿en qué te ayudo? Prueba con:</p>
+            }
             <div class="chips">
-              @for (s of suggestions; track s) {
+              @for (s of suggestions(); track s) {
                 <button class="chip" (click)="send(s)">{{ s }}</button>
               }
             </div>
@@ -61,13 +69,24 @@ const SUGGESTIONS = [
                   </dd>
                   <dt>turn</dt>
                   <dd>{{ meta.latency_ms | number: '1.0-0' }} ms · {{ meta.iterations }} model calls ·
-                    ~\${{ meta.cost_usd }}</dd>
+                    {{ meta.cost_usd === null ? 'no model cost' : '~$' + meta.cost_usd }}</dd>
                   @if (meta.flags.length) {
                     <dt>flags</dt><dd>{{ meta.flags.join(', ') }}</dd>
                   }
                 </dl>
               }
             </div>
+          }
+          @if (demoMode() && messages().length > 0 && !loading()) {
+            <!-- The script only understands these, so keep them one click away. -->
+            <details class="more">
+              <summary>Más preguntas de la demo</summary>
+              <div class="chips">
+                @for (s of suggestions(); track s) {
+                  <button class="chip" (click)="send(s)">{{ s }}</button>
+                }
+              </div>
+            </details>
           }
           @if (loading()) {
             <div class="msg assistant typing" aria-label="The assistant is typing"><span></span><span></span><span></span></div>
@@ -98,7 +117,8 @@ export class ChatWidget implements OnInit {
   private readonly chat = inject(ChatService);
   private readonly scroller = viewChild<ElementRef<HTMLElement>>('scroller');
 
-  protected readonly suggestions = SUGGESTIONS;
+  protected readonly suggestions = signal<string[]>(SUGGESTIONS);
+  protected readonly demoMode = signal(false);
   protected readonly open = signal(false);
   protected readonly showDetails = signal(false);
   protected readonly loading = signal(false);
@@ -114,6 +134,8 @@ export class ChatWidget implements OnInit {
       next: (info) => {
         this.storeName.set(info.name);
         this.supportHours.set(info.support_hours);
+        this.demoMode.set(info.demo_mode);
+        if (info.suggestions?.length) this.suggestions.set(info.suggestions);
       },
       error: () => {
         /* keep the generic defaults; chatting still works */

@@ -34,5 +34,6 @@ Status values:
 | [0020](0020-shopify-import.md) | Platform adapters, starting with a Shopify catalog importer | Proposed |
 | [0021](0021-policy-consistency-check.md) | Check policy texts against the profile before going live | Proposed |
 | [0022](0022-hosted-demo.md) | A free hosted demo behind a login and a spending cap | Accepted |
+| [0023](0023-scripted-demo-model.md) | A scripted demo model for the free hosted demo | Accepted |
 
 Template: [`template.md`](template.md).
