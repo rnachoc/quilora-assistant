@@ -161,3 +161,29 @@ def test_api_serves_the_built_widget_without_shadowing_the_api(database, setting
         assert page.status_code == 200 and "app-root" in page.text
         api = client.get("/api/store", headers=_basic("ana", "s3cret pass"))
         assert api.status_code == 200 and "name" in api.json()
+
+
+def test_public_landing_page_with_the_widget_and_api_behind_the_login(database, settings,
+                                                                     tmp_path):
+    landing, widget = tmp_path / "site", tmp_path / "widget"
+    landing.mkdir()
+    widget.mkdir()
+    (landing / "index.html").write_text("<h1>Hilo</h1>", encoding="utf-8")
+    (widget / "index.html").write_text("<app-root></app-root>", encoding="utf-8")
+    hosted = replace(settings, landing_dir=str(landing), web_dist_dir=str(widget),
+                     demo_username="ana", demo_password="s3cret pass")
+    agent = Agent(model=ScriptedModel([]), registry=build_registry(), settings=hosted,
+                  db=database)
+    app = create_app(hosted, agent=agent, store=PostgresSessionStore(database))
+    auth = _basic("ana", "s3cret pass")
+    with TestClient(app) as client:
+        home = client.get("/")
+        assert home.status_code == 200 and "Hilo" in home.text      # public
+        assert client.get("/demo/").status_code == 401               # widget needs login
+        assert client.get("/api/store").status_code == 401          # so does the API
+        assert client.post("/api/chat", json={"message": "hola"}).status_code == 401
+        page = client.get("/demo/", headers=auth)
+        assert page.status_code == 200 and "app-root" in page.text
+        moved = client.get("/demo", headers=auth, follow_redirects=False)
+        assert moved.status_code in (301, 307) and moved.headers["location"].endswith("/demo/")
+        assert client.get("/api/store", headers=auth).status_code == 200

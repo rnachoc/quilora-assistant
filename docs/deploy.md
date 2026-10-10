@@ -7,8 +7,9 @@ model API calls and needs no Anthropic key ([ADR 0023](decisions/0023-scripted-d
 
 ```
 browser ──HTTPS──> Render web service (free, Frankfurt)
-                   ├─ HTTP Basic Auth (everything except /healthz)
-                   ├─ /            built Angular widget
+                   ├─ /            public landing page (site/index.html), no login
+                   ├─ HTTP Basic Auth (everything else except /healthz)
+                   ├─ /demo/       built Angular widget
                    └─ /api/*       FastAPI + agent ──> scripted demo model
                                         │                 (or Claude, AGENT_MODE=live)
                                         └──> Neon Postgres (free)
@@ -36,6 +37,14 @@ browser ──HTTPS──> Render web service (free, Frankfurt)
 
 3. Deploy. The first build takes a few minutes. The URL is
    `https://<service-name>.onrender.com`.
+
+## Landing page
+
+`site/index.html` is the product page ("Hilo"): self-contained, with its own in-page
+scripted demo, use cases, size guide, pricing and a savings calculator. It is public because
+it is static and calls nothing on the server; the real widget and the API stay behind the
+login. Its "Real demo" links go to `/demo/`. Without `LANDING_DIR` the widget is served at
+`/` as before.
 
 ## 3. Guards
 

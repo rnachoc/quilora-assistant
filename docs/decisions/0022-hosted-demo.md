@@ -61,3 +61,9 @@ is empty (`seed --if-empty`), so restarts keep conversations, returns and ticket
 - The cap is global, so one heavy visitor can use the day's quota for everyone. Fine for a
   demo; a real deployment would rate-limit per user at the gateway.
 - Local development is unchanged: without credentials there is no login and no cap.
+
+## Amendment (2026-10-10): public landing page
+
+The product page (`site/index.html`) is served at `/` without login, and the widget moved to
+`/demo/`. The page is static and makes no server calls, so making it public adds no cost or
+attack surface; the widget and every `/api/*` route still require the login.

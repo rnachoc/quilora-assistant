@@ -126,8 +126,9 @@ make help             # everything else
 
 ### Hosted demo
 
-A free deployment (Render + Neon) behind a login and a daily message cap: see
-[`docs/deploy.md`](docs/deploy.md). Access is shared on request.
+A free deployment (Render + Neon): <https://quilora-assistant.onrender.com>. The product page
+at `/` is public; the chat widget at `/demo/` and the API are behind a login and a daily
+message cap (access shared on request). See [`docs/deploy.md`](docs/deploy.md).
 
 To cost nothing, the hosted site runs a **scripted demo model** (`AGENT_MODE=scripted`,
 [ADR 0023](docs/decisions/0023-scripted-demo-model.md)): the tools, database, verification,

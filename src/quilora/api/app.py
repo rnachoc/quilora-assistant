@@ -7,9 +7,11 @@ GET  /api/sessions/{id} the customer-visible transcript (no tool internals)
 GET  /healthz           liveness: the process is up
 GET  /readyz            readiness: the database answers
 /                       the built chat widget, when WEB_DIST_DIR is set (single-service deploy)
+                        or, with LANDING_DIR also set, a public landing page; the widget then
+                        moves to /demo/
 
-With DEMO_USERNAME/DEMO_PASSWORD set, everything except /healthz needs HTTP Basic Auth, and
-DAILY_MESSAGE_LIMIT caps customer messages per day (ADR 0022).
+With DEMO_USERNAME/DEMO_PASSWORD set, everything except /healthz (and the landing page) needs
+HTTP Basic Auth, and DAILY_MESSAGE_LIMIT caps customer messages per day (ADR 0022).
 
 Author: Ignacio Rodríguez Caro
 """
@@ -26,6 +28,7 @@ from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -128,10 +131,14 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
     app = FastAPI(title="Fashion Store Assistant API", version="0.1.0", lifespan=lifespan)
     app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins,
                        allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
+    landing = _static_dir(settings.landing_dir, "LANDING_DIR")
     if settings.demo_username and settings.demo_password:
         # Added last, so it is the outermost layer: nothing runs before the login check.
+        # Only the health probe and the static landing page are public; the widget and the
+        # whole API stay behind the login.
+        public = {"/healthz"} | ({"/", "/index.html"} if landing else set())
         app.add_middleware(BasicAuthMiddleware, username=settings.demo_username,
-                           password=settings.demo_password,
+                           password=settings.demo_password, exempt_paths=public,
                            realm=f"{settings.store.name} assistant demo")
     else:
         log.warning("Demo login disabled (DEMO_USERNAME/DEMO_PASSWORD not set).")
@@ -220,14 +227,31 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
         return visible_transcript(conv)
 
     # Mounted after the API routes, so /api/* and the probes always win over static files.
-    if settings.web_dist_dir:
-        dist = Path(settings.web_dist_dir)
-        if (dist / "index.html").is_file():
-            app.mount("/", StaticFiles(directory=dist, html=True), name="web")
-        else:
-            log.warning("WEB_DIST_DIR=%s has no index.html; widget not served.", dist)
+    widget = _static_dir(settings.web_dist_dir, "WEB_DIST_DIR")
+    if widget:
+        # With a landing page at "/", the widget lives under /demo/ (built with that base href).
+        if landing:
+            @app.get("/demo", include_in_schema=False)
+            def demo_slash() -> RedirectResponse:
+                """'/demo' would otherwise fall through to the landing mount and 404."""
+                return RedirectResponse("/demo/", status_code=307)
+        app.mount("/demo" if landing else "/", StaticFiles(directory=widget, html=True),
+                  name="web")
+    if landing:
+        app.mount("/", StaticFiles(directory=landing, html=True), name="landing")
 
     return app
+
+
+def _static_dir(path: str | None, variable: str) -> Path | None:
+    """A directory to serve if it exists and has an index.html; otherwise None (and a warning)."""
+    if not path:
+        return None
+    directory = Path(path)
+    if (directory / "index.html").is_file():
+        return directory
+    log.warning("%s=%s has no index.html; not served.", variable, directory)
+    return None
 
 
 def __getattr__(name: str):

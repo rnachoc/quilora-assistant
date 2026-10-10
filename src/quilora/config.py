@@ -56,6 +56,9 @@ class Settings:
     daily_message_limit: int = 0
     # Built Angular widget to serve from the API itself (single-service deploy); empty = off.
     web_dist_dir: str | None = None
+    # Public landing page (a directory with index.html). When set it is served at "/" without
+    # login and the widget moves to /demo/ (ADR 0022).
+    landing_dir: str | None = None
 
     @property
     def store(self) -> StoreProfile:
@@ -117,6 +120,7 @@ def load_settings(dotenv_path: str = ".env") -> Settings:
         demo_password=demo_password,
         daily_message_limit=daily_limit,
         web_dist_dir=os.environ.get("WEB_DIST_DIR") or None,
+        landing_dir=os.environ.get("LANDING_DIR") or None,
         cors_origins=[
             o.strip()
             for o in (os.environ.get("CORS_ORIGINS") or "http://localhost:4200").split(",")

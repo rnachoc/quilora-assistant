@@ -9,7 +9,8 @@ WORKDIR /web
 COPY web/package.json web/package-lock.json ./
 RUN npm ci
 COPY web/ ./
-RUN npm run build
+# The public landing page takes "/", so the widget is built to live under /demo/.
+RUN npm run build -- --base-href /demo/
 
 # --- 2. API image ----------------------------------------------------------------------
 FROM python:3.13-slim
@@ -19,7 +20,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     QUILORA_HOME=/app \
-    WEB_DIST_DIR=/app/web-dist
+    WEB_DIST_DIR=/app/web-dist \
+    LANDING_DIR=/app/site
 
 WORKDIR /app
 
@@ -31,6 +33,7 @@ RUN pip install .
 COPY data ./data
 COPY db ./db
 COPY --from=web /web/dist/web/browser ./web-dist
+COPY site ./site
 
 RUN useradd --create-home --uid 1000 app && chown -R app /app
 USER app
