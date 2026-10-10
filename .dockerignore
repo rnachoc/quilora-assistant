@@ -11,6 +11,10 @@ venv
 .ruff_cache
 models_cache
 evals/results
-web
+# web/ is needed by deploy/Dockerfile.render; keep only its sources in the context.
+web/node_modules
+web/dist
+web/.angular
+build
 docs
 tests

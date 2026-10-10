@@ -140,7 +140,9 @@ export class ChatWidget implements OnInit {
         const text =
           err.status === 409
             ? 'Tu mensaje se cruzó con otro. Envíalo de nuevo, por favor.'
-            : 'No he podido conectar con el asistente. Inténtalo de nuevo en un momento.';
+            : err.status === 429
+              ? 'La demo ha alcanzado el límite de mensajes de hoy. Vuelve mañana, por favor.'
+              : 'No he podido conectar con el asistente. Inténtalo de nuevo en un momento.';
         this.push({ role: 'error', text });
         this.loading.set(false);
       },

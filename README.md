@@ -124,6 +124,11 @@ make eval             # evaluation suite (needs API key)
 make help             # everything else
 ```
 
+### Hosted demo
+
+A free deployment (Render + Neon) behind a login and a daily message cap: see
+[`docs/deploy.md`](docs/deploy.md). Access is shared on request.
+
 ## Evaluation
 
 | Level | Command | API key |
@@ -206,7 +211,9 @@ confirmation, guardrail layering, read-only MCP, evaluation strategy.
 - Confirmation proves the customer *replied* after the summary, not what the reply meant;
   the model interprets "yes".
 - Regex-based guardrails miss creative phrasing; injection detection only flags.
-- No authentication or rate limiting on the public endpoint (expected at the gateway).
+- The hosted demo is protected by one shared login and a global daily message cap
+  ([ADR 0022](docs/decisions/0022-hosted-demo.md)); per-user rate limiting belongs at a
+  gateway.
 - MCP server state is per process (fine for stdio, not for multi-client HTTP).
 - One process serves one shop; orders for a real shop must come from an adapter that does
   not exist yet (only the catalog importer does).

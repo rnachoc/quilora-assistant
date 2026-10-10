@@ -33,5 +33,6 @@ Status values:
 | [0019](0019-generic-catalog.md) | A catalog model that fits real shops' data | Proposed |
 | [0020](0020-shopify-import.md) | Platform adapters, starting with a Shopify catalog importer | Proposed |
 | [0021](0021-policy-consistency-check.md) | Check policy texts against the profile before going live | Proposed |
+| [0022](0022-hosted-demo.md) | A free hosted demo behind a login and a spending cap | Accepted |
 
 Template: [`template.md`](template.md).

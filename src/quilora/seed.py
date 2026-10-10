@@ -3,6 +3,7 @@
 Usage:
     python -m quilora.seed            # migrate + (re)load all data
     python -m quilora.seed --reset-writes   # only clear returns/tickets/sessions (eval runs)
+    python -m quilora.seed --if-empty       # migrate; load data only into an empty database
 
 Author: Ignacio Rodríguez Caro
 """
@@ -54,6 +55,14 @@ def reset_writes(conn: psycopg.Connection) -> None:
     tables = _existing(conn, WRITE_TABLES)
     if tables:
         conn.execute(f"TRUNCATE {', '.join(tables)} RESTART IDENTITY CASCADE")
+
+
+def has_catalog(conn: psycopg.Connection) -> bool:
+    """True if products are already loaded (used to seed a hosted database only once)."""
+    if not _existing(conn, ["products"]):
+        return False
+    with conn.cursor(row_factory=tuple_row) as cur:
+        return cur.execute("SELECT EXISTS (SELECT 1 FROM products)").fetchone()[0]
 
 
 def _read_json(path: Path) -> list:
@@ -151,6 +160,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--reset-writes", action="store_true",
                         help="only clear tables written by the assistant")
+    parser.add_argument("--if-empty", action="store_true",
+                        help="apply migrations, but load data only if no catalog exists yet")
     args = parser.parse_args()
     settings = load_settings()
     with psycopg.connect(settings.database_url) as conn:
@@ -160,6 +171,11 @@ def main() -> None:
         if args.reset_writes:
             reset_writes(conn)
             print("Cleared runtime tables.")
+            return
+        if args.if_empty and has_catalog(conn):
+            # A deployed instance restarts often (e.g. after sleeping); reloading would wipe
+            # conversations, returns and tickets created since the last start.
+            print("Catalog already loaded; data left as is.")
             return
         counts = load_all(conn, settings.store_dir)
     print("Loaded: " + ", ".join(f"{k}={v}" for k, v in counts.items()))

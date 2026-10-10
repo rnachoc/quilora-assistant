@@ -46,6 +46,13 @@ class Settings:
     cors_origins: list[str] = field(default_factory=lambda: ["http://localhost:4200"])
     # Directory with store.yaml, policies/ and generated/ (the shop being served).
     store_dir: str = str(DATA_DIR)
+    # Public demo guard (ADR 0022). Empty credentials = no login (local development).
+    demo_username: str | None = None
+    demo_password: str | None = field(default=None, repr=False)
+    # Customer messages accepted per calendar day across all visitors; 0 = no cap.
+    daily_message_limit: int = 0
+    # Built Angular widget to serve from the API itself (single-service deploy); empty = off.
+    web_dist_dir: str | None = None
 
     @property
     def store(self) -> StoreProfile:
@@ -72,6 +79,17 @@ def load_settings(dotenv_path: str = ".env") -> Settings:
     backend = (os.environ.get("POLICY_SEARCH_BACKEND") or "fts").lower()
     if backend not in {"fts", "vector", "hybrid"}:
         raise ValueError(f"POLICY_SEARCH_BACKEND must be fts, vector or hybrid, got {backend!r}")
+    demo_username = os.environ.get("DEMO_USERNAME") or None
+    demo_password = os.environ.get("DEMO_PASSWORD") or None
+    if bool(demo_username) != bool(demo_password):
+        raise ValueError("Set both DEMO_USERNAME and DEMO_PASSWORD, or neither.")
+    # Fail closed: a deployment that declares it needs a login refuses to start without one,
+    # so a forgotten variable cannot leave the demo (and the API key's budget) open.
+    if os.environ.get("REQUIRE_DEMO_AUTH") == "1" and not demo_password:
+        raise ValueError("REQUIRE_DEMO_AUTH=1 but DEMO_USERNAME/DEMO_PASSWORD are not set.")
+    daily_limit = _int("DAILY_MESSAGE_LIMIT", 0)
+    if daily_limit < 0:
+        raise ValueError("DAILY_MESSAGE_LIMIT must be 0 (no cap) or positive.")
     return Settings(
         database_url=os.environ.get("DATABASE_URL") or Settings.database_url,
         anthropic_api_key=os.environ.get("ANTHROPIC_API_KEY") or None,
@@ -88,6 +106,10 @@ def load_settings(dotenv_path: str = ".env") -> Settings:
         otel_service_name=os.environ.get("OTEL_SERVICE_NAME") or Settings.otel_service_name,
         otel_console=os.environ.get("OTEL_CONSOLE") == "1",
         store_dir=os.environ.get("STORE_DIR") or str(DATA_DIR),
+        demo_username=demo_username,
+        demo_password=demo_password,
+        daily_message_limit=daily_limit,
+        web_dist_dir=os.environ.get("WEB_DIST_DIR") or None,
         cors_origins=[
             o.strip()
             for o in (os.environ.get("CORS_ORIGINS") or "http://localhost:4200").split(",")

@@ -1,0 +1,37 @@
+# Author: Ignacio Rodríguez Caro
+# Render Blueprint for the hosted demo (ADR 0022, docs/deploy.md).
+# Secrets are `sync: false`: Render asks for them when the Blueprint is created and they
+# never live in this repository.
+services:
+  - type: web
+    runtime: docker
+    name: quilora-assistant
+    plan: free
+    region: frankfurt
+    branch: main
+    dockerfilePath: ./deploy/Dockerfile.render
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      # --- secrets (entered in the Render dashboard) ---
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DATABASE_URL          # Neon connection string, direct (non-pooled) endpoint
+        sync: false
+      - key: DEMO_USERNAME
+        sync: false
+      - key: DEMO_PASSWORD
+        sync: false
+      # --- guards ---
+      - key: REQUIRE_DEMO_AUTH     # refuse to start without a login configured
+        value: "1"
+      - key: DAILY_MESSAGE_LIMIT   # customer messages per day, all visitors together
+        value: "200"
+      # --- app ---
+      - key: STORE_TODAY           # synthetic orders are dated around this day
+        value: "2026-10-01"
+      - key: POLICY_SEARCH_BACKEND
+        value: fts
+      - key: CORS_ORIGINS          # same origin in this deploy; nothing cross-site needed
+        value: "https://quilora-assistant.onrender.com"

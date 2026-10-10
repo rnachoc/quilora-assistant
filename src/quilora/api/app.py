@@ -6,6 +6,10 @@ POST /api/chat          one customer message in, one reply out (session kept ser
 GET  /api/sessions/{id} the customer-visible transcript (no tool internals)
 GET  /healthz           liveness: the process is up
 GET  /readyz            readiness: the database answers
+/                       the built chat widget, when WEB_DIST_DIR is set (single-service deploy)
+
+With DEMO_USERNAME/DEMO_PASSWORD set, everything except /healthz needs HTTP Basic Auth, and
+DAILY_MESSAGE_LIMIT caps customer messages per day (ADR 0022).
 
 Author: Ignacio Rodríguez Caro
 """
@@ -15,14 +19,19 @@ from __future__ import annotations
 import logging
 import uuid
 from contextlib import asynccontextmanager
+from datetime import datetime
+from pathlib import Path
 from typing import Any
+from zoneinfo import ZoneInfo
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from quilora.agent.loop import Agent
 from quilora.agent.session import ConcurrentUpdateError, Conversation, PostgresSessionStore
+from quilora.api.access import BasicAuthMiddleware, consume_daily_message
 from quilora.config import Settings, load_settings
 from quilora.db import Database
 from quilora.observability import setup_tracing
@@ -116,6 +125,13 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
     app = FastAPI(title="Fashion Store Assistant API", version="0.1.0", lifespan=lifespan)
     app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins,
                        allow_methods=["GET", "POST"], allow_headers=["Content-Type"])
+    if settings.demo_username and settings.demo_password:
+        # Added last, so it is the outermost layer: nothing runs before the login check.
+        app.add_middleware(BasicAuthMiddleware, username=settings.demo_username,
+                           password=settings.demo_password,
+                           realm=f"{settings.store.name} assistant demo")
+    else:
+        log.warning("Demo login disabled (DEMO_USERNAME/DEMO_PASSWORD not set).")
 
     @app.get("/healthz")
     def healthz() -> dict[str, str]:
@@ -145,6 +161,15 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
         """Run one customer turn: load or create the session, call the agent, save with optimistic
         locking.
         """
+        limit = settings.daily_message_limit
+        if limit:
+            # The real calendar day, not STORE_TODAY: the demo clock is frozen for reproducible
+            # data, and a frozen day would turn the daily cap into a lifetime cap.
+            day = datetime.now(ZoneInfo(settings.store.timezone)).date()
+            if not consume_daily_message(state["db"], day, limit):
+                log.warning("daily message limit reached (%s)", limit)
+                raise HTTPException(429, "The demo has reached today's message limit.")
+
         sessions = state["store"]
         if request.session_id:
             conv = sessions.load(request.session_id)
@@ -185,6 +210,14 @@ def create_app(settings: Settings | None = None, agent: Agent | None = None,
         if conv is None:
             raise HTTPException(404, "Unknown session.")
         return visible_transcript(conv)
+
+    # Mounted after the API routes, so /api/* and the probes always win over static files.
+    if settings.web_dist_dir:
+        dist = Path(settings.web_dist_dir)
+        if (dist / "index.html").is_file():
+            app.mount("/", StaticFiles(directory=dist, html=True), name="web")
+        else:
+            log.warning("WEB_DIST_DIR=%s has no index.html; widget not served.", dist)
 
     return app
 

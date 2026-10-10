@@ -1,0 +1,41 @@
+# Author: Ignacio Rodríguez Caro
+# Single-service image for the hosted demo (ADR 0022): the API also serves the built
+# widget, so one login protects both and no CORS or second host is needed.
+# Local development keeps using the root Dockerfile and docker-compose.yml.
+
+# --- 1. Build the Angular widget -------------------------------------------------------
+FROM node:24-alpine AS web
+WORKDIR /web
+COPY web/package.json web/package-lock.json ./
+RUN npm ci
+COPY web/ ./
+RUN npm run build
+
+# --- 2. API image ----------------------------------------------------------------------
+FROM python:3.13-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    QUILORA_HOME=/app \
+    WEB_DIST_DIR=/app/web-dist
+
+WORKDIR /app
+
+COPY pyproject.toml README.md ./
+COPY src ./src
+# No embeddings extra: the free instance has 512 MB, so policy search runs on Postgres FTS.
+RUN pip install .
+
+COPY data ./data
+COPY db ./db
+COPY --from=web /web/dist/web/browser ./web-dist
+
+RUN useradd --create-home --uid 1000 app && chown -R app /app
+USER app
+
+# Render injects PORT. Migrations run on every start; data loads only into an empty DB.
+# One worker fits the memory limit; --proxy-headers takes the client IP from the platform's
+# proxy, which the login throttle keys on.
+CMD ["sh", "-c", "python -m quilora.seed --if-empty && exec uvicorn quilora.api.app:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1 --proxy-headers --forwarded-allow-ips='*'"]
