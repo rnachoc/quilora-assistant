@@ -93,11 +93,12 @@ STORE_DIR=my_store make check-store   # profile warnings + contradictions in the
 STORE_DIR=my_store make seed && STORE_DIR=my_store make chat
 ```
 
-Step by step: [`docs/adding-a-store.md`](docs/adding-a-store.md). The design comes from
-reviewing a real Shopify fashion store ([phase 12](docs/phases/12-any-store.md)): free-form
-IDs and categories, sizes 2XS-4XL, sale prices, products without material or size chart,
-availability without unit counts, long ranged delivery times, returns to a warehouse
-abroad, no cancellations, and policies that contradict themselves.
+Step by step: [`docs/adding-a-store.md`](docs/adding-a-store.md).
+[Phase 12](docs/phases/12-any-store.md) lists what varies between small online fashion shops
+and how the profile covers it: free-form IDs and categories, extended size ranges, sale
+prices, products without material or size chart, availability without unit counts, ranged
+delivery times, different return and cancellation rules, and policies that contradict
+themselves.
 
 ## Quickstart
 

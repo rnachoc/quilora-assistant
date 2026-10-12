@@ -13,8 +13,8 @@
     },
     {
       "id": 1002, "title": "MARÉ | Chaqueta Acolchada Olivo", "handle": "chaqueta-acolchada-olivo",
-      "product_type": "Chaquetas", "tags": "acolchada, entretiempo, mujer, cuello alto",
-      "body_html": "<p>Chaqueta acolchada con estampado floral &amp; cuello alto.</p>",
+      "product_type": "Chaquetas", "tags": "acolchada, otoño, mujer, bolsillos",
+      "body_html": "<p>Chaqueta acolchada corta con bolsillos &amp; cremallera.</p>",
       "options": [{"name": "Color", "position": 1}, {"name": "Talla", "position": 2}],
       "variants": [
         {"id": 4, "sku": "", "option1": "Verde Oliva", "option2": "2XS", "option3": null, "price": "59.95", "compare_at_price": null, "available": true},

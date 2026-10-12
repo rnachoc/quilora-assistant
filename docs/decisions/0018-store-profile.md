@@ -7,11 +7,11 @@
 ## Context
 
 The first version was written for one fictional shop: its name, shipping zones, return
-terms and support hours were spread across the prompt, tool texts and constants. Reviewing
-a real Shopify fashion store showed what changes from shop to shop (languages, processing
-and transit times, who pays return shipping, whether returns go to a warehouse abroad,
-whether orders can be cancelled, tracking pages, public promotions) and that policy texts
-often contradict themselves.
+terms and support hours were spread across the prompt, tool texts and constants. Small
+online fashion shops differ in exactly those things (languages, processing and transit
+times, who pays return shipping and where returns are sent, whether orders can be
+cancelled, tracking pages, public promotions), and their policy texts often contradict
+themselves.
 
 ## Options
 

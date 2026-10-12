@@ -532,26 +532,25 @@ def generate_orders(rng: random.Random, products: list[dict], customers: list[di
     return orders
 
 
-# Products shaped like a real shop's public feed: no material, care, fit or size chart,
+# Products shaped like a typical Shopify public feed: no material, care, fit or size chart,
 # availability without unit counts, free-form category and sizes 2XS-4XL, sale prices.
 # They are added AFTER the random draws so the rest of the dataset stays identical.
 FEED_STYLE_PRODUCTS = [
     {
-        "id": "QL-JKT-007", "name": "Nerea Quilted Jacket", "category": "jackets",
-        "gender": "women", "price_eur": 59.95, "compare_at_price_eur": 119.95,
-        "description": "Lightweight quilted jacket with a high collar and a sage floral print. "
-                       "Ideal between seasons.",
-        "tags": ["quilted", "floral", "high collar", "transitional", "plus sizes"],
-        "colors": ["sage floral"], "sizes": ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
-        "unavailable": [("sage floral", "M")],
+        "id": "QL-JKT-007", "name": "Brezo Padded Jacket", "category": "jackets",
+        "gender": "women", "price_eur": 64.95, "compare_at_price_eur": 89.95,
+        "description": "Short padded jacket with a stand collar and snap fastening.",
+        "tags": ["padded", "stand collar", "autumn", "extended sizes"],
+        "colors": ["charcoal"], "sizes": ["2XS", "XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+        "unavailable": [("charcoal", "M")],
     },
     {
-        "id": "QL-JMP-001", "name": "Ondina Denim Jumpsuit", "category": "jumpsuits",
-        "gender": "women", "price_eur": 49.95, "compare_at_price_eur": 99.90,
-        "description": "Short-sleeved denim jumpsuit with a tie belt and front pockets.",
-        "tags": ["denim", "jumpsuit", "summer", "belted"],
-        "colors": ["light blue"], "sizes": ["S", "M", "L", "XL", "2XL"],
-        "unavailable": [("light blue", "2XL")],
+        "id": "QL-JMP-001", "name": "Ribera Denim Jumpsuit", "category": "jumpsuits",
+        "gender": "women", "price_eur": 54.95, "compare_at_price_eur": 74.95,
+        "description": "Sleeveless denim jumpsuit with a zip front and wide legs.",
+        "tags": ["denim", "jumpsuit", "wide leg"],
+        "colors": ["mid blue"], "sizes": ["S", "M", "L", "XL", "2XL"],
+        "unavailable": [("mid blue", "2XL")],
     },
 ]
 

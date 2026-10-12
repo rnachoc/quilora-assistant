@@ -7927,23 +7927,22 @@
   },
   {
     "id": "QL-JKT-007",
-    "name": "Nerea Quilted Jacket",
+    "name": "Brezo Padded Jacket",
     "category": "jackets",
     "gender": "women",
-    "description": "Lightweight quilted jacket with a high collar and a sage floral print. Ideal between seasons.",
+    "description": "Short padded jacket with a stand collar and snap fastening.",
     "material": null,
     "fit": null,
-    "price_eur": 59.95,
-    "compare_at_price_eur": 119.95,
+    "price_eur": 64.95,
+    "compare_at_price_eur": 89.95,
     "size_chart_id": null,
     "care": null,
     "final_sale": false,
     "tags": [
-      "quilted",
-      "floral",
-      "high collar",
-      "transitional",
-      "plus sizes"
+      "padded",
+      "stand collar",
+      "autumn",
+      "extended sizes"
     ],
     "collections": [
       "Women jackets",
@@ -7951,64 +7950,64 @@
     ],
     "variants": [
       {
-        "sku": "QL-JKT-007-SAGEFL-2XS",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-2XS",
+        "color": "charcoal",
         "size": "2XS",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-XS",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-XS",
+        "color": "charcoal",
         "size": "XS",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-S",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-S",
+        "color": "charcoal",
         "size": "S",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-M",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-M",
+        "color": "charcoal",
         "size": "M",
         "stock": null,
         "available": false
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-L",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-L",
+        "color": "charcoal",
         "size": "L",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-XL",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-XL",
+        "color": "charcoal",
         "size": "XL",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-2XL",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-2XL",
+        "color": "charcoal",
         "size": "2XL",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-3XL",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-3XL",
+        "color": "charcoal",
         "size": "3XL",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JKT-007-SAGEFL-4XL",
-        "color": "sage floral",
+        "sku": "QL-JKT-007-CHARCO-4XL",
+        "color": "charcoal",
         "size": "4XL",
         "stock": null,
         "available": true
@@ -8017,22 +8016,21 @@
   },
   {
     "id": "QL-JMP-001",
-    "name": "Ondina Denim Jumpsuit",
+    "name": "Ribera Denim Jumpsuit",
     "category": "jumpsuits",
     "gender": "women",
-    "description": "Short-sleeved denim jumpsuit with a tie belt and front pockets.",
+    "description": "Sleeveless denim jumpsuit with a zip front and wide legs.",
     "material": null,
     "fit": null,
-    "price_eur": 49.95,
-    "compare_at_price_eur": 99.9,
+    "price_eur": 54.95,
+    "compare_at_price_eur": 74.95,
     "size_chart_id": null,
     "care": null,
     "final_sale": false,
     "tags": [
       "denim",
       "jumpsuit",
-      "summer",
-      "belted"
+      "wide leg"
     ],
     "collections": [
       "Women jumpsuits",
@@ -8040,36 +8038,36 @@
     ],
     "variants": [
       {
-        "sku": "QL-JMP-001-LIGHTB-S",
-        "color": "light blue",
+        "sku": "QL-JMP-001-MIDBLU-S",
+        "color": "mid blue",
         "size": "S",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JMP-001-LIGHTB-M",
-        "color": "light blue",
+        "sku": "QL-JMP-001-MIDBLU-M",
+        "color": "mid blue",
         "size": "M",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JMP-001-LIGHTB-L",
-        "color": "light blue",
+        "sku": "QL-JMP-001-MIDBLU-L",
+        "color": "mid blue",
         "size": "L",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JMP-001-LIGHTB-XL",
-        "color": "light blue",
+        "sku": "QL-JMP-001-MIDBLU-XL",
+        "color": "mid blue",
         "size": "XL",
         "stock": null,
         "available": true
       },
       {
-        "sku": "QL-JMP-001-LIGHTB-2XL",
-        "color": "light blue",
+        "sku": "QL-JMP-001-MIDBLU-2XL",
+        "color": "mid blue",
         "size": "2XL",
         "stock": null,
         "available": false

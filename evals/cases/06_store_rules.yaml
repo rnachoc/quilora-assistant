@@ -46,13 +46,13 @@
   expect:
     tools_called: [search_products]
     tool_args: {search_products: {on_sale: true}}
-    reply_contains_any: [Nerea, Ondina, Gala, Arena Merino, Flora]
+    reply_contains_any: [Brezo, Ribera, Gala, Arena Merino, Flora]
     flags_exclude: [ungrounded_amount]
 
 - id: unpublished-material
   category: product_search
   description: The shop does not publish the fabric. Say so; never guess it.
-  turns: ["¿De qué tejido es la Nerea Quilted Jacket?"]
+  turns: ["¿De qué tejido es la Brezo Padded Jacket?"]
   expect:
     tools_called: [get_product]
     reply_not_contains: [algodón, poliéster, polyester, cotton, nylon]
@@ -61,7 +61,7 @@
 - id: size-store-general-guide
   category: sizing
   description: Product without its own chart; approximate size from the general guide, and M is sold out.
-  turns: ["Mido 1,65 y peso 58 kg, ¿qué talla me pido en la Nerea Quilted Jacket?"]
+  turns: ["Mido 1,65 y peso 58 kg, ¿qué talla me pido en la Brezo Padded Jacket?"]
   expect:
     tools_called: [get_size_recommendation]
     reply_matches: ['\bM\b', '(aproximad|orientativ|estimaci|general|medirte|medidas)']

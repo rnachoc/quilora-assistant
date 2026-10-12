@@ -118,8 +118,8 @@ def test_consistency_check_finds_contradictions():
     store = load_profile(str(SPANISH_STORE))
     findings = check(store, load_policies(SPANISH_STORE / "policies"))
     by_fact = {(f.fact, f.value) for f in findings}
-    assert ("return_window_days", 14) in by_fact       # 30 vs 14 days
-    assert ("processing_business_days", 10) in by_fact  # "3 a 10" vs profile [1, 3]
+    assert ("return_window_days", 14) in by_fact       # 21 vs 14 days
+    assert ("processing_business_days", 8) in by_fact  # "5 a 8" vs profile [2, 4]
     assert not any(f.fact == "refund_days" for f in findings)  # "catorce días" == 14
 
 

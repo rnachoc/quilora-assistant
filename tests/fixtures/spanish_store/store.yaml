@@ -13,18 +13,18 @@ catalog:
   search_config: spanish
 contact:
   email: hola@mare-demo.example
-  hours: de lunes a viernes de 9:00 a 20:00
+  hours: de lunes a viernes de 10:00 a 19:00
   response_time: en 48 horas laborables
 shipping:
-  processing_business_days: [1, 3]
+  processing_business_days: [2, 4]
   ships_from: international warehouse
   split_shipments_possible: true
   zones:
-    - {id: europe, name: Europa, destinations: [EU], transit_business_days: [7, 14], cost: 0}
-    - {id: world, name: Resto del mundo, destinations: ["*"], transit_business_days: [11, 30],
+    - {id: europe, name: Europa, destinations: [EU], transit_business_days: [5, 10], cost: 0}
+    - {id: world, name: Resto del mundo, destinations: ["*"], transit_business_days: [10, 25],
        cost: 0}
 returns:
-  window_days: 30
+  window_days: 21
   return_shipping_paid_by: customer
   method: address_on_request
   method_details: Escríbenos con tu número de pedido y te enviaremos la dirección de devolución.

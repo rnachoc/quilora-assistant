@@ -6,9 +6,10 @@
 
 ## Context
 
-The reviewed real store stated a 30-day return period in one place and 14 days in another,
-and two different processing times in the same shipping policy. A retrieval-based
-assistant would quote whichever section it happened to retrieve.
+Shop policies are written over time, often by different people, and the numbers drift:
+one return period in one section and a different one in another, or two processing times
+in the same shipping policy. A retrieval-based assistant would quote whichever section it
+happened to retrieve.
 
 ## Options
 

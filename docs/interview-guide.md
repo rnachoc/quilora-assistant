@@ -120,7 +120,7 @@ refusing to present unverified prices as facts, keeping injection detection as a
 **Is this only for one shop?**
 No. Everything shop-specific lives in a validated store profile (`store.yaml`): languages,
 shipping zones and times, return terms, cancellation rules, tracking links, public
-promotions. I reviewed a real Shopify fashion store and generalised what differed: free
+promotions. I generalised what differs between small Shopify fashion shops: free
 IDs and categories, sale prices, products without material or size chart, availability
 without unit counts, delivery estimates in business days, and a check that finds
 contradictions between the policies and the profile. A second fictional shop in Spanish

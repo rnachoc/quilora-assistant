@@ -4,23 +4,23 @@ _Author: Ignacio Rodríguez Caro_
 
 ## Why
 
-Reviewing a real Shopify dropshipping fashion store (October 2026) showed the gap between
-a synthetic demo and production data:
+The first version assumed one tidy demo shop. Small online fashion shops, many of them on
+Shopify, differ from it in ways that are easy to predict:
 
-| Observed in the real shop | What the first version assumed |
-|---------------------------|--------------------------------|
+| Common in small online fashion shops | What the first version assumed |
+|--------------------------------------|--------------------------------|
 | Handles as IDs, categories named by the shop, rich tags | `QL-ABC-123` IDs and a fixed category list |
-| Sizes 2XS to 4XL | XS to XL |
-| Previous prices on most products ("-50%") | No sale prices |
+| Extended size ranges (2XS to 4XL) | XS to XL |
+| Previous prices shown on sale items | No sale prices |
 | Public feed with available/unavailable, no unit counts | Unit counts per variant |
 | No material, care or size chart in product pages | Always present |
-| Long, ranged delivery times by region; no weekend processing | A carrier ETA on every order |
-| Returns to a warehouse abroad, address sent by email, paid by the customer, no exchanges | Free prepaid label |
-| Orders cannot be cancelled once placed | Cancellation while processing |
-| Tracking through a tracking app page | No tracking link |
-| Policies contradicting themselves (30 vs 14 days; two processing times) | One consistent policy set |
+| Ranged delivery times by region; no weekend processing | A carrier ETA on every order |
+| Return address sent by email, return shipping paid by the customer, no exchanges | Free prepaid label |
+| Orders that cannot be cancelled once placed | Cancellation while processing |
+| Tracking through a third-party tracking page | No tracking link |
+| Policies that contradict themselves (two return periods, two processing times) | One consistent policy set |
 
-None of these are specific to that shop; they are common in small fashion e-commerce.
+The store profile has to express every row of this table without code changes.
 
 ## Concept
 

@@ -6,9 +6,9 @@
 
 ## Context
 
-Real catalogs (Shopify in the reviewed case) differ from the synthetic one: free-form IDs
-(handles), categories named by the shop, tags and collections that carry meaning ("plus
-sizes", "transitional"), sizes from 2XS to 4XL, previous prices on sale items, no unit
+Real catalogs, such as a typical Shopify public feed, differ from the synthetic one:
+free-form IDs (handles), categories named by the shop, tags and collections that carry
+meaning ("new in", "occasion wear"), sizes from 2XS to 4XL, previous prices on sale items, no unit
 counts in public feeds (only "available"), and often no material, care instructions, fit
 or size chart at all.
 

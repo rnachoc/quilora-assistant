@@ -1,7 +1,7 @@
 # Política de devoluciones
 <!-- Author: Ignacio Rodríguez Caro -->
 
-Puedes devolver tus artículos dentro de los 30 días posteriores a la recepción del pedido.
+Puedes devolver tus artículos dentro de los 21 días posteriores a la recepción del pedido.
 
 El cliente se hace cargo de los gastos de envío de la devolución. Escríbenos y te enviaremos la dirección del almacén.
 
