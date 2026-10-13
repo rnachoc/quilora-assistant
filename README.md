@@ -49,7 +49,7 @@ flowchart LR
     L <-->|messages + tools<br/>tool_use / tool_result| M[(Claude<br/>Messages API)]
     L --> R[ToolRegistry<br/>Pydantic validation · timeouts · error shaping]
     MC --> MCP[MCP server<br/>read-only] --> R
-    R --> T[8 tools]
+    R --> T[10 tools]
     T --> DB[(PostgreSQL + pgvector<br/>catalog · orders · policies<br/>returns · tickets · audit)]
     L -. OTLP .-> J[Jaeger]
 ```
@@ -57,7 +57,7 @@ flowchart LR
 One customer turn:
 
 1. The **input guard** redacts card/IBAN/ID numbers and flags injection phrases.
-2. The **loop** calls the model with the system prompt, the 8 tool definitions and the
+2. The **loop** calls the model with the system prompt, the 10 tool definitions and the
    history (prompt caching on). At most `AGENT_MAX_ITERATIONS` model calls per turn.
 3. Each `tool_use` goes through the **registry**: unknown tool → error; invalid input →
    field-level error; handler runs with a timeout; business refusals come back as
@@ -117,7 +117,7 @@ Local development (Python 3.12+, Node 24, Postgres 16 with pgvector):
 python -m venv .venv && . .venv/bin/activate
 make install          # pip install -e ".[dev]"
 make seed             # schema + synthetic data
-make test             # 100+ tests, no API key needed
+make test             # 165 tests, no API key needed
 make chat             # terminal chat with the agent
 make api & make web   # API on :8000, widget on :4200
 make mcp              # MCP server over stdio
@@ -188,7 +188,7 @@ Details in [`docs/results/retrieval.md`](docs/results/retrieval.md) and
 ```
 src/quilora/
   agent/       loop, model client, prompts, guardrails, sessions, pricing
-  tools/       registry + the 8 tools
+  tools/       registry + the 10 tools
   domain/      sizing, size labels, delivery dates, return eligibility (pure functions)
   store/       store profile (store.yaml) and policy consistency check
   importers/   Shopify catalog importer
@@ -197,15 +197,15 @@ src/quilora/
   api/         FastAPI app
   mcp_server.py, observability.py, seed.py, cli.py
 data/          synthetic data generator, generated JSON, policies (Markdown)
-db/migrations/ SQL schema (6 forward-only migrations)
+db/migrations/ SQL schema (7 forward-only migrations)
 evals/         83 cases (YAML), retrieval queries, baseline
 web/           Angular 22 storefront + chat widget
-docs/          ADRs, phase notes, evaluation guide, demo script, interview guide
+docs/          ADRs, phase notes, evaluation guide, demo script, deploy and onboarding guides
 ```
 
 ## Decisions
 
-21 Architecture Decision Records in [`docs/decisions/`](docs/decisions/), e.g. Python vs
+23 Architecture Decision Records in [`docs/decisions/`](docs/decisions/), e.g. Python vs
 Java + Spring AI, one model vs a router, hand-written loop vs frameworks, two-phase
 confirmation, guardrail layering, read-only MCP, evaluation strategy.
 

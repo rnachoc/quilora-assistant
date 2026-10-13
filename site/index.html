@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Version B: one brand colour and one tinted neutral. Ultramarine opens and closes the page (hero, pricing, footer);
+/* Version B: one brand colour and one tinted neutral. Ultramarine opens and closes the page (hero, closing section, footer);
    every other section sits on two close shades of a cool blue-grey, alternating for rhythm,
    cards stay white so content reads cleanly, and the phones keep their black frames as the loud element.
    Previous concept note: a quiet white product page whose one loud element is the phone. The store widget runs inside it,
@@ -323,44 +323,6 @@ input[type=range]{width:100%;accent-color:var(--blue)}
 .trust h3{font-size:18px;margin-bottom:6px}
 .trust p{font-size:15.5px;color:var(--ink-2)}
 
-/* pricing */
-.price-top{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
-.price-top .head{margin-bottom:0}
-.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-@media (max-width:1060px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:600px){.plans{grid-template-columns:1fr}}
-.plan{border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:16px}
-.plan.feat{background:var(--blue);border-color:var(--blue);color:var(--on-blue)}
-.plan.feat .sub,.plan.feat li{color:rgba(255,255,255,.85)}
-.plan.feat .btn{background:var(--paper);color:var(--blue);border-color:var(--paper)}
-.plan .rec{font-size:13px;font-weight:600;align-self:flex-start;background:rgba(255,255,255,.18);padding:5px 10px;border-radius:999px}
-.plan h3{font-size:20px}
-.plan .amt{font:700 48px/1 var(--f-display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.plan .amt small{font:500 15px/1 var(--f-body);margin-left:4px;opacity:.7;letter-spacing:0}
-.plan .sub{font-size:14px;color:var(--ink-2);min-height:2.9em}
-.plan ul{margin:0;padding:0;list-style:none;display:grid;gap:9px;font-size:15px;flex:1;color:var(--ink-2)}
-.plan li{display:flex;gap:10px}
-.plan li::before{content:"";flex:0 0 14px;height:14px;margin-top:4px;border-radius:50%;background:currentColor;opacity:.25}
-.price-note{margin-top:16px;font-size:14px;color:var(--ink-3)}
-.roi{margin-top:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);background:var(--blue-2);border-radius:28px;padding:clamp(22px,4vw,44px)}
-@media (max-width:900px){.roi{grid-template-columns:1fr}}
-.roi h3{font-size:var(--t-lg);margin-bottom:4px}
-.roi-out{display:grid;gap:12px;align-content:start}
-.roi-out .big{font:700 clamp(48px,6vw,76px)/1 var(--f-display);color:var(--blue);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
-.roi-out .row{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--blue-3);padding-block:10px;font-size:15.5px;font-variant-numeric:tabular-nums}
-.roi-out p{font-size:14.5px;color:var(--ink-2)}
-
-/* contact */
-.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start}
-@media (max-width:900px){.contact{grid-template-columns:1fr}}
-form.lead{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;border:1px solid var(--line);border-radius:22px;padding:24px}
-form.lead .full{grid-column:1/-1}
-@media (max-width:560px){form.lead{grid-template-columns:1fr}}
-.err{color:var(--bad);font-size:14px}
-.leadout{grid-column:1/-1;display:grid;gap:10px}
-.leadout pre{margin:0;background:var(--mist);border-radius:12px;padding:14px;font:400 13px/1.55 var(--f-code);white-space:pre-wrap;word-break:break-word}
-.contact-line{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:15px}
-.contact-line code{user-select:all;background:var(--mist);padding:6px 10px;border-radius:8px}
 footer{border-top:1px solid var(--line);padding-block:30px 44px;font-size:14px;color:var(--ink-3)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -427,22 +389,13 @@ body{background:var(--sky)}
 .c-mint .int li:first-child{border-top-color:var(--blue)}
 @media (max-width:1000px){.c-mint .int li{border-left-color:rgba(0,0,0,.16)}.c-mint .int li:first-child{border-left-color:var(--blue)}}
 .c-mint .trust{border-top-color:rgba(0,0,0,.16)}
-/* pricing on ultramarine */
-#precios.c-blue h2{color:#fff}
-#precios.c-blue .lede,#precios.c-blue .price-note{color:rgba(255,255,255,.82)}
-#precios.c-blue .seg{background:rgba(255,255,255,.18)}
-#precios.c-blue .seg button{color:rgba(255,255,255,.85)}
-#precios.c-blue .seg button[aria-pressed="true"]{background:#fff;color:var(--blue)}
-#precios .plan{background:#E4E9F4;color:var(--ink);border-color:transparent}
-#precios .plan.feat{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-8px);box-shadow:0 24px 50px -28px rgba(0,0,0,.5)}
-#precios .plan.feat .sub,#precios .plan.feat li{color:var(--ink-2)}
-#precios .plan.feat .btn{background:var(--blue);border-color:var(--blue);color:#fff}
-#precios .plan .rec{background:var(--blue-2);color:var(--blue)}
-#precios .roi{background:#fff;color:var(--ink)}
-#precios .roi-out .row{border-bottom-color:var(--line)}
-@media (max-width:600px){#precios .plan.feat{transform:none}}
-/* contact */
-.c-butter form.lead{border-color:transparent}
+/* closing section */
+#codigo.c-blue h2{color:#fff}
+#codigo.c-blue .lede{color:rgba(255,255,255,.86)}
+#codigo .btn.blue{background:#fff;border-color:#fff;color:var(--blue)}
+#codigo .btn.blue:hover{background:var(--blue-2);border-color:var(--blue-2)}
+#codigo .btn:not(.blue){background:transparent;border-color:#fff;color:#fff}
+#codigo .btn:not(.blue):hover{background:rgba(255,255,255,.12)}
 @media (pointer:coarse),(max-width:760px){.inrow input,select,.field input[type=text],textarea{font-size:16px}}
 footer{background:var(--blue);color:rgba(255,255,255,.8);border-top:0}
 footer b{color:#fff!important}
@@ -456,11 +409,11 @@ footer b{color:#fff!important}
       <a href="#casos"><span class="es">Casos</span><span class="en">Use cases</span></a>
       <a href="#como"><span class="es">Cómo funciona</span><span class="en">How it works</span></a>
       <a href="#calidad"><span class="es">Calidad</span><span class="en">Quality</span></a>
-      <a href="#precios"><span class="es">Precios</span><span class="en">Pricing</span></a>
+      <a href="#codigo"><span class="es">Código</span><span class="en">Code</span></a>
     </nav>
     <div class="nav-r">
       <div class="seg" role="group" aria-label="Idioma / Language"><button type="button" id="langEs" aria-pressed="true">ES</button><button type="button" id="langEn" aria-pressed="false">EN</button></div>
-      <a class="btn blue sm" href="#contacto"><span class="es">Pedir piloto</span><span class="en">Request a pilot</span></a>
+      <a class="btn blue sm" href="https://github.com/rnachoc/quilora-assistant" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
   <div id="progress"></div>
@@ -477,7 +430,7 @@ footer b{color:#fff!important}
       </p>
       <div class="ctas">
         <a class="btn blue" href="#demo"><span class="es">Probar la demo</span><span class="en">Try the demo</span></a>
-        <a class="btn" href="#precios"><span class="es">Ver precios</span><span class="en">See pricing</span></a>
+        <a class="btn" href="https://github.com/rnachoc/quilora-assistant" target="_blank" rel="noopener"><span class="es">Ver el código</span><span class="en">See the code</span></a>
         <a class="btn" href="/demo/"><span class="es">Demo real (con acceso)</span><span class="en">Real demo (with access)</span></a>
       </div>
       <div class="facts">
@@ -695,14 +648,14 @@ footer b{color:#fff!important}
 <section id="integracion" class="c-mint" style="background:var(--blush)">
   <div class="wrap">
     <div class="head">
-      <h2><span class="es">De tu catálogo a tu web en cinco pasos</span><span class="en">From your catalog to your site in five steps</span></h2>
+      <h2><span class="es">Cómo se adapta a otra tienda, en cinco pasos</span><span class="en">How it adapts to another store, in five steps</span></h2>
     </div>
     <ol class="int">
-      <li><h3><span class="es">Conectamos tu catálogo</span><span class="en">We connect your catalog</span></h3><p><span class="es">Importación desde Shopify con variantes, rebajas, etiquetas y colecciones. XXL y 2XL cuentan como la misma talla.</span><span class="en">Import from Shopify with variants, sale prices, tags and collections. XXL and 2XL count as the same size.</span></p></li>
-      <li><h3><span class="es">Definimos tu perfil de tienda</span><span class="en">We define your store profile</span></h3><p><span class="es">Plazos, zonas, festivos, hora de corte, devoluciones, horario y promociones públicas. Solo da códigos que estén aquí.</span><span class="en">Deadlines, zones, holidays, cut-off time, returns, hours and public promotions. It only shares codes listed here.</span></p></li>
-      <li><h3><span class="es">Revisamos tus políticas</span><span class="en">We review your policies</span></h3><p><span class="es">Se dividen en secciones que se pueden citar y se marcan las que contradicen tu perfil.</span><span class="en">They're split into citable sections, and any that contradict your profile get flagged.</span></p></li>
-      <li><h3><span class="es">Lo medimos con tus preguntas</span><span class="en">We measure it with your questions</span></h3><p><span class="es">Añadimos a la evaluación las preguntas que ya recibes y ves el resultado antes de activar nada.</span><span class="en">We add the questions you already get to the evaluation and you see the result before anything goes live.</span></p></li>
-      <li><h3><span class="es">Publicamos el widget</span><span class="en">We publish the widget</span></h3><p><span class="es">Lo que necesita una persona llega a tu equipo como ticket con el resumen del caso.</span><span class="en">Whatever needs a person reaches your team as a ticket with a case summary.</span></p></li>
+      <li><h3><span class="es">Se importa el catálogo</span><span class="en">Import the catalog</span></h3><p><span class="es">Importación desde Shopify con variantes, rebajas, etiquetas y colecciones. XXL y 2XL cuentan como la misma talla.</span><span class="en">Import from Shopify with variants, sale prices, tags and collections. XXL and 2XL count as the same size.</span></p></li>
+      <li><h3><span class="es">Se define el perfil de tienda</span><span class="en">Define the store profile</span></h3><p><span class="es">Plazos, zonas, festivos, hora de corte, devoluciones, horario y promociones públicas. Solo da códigos que estén aquí.</span><span class="en">Deadlines, zones, holidays, cut-off time, returns, hours and public promotions. It only shares codes listed here.</span></p></li>
+      <li><h3><span class="es">Se revisan las políticas</span><span class="en">Check the policies</span></h3><p><span class="es">Se dividen en secciones que se pueden citar y se marcan las que contradicen el perfil.</span><span class="en">They're split into citable sections, and any that contradict the profile get flagged.</span></p></li>
+      <li><h3><span class="es">Se mide con preguntas reales</span><span class="en">Measure it with real questions</span></h3><p><span class="es">Las preguntas que ya recibe la tienda se añaden a la evaluación antes de activar nada.</span><span class="en">The questions the store already gets are added to the evaluation before anything goes live.</span></p></li>
+      <li><h3><span class="es">Se publica el widget</span><span class="en">Publish the widget</span></h3><p><span class="es">Lo que necesita una persona llega al equipo de la tienda como ticket con el resumen del caso.</span><span class="en">Whatever needs a person reaches the store's team as a ticket with a case summary.</span></p></li>
     </ol>
     <div class="trust">
       <div><h3><span class="es">Datos personales</span><span class="en">Personal data</span></h3><p><span class="es">Solo pide número de pedido y email, y nunca enseña datos de otro cliente. Da el mismo error si el pedido no existe o si el email no coincide, y bloquea tras 3 intentos.</span><span class="en">It only asks for the order number and email, and never shows another customer's data. It gives the same error for a missing order or a wrong email, and locks after 3 attempts.</span></p></div>
@@ -712,52 +665,23 @@ footer b{color:#fff!important}
   </div>
 </section>
 
-<section id="precios" class="c-blue">
+<section id="codigo" class="c-blue">
   <div class="wrap">
-    <div class="price-top">
-      <div class="head">
-        <h2><span class="es">Empieza con un piloto gratuito</span><span class="en">Start with a free pilot</span></h2>
-        <p class="lede"><span class="es">Pagas cuando los números te convencen.</span><span class="en">You pay once the numbers convince you.</span></p>
-      </div>
-      <div class="seg" role="group" aria-label="Facturación"><button type="button" id="bM" aria-pressed="true"><span class="es">Mensual</span><span class="en">Monthly</span></button><button type="button" id="bY" aria-pressed="false"><span class="es">Anual, 2 meses gratis</span><span class="en">Yearly, 2 months free</span></button></div>
-    </div>
-    <div class="plans" id="plans"></div>
-    <p class="price-note"><span class="es">Precios sin IVA. El uso del modelo está incluido en el volumen de cada plan.</span><span class="en">Prices exclude VAT. Model usage is included in each plan's volume.</span></p>
-    <div class="roi">
-      <div style="display:grid;gap:22px;align-content:start">
-        <div><h3><span class="es">¿Cuánto te ahorra?</span><span class="en">How much does it save you?</span></h3><p class="muted"><span class="es">Ajusta los valores a tu tienda.</span><span class="en">Adjust the values to your store.</span></p></div>
-        <div class="field"><label for="rT"><span class="es">Consultas al mes</span><span class="en">Enquiries per month</span><output id="rTo"></output></label><input type="range" id="rT" min="200" max="12000" step="100" value="1500"></div>
-        <div class="field"><label for="rP"><span class="es">Resueltas sin persona (tu estimación)</span><span class="en">Resolved without a person (your estimate)</span><output id="rPo"></output></label><input type="range" id="rP" min="10" max="80" step="5" value="40"></div>
-        <div class="field"><label for="rM"><span class="es">Minutos por consulta</span><span class="en">Minutes per enquiry</span><output id="rMo"></output></label><input type="range" id="rM" min="2" max="20" value="6"></div>
-        <div class="field"><label for="rC"><span class="es">Coste por hora del equipo</span><span class="en">Team cost per hour</span><output id="rCo"></output></label><input type="range" id="rC" min="10" max="45" value="18"></div>
-      </div>
-      <div class="roi-out" id="roiOut"></div>
-    </div>
-  </div>
-</section>
-
-<section id="contacto" class="c-butter">
-  <div class="wrap contact">
     <div class="head">
-      <h2><span class="es">Pruébalo con tu tienda</span><span class="en">Try it with your store</span></h2>
-      <p class="lede"><span class="es">En el piloto importamos tu catálogo, configuramos tu perfil de tienda y medimos el asistente con preguntas reales de tus clientes. Si los números no convencen, lo dejamos ahí.</span><span class="en">In the pilot we import your catalog, set up your store profile and measure the assistant with your customers' real questions. If the numbers don't convince you, we stop there.</span></p>
+      <h2><span class="es">El código está en GitHub</span><span class="en">The code is on GitHub</span></h2>
+      <p class="lede"><span class="es">Quilora Assistant es un proyecto de portfolio: la tienda y los datos son inventados. En el repositorio están el agente, las herramientas, las decisiones de diseño, los tests, la evaluación y las limitaciones conocidas.</span><span class="en">Quilora Assistant is a portfolio project: the store and its data are made up. The repository has the agent, the tools, the design decisions, the tests, the evaluation and the known limitations.</span></p>
     </div>
-    <form class="lead" id="leadForm" novalidate style="background:var(--paper)">
-      <div class="field"><label for="lName"><span class="es">Nombre</span><span class="en">Name</span></label><input type="text" id="lName" autocomplete="name"></div>
-      <div class="field"><label for="lShop"><span class="es">Web de la tienda</span><span class="en">Store website</span></label><input type="text" id="lShop" placeholder="https://"></div>
-      <div class="field"><label for="lPlat"><span class="es">Plataforma</span><span class="en">Platform</span></label><select id="lPlat"><option>Shopify</option><option>WooCommerce</option><option>PrestaShop</option><option value="other">Otra / Other</option></select></div>
-      <div class="field"><label for="lVol"><span class="es">Consultas al mes</span><span class="en">Enquiries per month</span></label><select id="lVol"><option>&lt; 500</option><option selected>500 - 2.000</option><option>2.000 - 8.000</option><option>&gt; 8.000</option></select></div>
-      <div class="field full"><label for="lMsg"><span class="es">¿Qué preguntan más tus clientes?</span><span class="en">What do your customers ask most?</span></label><textarea id="lMsg" rows="3"></textarea></div>
-      <div class="full" style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><button class="btn blue" type="submit"><span class="es">Preparar solicitud</span><span class="en">Prepare request</span></button><span class="err" id="lErr"></span></div>
-      <div class="leadout" id="leadOut" hidden></div>
-    </form>
+    <div class="ctas">
+      <a class="btn blue" href="https://github.com/rnachoc/quilora-assistant" target="_blank" rel="noopener"><span class="es">Ver el código</span><span class="en">See the code</span></a>
+      <a class="btn" href="#demo"><span class="es">Probar la demo</span><span class="en">Try the demo</span></a>
+    </div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span><b style="color:var(--ink)">Hilo</b>, <span class="es">demo de producto, octubre de 2026</span><span class="en">product demo, October 2026</span></span>
+    <span><b style="color:var(--ink)">Hilo</b>, <span class="es">demo de producto del proyecto Quilora Assistant, octubre de 2026</span><span class="en">product demo of the Quilora Assistant project, October 2026</span></span>
     <span><span class="es">Quilora es una tienda inventada y todos los datos de la demo son de prueba.</span><span class="en">Quilora is a made-up store and all demo data is test data.</span> <a href="https://github.com/rnachoc/quilora-assistant" target="_blank" rel="noopener" style="color:#fff;font-weight:600"><span class="es">Código en GitHub</span><span class="en">Code on GitHub</span></a></span>
   </div>
 </footer>
@@ -1082,7 +1006,6 @@ let LANG = 'es';
 const L = (es, en) => LANG === 'es' ? es : en;
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const eur = n => LANG === 'es' ? n.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €' : '€' + n.toFixed(2);
-const eur0 = n => LANG === 'es' ? Math.round(n).toLocaleString('es-ES') + ' €' : '€' + Math.round(n).toLocaleString('en-GB');
 const fdate = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString(LANG === 'es' ? 'es-ES' : 'en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
 const FINE = window.matchMedia('(pointer: fine)').matches;
 const focusMsg = () => { if (FINE) $('#msg').focus({ preventScroll: true }); };
@@ -1554,56 +1477,6 @@ const ADRS = [['0002', 'Python frente a Java con Spring AI', 'Python vs Java wit
 function renderAdr() { const one = ADRS.map(a => `<span><b>ADR ${a[0]}</b>${esc(LANG === 'es' ? a[1] : a[2])}</span>`).join(''); $('#adrRun').innerHTML = one + (REDUCED ? '' : one.replace(/<span>/g, '<span aria-hidden="true">')); }
 langListeners.push(renderAdr);
 
-/* ================= PRICING + ROI ================= */
-let yearly = false;
-const PLANS = [
-  { n: ['Piloto', 'Pilot'], m: 0, sub: ['Sin permanencia', 'No commitment'], f: [['Catálogo y perfil de tienda configurados', 'Catalog and store profile set up'], ['Widget en tu entorno de pruebas', 'Widget in your staging site'], ['Evaluación con 50 preguntas reales de tus clientes', 'Evaluation with 50 of your customers\' real questions'], ['Informe de resultados por categoría', 'Results report by category']], cta: ['Pedir piloto', 'Request pilot'] },
-  { n: ['Tienda', 'Store'], m: 149, sub: ['hasta 2.000 conversaciones al mes', 'up to 2,000 conversations a month'], f: [['Widget en tu tienda, ES y EN', 'Widget in your store, ES and EN'], ['Productos, tallas, stock y pedidos', 'Products, sizes, stock and orders'], ['Devoluciones con confirmación', 'Returns with confirmation'], ['Escalado con ticket y resumen', 'Escalation with ticket and summary']], cta: ['Empezar', 'Get started'] },
-  { n: ['Marca', 'Brand'], m: 390, feat: true, sub: ['hasta 8.000 conversaciones al mes', 'up to 8,000 conversations a month'], f: [['Todo lo del plan Tienda', 'Everything in Store'], ['Servidor MCP para tu equipo', 'MCP server for your team'], ['Trazas con coste y latencia por conversación', 'Traces with cost and latency per conversation'], ['Evaluación automática en cada cambio', 'Automatic evaluation on every change']], cta: ['Empezar', 'Get started'] },
-  { n: ['Enterprise', 'Enterprise'], m: null, sub: ['volumen y requisitos a medida', 'custom volume and requirements'], f: [['Integración con tu helpdesk y tu ERP', 'Integration with your helpdesk and ERP'], ['Despliegue en tu nube (AWS o Azure)', 'Deployment in your cloud (AWS or Azure)'], ['Idiomas adicionales', 'Additional languages'], ['Acuerdo de nivel de servicio', 'Service level agreement']], cta: ['Hablemos', 'Let\'s talk'] }
-];
-function renderPlans() {
-  const k = LANG === 'es' ? 0 : 1;
-  $('#plans').innerHTML = PLANS.map(p => {
-    const amt = p.m === null ? `<div class="amt" style="font-size:36px">${L('A medida', 'Custom')}</div>` : `<div class="amt">${eur0(p.m === 0 ? 0 : (yearly ? p.m * 10 / 12 : p.m))}<small>${p.m === 0 ? L('30 días', '30 days') : L('al mes', 'a month')}</small></div>`;
-    return `<div class="plan${p.feat ? ' feat' : ''}">${p.feat ? `<span class="rec">${L('El más elegido para empezar a escalar', 'The usual pick once you start scaling')}</span>` : ''}<h3>${p.n[k]}</h3>${amt}<div class="sub">${p.sub[k]}${yearly && p.m ? '. ' + L('Facturado al año', 'Billed yearly') : ''}</div><ul>${p.f.map(f => `<li>${esc(f[k])}</li>`).join('')}</ul><a class="btn sm${p.feat ? '' : ''}" href="#contacto">${p.cta[k]}</a></div>`;
-  }).join('');
-}
-
-$('#bM').onclick = () => { yearly = false; $('#bM').setAttribute('aria-pressed', true); $('#bY').setAttribute('aria-pressed', false); renderPlans(); renderRoi(); };
-$('#bY').onclick = () => { yearly = true; $('#bM').setAttribute('aria-pressed', false); $('#bY').setAttribute('aria-pressed', true); renderPlans(); renderRoi(); };
-function renderRoi() {
-  const t = +$('#rT').value, p = +$('#rP').value, m = +$('#rM').value, c = +$('#rC').value;
-  $('#rTo').textContent = t.toLocaleString(LANG === 'es' ? 'es-ES' : 'en-GB'); $('#rPo').textContent = p + ' %'; $('#rMo').textContent = m + ' min'; $('#rCo').textContent = eur0(c);
-  const hours = t * p / 100 * m / 60, saved = hours * c;
-  const plan = t <= 2000 ? PLANS[1] : t <= 8000 ? PLANS[2] : PLANS[3];
-  const planCost = plan.m === null ? null : (yearly ? plan.m * 10 / 12 : plan.m);
-  $('#roiOut').innerHTML = `<p>${L('Ahorro estimado al mes', 'Estimated monthly saving')}</p><div class="big">${eur0(saved)}</div>
-    <div class="row"><span>${L('Horas de equipo liberadas', 'Team hours freed')}</span><b>${Math.round(hours)} h</b></div>
-    <div class="row"><span>${L('Plan que encaja', 'Matching plan')}</span><b>${plan.n[LANG === 'es' ? 0 : 1]}${planCost !== null ? ' · ' + eur0(planCost) + L('/mes', '/mo') : ''}</b></div>
-    <div class="row"><span>${L('Diferencia neta', 'Net difference')}</span><b>${planCost !== null ? eur0(saved - planCost) : L('a medida', 'custom')}</b></div>
-    <p>${L('Cálculo con tus propios supuestos. El piloto mide el porcentaje real de consultas resueltas con las preguntas de tus clientes.', 'Calculated from your own assumptions. The pilot measures the real share of resolved enquiries using your customers\' questions.')}</p>`;
-}
-['#rT', '#rP', '#rM', '#rC'].forEach(s => $(s).addEventListener('input', renderRoi));
-langListeners.push(() => { renderPlans(); renderRoi(); });
-
-/* ================= LEAD FORM ================= */
-$('#leadForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const name = $('#lName').value.trim(), shop = $('#lShop').value.trim();
-  if (!name || !shop) { $('#lErr').textContent = L('Falta el nombre o la web de la tienda.', 'Name or store website missing.'); return; }
-  $('#lErr').textContent = '';
-  const txt = [L('Solicitud de piloto de Hilo', 'Hilo pilot request'), L('Nombre', 'Name') + ': ' + name, L('Tienda', 'Store') + ': ' + shop, L('Plataforma', 'Platform') + ': ' + $('#lPlat').value, L('Consultas al mes', 'Enquiries per month') + ': ' + $('#lVol').value, L('Preguntas frecuentes', 'Common questions') + ': ' + ($('#lMsg').value.trim() || '-')].join('\n');
-  const out = $('#leadOut'); out.hidden = false;
-  out.innerHTML = `<b>${L('Solicitud preparada. Cópiala y envíanosla:', 'Request ready. Copy it and send it to us:')}</b><pre id="leadTxt"></pre><div class="contact-line"><button type="button" class="btn small primary" id="leadCopy">${L('Copiar solicitud', 'Copy request')}</button><span>${L('Email', 'Email')}:</span><code>${CONTACT_EMAIL}</code></div>`;
-  $('#leadTxt').textContent = txt;
-  $('#leadCopy').onclick = () => {
-    const done = () => { $('#leadCopy').textContent = L('Copiada', 'Copied'); };
-    try { navigator.clipboard.writeText(txt).then(done, () => selectPre()); } catch (err) { selectPre(); }
-  };
-  function selectPre() { const r = document.createRange(); r.selectNodeContents($('#leadTxt')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('#leadCopy').textContent = L('Texto seleccionado', 'Text selected'); }
-});
-
 /* ================= HEADER PROGRESS ================= */
 let ticking = false;
 function onScroll() {
@@ -1638,7 +1511,7 @@ function initMotion() {
   const saved = store.get('hilo-lang');
   setLang(saved || ((navigator.language || 'es').toLowerCase().startsWith('es') ? 'es' : 'en'), true);
   langListeners.push(() => { renderCases(); renderOrders(); setMode(MODE); if (!busy) resetConversation(true); else stateBar(); });
-  renderCases(); renderOrders(); renderAdr(); renderPlans(); renderRoi(); initSize();
+  renderCases(); renderOrders(); renderAdr(); initSize();
   resetConversation(true); setMode('replay');
   $('#modeTxt').textContent = L('Comprobando Claude…', 'Checking Claude…');
   miniPlay();

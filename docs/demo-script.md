@@ -43,13 +43,14 @@ repository, and the latest evaluation report. Rehearse once: model answers vary.
 ## 3:45 – 4:30 · How I know it works
 
 9. Open the evaluation report: pass rate per category, cost per conversation, p50/p95.
-   "83 cases, run in CI on every change to prompt, tools or model, compared with a baseline;
-   regressions fail the build."
+   "83 cases with deterministic graders. The CI job runs them on every change to prompt,
+   tools or model once an API key is configured; the first full run sets the baseline and
+   later runs fail on regressions against it."
 10. Open Jaeger: one trace per turn, model calls vs tool calls, tokens and cost.
 
 ## 4:30 – 5:00 · Close
 
-> "The decisions are in 17 ADRs. Known limitations are listed in the README. With more
+> "The decisions are in 23 ADRs. Known limitations are listed in the README. With more
 > time: out-of-band confirmation buttons, streaming, and calibrating the LLM judge
 > against human labels."
 
