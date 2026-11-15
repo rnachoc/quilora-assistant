@@ -1,6 +1,6 @@
 # Quilora Assistant
 
-_Author: Ignacio Rodríguez Caro_
+_Author: Ignacio Rodríguez Caro · [LinkedIn](https://www.linkedin.com/in/ignaciorodriguezcaro/)_
 
 A production-minded customer-support agent for **any online fashion store**, shipped with
 **Quilora**, a fictional demo shop. Customers write in Spanish or English; the assistant answers by calling a small set
